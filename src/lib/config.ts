@@ -7,7 +7,7 @@ export const siteConfig = {
   memberCount: '42,000+',
   onlineCount: '2,500+',
   channels: '50+',
-  github: 'https://github.com/yourcommunity',
-  email: 'hello@yourcommunity.gg',
-  siteUrl: 'https://yourcommunity.gg',
+  github: 'https://github.com/catcafe',
+  email: 'hello@catcafe.gg',
+  siteUrl: 'https://cat-cafe-discord.vercel.app/',
 } as const
