@@ -29,7 +29,7 @@ export default function JoinCTA() {
                   ))}
                 </div>
 
-                <h2 className="font-display font-semibold text-5xl md:text-6xl text-white mb-4 leading-tight">
+                <h2 className="font-display font-medium text-5xl md:text-6xl text-white mb-4 leading-tight">
                   Ready to join the
                   <br />
                   <span className="bg-gradient-to-r from-[#FF5F57] to-[#FFD166] bg-clip-text text-transparent">

@@ -72,7 +72,7 @@ export default function FAQ() {
           <span className="inline-block px-4 py-2 rounded-full bg-[#FFD166]/10 text-[#FFD166] text-sm font-bold uppercase tracking-widest mb-2">
             FAQ
           </span>
-          <h2 className="font-display font-semibold text-5xl md:text-6xl text-white mb-4">
+          <h2 className="font-display font-medium text-5xl md:text-6xl text-white mb-4">
             Got questions?<br />
             <span className="text-[#FFD166]">We got answers.</span>
           </h2>

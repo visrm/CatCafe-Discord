@@ -54,7 +54,7 @@ export default function Features() {
           <span className="inline-block px-4 py-2 rounded-full bg-[#06D6A0]/10 text-[#06D6A0] text-sm font-bold uppercase tracking-widest mb-2">
             What We Offer
           </span>
-          <h2 className="font-display font-semibold text-5xl md:text-6xl text-white mb-4">
+          <h2 className="font-display font-medium text-5xl md:text-6xl text-white mb-4">
             Everything you need,<br />
             <span className="text-[#06D6A0]">nothing you don't.</span>
           </h2>

@@ -105,7 +105,7 @@ export default function Stats() {
             <span className="inline-block px-4 py-2 rounded-full bg-[#FF5F57]/10 text-[#FF5F57] text-sm font-bold uppercase tracking-widest mb-2">
               By the Numbers
             </span>
-            <h2 className="font-display font-semibold text-5xl md:text-6xl text-white">
+            <h2 className="font-display font-medium text-5xl md:text-6xl text-white">
               The proof is in
               <br />
               <span className="text-[#FF5F57]">the people.</span>

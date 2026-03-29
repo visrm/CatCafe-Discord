@@ -52,7 +52,7 @@ export default function Testimonials() {
           <span className="inline-block px-4 py-2 rounded-full bg-[#118AB2]/15 text-[#118AB2] text-sm font-bold uppercase tracking-widest mb-2">
             Member Voices
           </span>
-          <h2 className="font-display font-semibold text-5xl md:text-6xl text-white mb-4">
+          <h2 className="font-display font-medium text-5xl md:text-6xl text-white mb-4">
             Don't take our word,<br />
             <span className="text-[#118AB2]">see theirs.</span>
           </h2>

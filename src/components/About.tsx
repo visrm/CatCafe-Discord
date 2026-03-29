@@ -39,7 +39,7 @@ export default function About() {
           <span className="inline-block px-4 py-2 rounded-full bg-[#FFD166]/10 text-[#FFD166] text-sm font-bold uppercase tracking-widest mb-2">
             About Us
           </span>
-          <h2 className="font-display font-bold text-5xl md:text-6xl text-white mb-6">
+          <h2 className="font-display font-medium text-5xl md:text-6xl text-white mb-6">
             More than a server —<br />
             <span className="text-[#FFD166]">it's a home.</span>
           </h2>

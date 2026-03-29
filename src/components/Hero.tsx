@@ -49,7 +49,7 @@ export default function Hero() {
 
         {/* Headline */}
         <h1
-          className="font-display font-semibold text-6xl sm:text-7xl md:text-8xl leading-none mb-6"
+          className="font-display font-medium text-6xl sm:text-7xl md:text-7xl leading-none mb-6"
           style={{ lineHeight: 0.9 }}
         >
           <span className="text-white">Your new</span>
