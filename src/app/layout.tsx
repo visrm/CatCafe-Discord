@@ -10,17 +10,20 @@ export const metadata: Metadata = {
     'A vibrant, welcoming Discord community where curious people hang out, share ideas, and have fun together. Join thousands of members today!',
   keywords: ['discord', 'community', 'server', 'chat', 'friends', 'hangout'],
   authors: [{ name: 'CatCafe India Team' }],
+  verification: {
+    google: "w6NUiZO5uyHHC7uKJOp4nGC1Tq3a8Zm7yf8cjt1foMo"
+  },
   openGraph: {
     title: 'CatCafe India — Join the Fun on Discord',
     description: 'A vibrant, welcoming Discord community where curious people hang out.',
     url: 'https://discord.gg/catcafe',
-    siteName: 'CatCafe India',
+    siteName: 'Cat Cafe India',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'CatCafe India Discord Server',
+        alt: 'Cat Cafe India Discord Server',
       },
     ],
     locale: 'en_US',
