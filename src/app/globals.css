@@ -56,12 +56,6 @@ body {
   box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.4);
 }
 
-.card-glow:hover {
-  box-shadow: 0 0 0 1px rgba(255, 95, 87, 0.3), 0 16px 48px rgba(255, 95, 87, 0.15);
-  transform: translateY(-4px);
-  transition: all 0.3s ease;
-}
-
 /* Blob shapes */
 .blob {
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;

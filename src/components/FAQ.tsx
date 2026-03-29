@@ -38,15 +38,15 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
   return (
     <div
-      className={`bg-[#1E2540] rounded-2xl overflow-hidden transition-all duration-300 ${open ? 'ring-1 ring-[#FF5F57]/30' : ''}`}
+      className={`bg-[#1E2540] rounded-2xl overflow-hidden transition-all duration-300 ${open ? 'ring-1 ring-[#D3D3D3]/30' : ''}`}
     >
       <button
         onClick={() => setOpen(!open)}
         className="w-full px-6 py-5 flex items-center justify-between text-left group"
       >
-        <span className="font-bold text-white text-base group-hover:text-[#FF5F57] transition-colors">{q}</span>
+        <span className="font-bold text-white text-base group-hover:text-[#FFD166] transition-colors">{q}</span>
         <span
-          className={`flex-shrink-0 w-7 h-7 rounded-full border border-white/10 flex items-center justify-center text-[#8892B0] transition-all duration-300 ${open ? 'rotate-45 bg-[#FF5F57] text-white border-[#FF5F57]' : ''}`}
+          className={`flex-shrink-0 w-7 h-7 rounded-full border border-white/10 flex items-center justify-center text-[#8892B0] transition-all duration-300 ${open ? 'rotate-45 bg-[#FFD166] text-white border-white' : ''}`}
         >
           +
         </span>
@@ -69,10 +69,10 @@ export default function FAQ() {
 
       <div className="max-w-3xl mx-auto relative z-10">
         <div className="text-center mb-14">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#FFD166]/10 text-[#FFD166] text-sm font-bold uppercase tracking-widest mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-[#FFD166]/10 text-[#FFD166] text-sm font-bold uppercase tracking-widest mb-2">
             FAQ
           </span>
-          <h2 className="font-display text-5xl md:text-6xl text-white mb-4">
+          <h2 className="font-display font-semibold text-5xl md:text-6xl text-white mb-4">
             Got questions?<br />
             <span className="text-[#FFD166]">We got answers.</span>
           </h2>

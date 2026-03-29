@@ -6,10 +6,9 @@ export default function NotFound() {
     <>
       <div className="min-h-screen bg-[#0A0F1E] flex items-center justify-center px-6">
         <div className="text-center max-w-lg">
-          <div className="font-display text-[9rem] leading-none text-[#1E2540] select-none mb-4">
+          <div className="font-display text-[9rem] leading-none text-[#A3A3A3] select-none mb-4">
             404
           </div>
-          <div className="text-6xl mb-6 animate-float inline-block">🔍</div>
           <h1 className="font-display text-4xl text-white mb-4">
             Lost in the void?
           </h1>

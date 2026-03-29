@@ -33,13 +33,12 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Navigate</h4>
-            <ul className="flex flex-col gap-3">
+            <h4 className="text-white font-bold text-sm tracking-wider mb-4">Navigate</h4>
+            <ul className="flex flex-col gap-2">
               {[
-                { label: 'About',     href: '#about' },
-                { label: 'Features',  href: '#features' },
-                { label: 'Stats',     href: '#stats' },
-                { label: 'Members',   href: '#testimonials' },
+                { label: 'About Us',     href: '#about' },
+                { label: 'Services',  href: '#features' },
+                { label: 'Testimonials',   href: '#testimonials' },
                 { label: 'FAQ',       href: '#faq' },
               ].map((link) => (
                 <li key={link.href}>
@@ -53,8 +52,8 @@ export default function Footer() {
 
           {/* Legal / Contact */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Legal</h4>
-            <ul className="flex flex-col gap-3">
+            <h4 className="text-white font-bold text-sm tracking-wider mb-4">Legal</h4>
+            <ul className="flex flex-col gap-2">
               <li>
                 <Link href="/privacy" className="text-[#8892B0] text-sm hover:text-white transition-colors">
                   Privacy Policy

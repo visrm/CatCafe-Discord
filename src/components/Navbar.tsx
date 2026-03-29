@@ -60,7 +60,7 @@ export default function Navbar() {
             href={siteConfig.discordInvite}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 rounded-full bg-[#FF5F57] text-white text-sm font-bold hover:bg-[#ff4038] transition-colors shadow-lg hover:shadow-[#FF5F57]/30"
+            className="px-6 py-2 rounded-full bg-[#FF5F57] text-white text-sm font-bold hover:bg-[#ff4038] transition-colors shadow-lg hover:shadow-[#FF5F57]/30"
           >
             Join Server
           </a>

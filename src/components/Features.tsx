@@ -51,14 +51,14 @@ export default function Features() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#06D6A0]/10 text-[#06D6A0] text-sm font-bold uppercase tracking-widest mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-[#06D6A0]/10 text-[#06D6A0] text-sm font-bold uppercase tracking-widest mb-2">
             What We Offer
           </span>
-          <h2 className="font-display text-5xl md:text-6xl text-white mb-4">
+          <h2 className="font-display font-semibold text-5xl md:text-6xl text-white mb-4">
             Everything you need,<br />
             <span className="text-[#06D6A0]">nothing you don't.</span>
           </h2>
-          <p className="text-[#8892B0] text-lg max-w-xl mx-auto">
+          <p className="text-[#8892B0] text-md max-w-xl mx-auto">
             Packed with features to make every visit feel worth it.
           </p>
         </div>
@@ -71,10 +71,10 @@ export default function Features() {
               className="group bg-[#1E2540] rounded-2xl p-7 card-glow transition-all duration-300"
             >
               {/* Top row */}
-              <div className="flex items-start justify-between mb-4">
+              <div className="flex items-start justify-between mb-2">
                 <span className="text-3xl">{f.emoji}</span>
                 <span
-                  className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide"
+                  className="px-4 py-2 rounded-full text-xs font-extrabold uppercase tracking-wide"
                   style={{
                     backgroundColor: `${f.tagColor}18`,
                     color: f.tagColor,
@@ -83,7 +83,7 @@ export default function Features() {
                   {f.tag}
                 </span>
               </div>
-              <h3 className="font-display text-xl text-white mb-2">{f.title}</h3>
+              <h3 className="font-display font-medium text-xl text-white mb-2">{f.title}</h3>
               <p className="text-[#8892B0] text-sm leading-relaxed">{f.description}</p>
 
               {/* Hover underline accent */}

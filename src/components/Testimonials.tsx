@@ -49,27 +49,27 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#118AB2]/15 text-[#118AB2] text-sm font-bold uppercase tracking-widest mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-[#118AB2]/15 text-[#118AB2] text-sm font-bold uppercase tracking-widest mb-2">
             Member Voices
           </span>
-          <h2 className="font-display text-5xl md:text-6xl text-white mb-4">
-            Don't take our word<br />
-            <span className="text-[#118AB2]">for it.</span>
+          <h2 className="font-display font-semibold text-5xl md:text-6xl text-white mb-4">
+            Don't take our word,<br />
+            <span className="text-[#118AB2]">see theirs.</span>
           </h2>
-          <p className="text-[#8892B0] text-lg max-w-xl mx-auto">
+          <p className="text-[#8892B0] text-md max-w-xl mx-auto">
             Real words from real members who call this place home.
           </p>
         </div>
 
         {/* Masonry-style grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="grid grid-cols-1 columns-1 sm:grid-cols-2 sm:columns-2 lg:grid-cols-3 lg:columns-3 p-2 gap-6">
           {testimonials.map((t, i) => (
             <div
               key={t.handle}
-              className="break-inside-avoid bg-[#1E2540] rounded-2xl p-6 card-glow transition-all duration-300"
+              className="break-inside-avoid h-full bg-[#1E2540] rounded-2xl p-6 card-glow transition-all duration-300"
             >
               {/* Stars */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-2">
                 {[...Array(5)].map((_, j) => (
                   <span key={j} className="text-[#FFD166] text-sm">★</span>
                 ))}

@@ -27,7 +27,6 @@ module.exports = {
         'float':      'float 6s ease-in-out infinite',
         'float-slow': 'float 9s ease-in-out infinite',
         'wiggle':     'wiggle 1s ease-in-out infinite',
-        'fade-up':    'fadeUp 0.7s ease forwards',
         'pulse-slow': 'pulse 4s ease-in-out infinite',
         'spin-slow':  'spin 12s linear infinite',
       },
@@ -39,10 +38,6 @@ module.exports = {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%':      { transform: 'rotate(3deg)' },
-        },
-        fadeUp: {
-          '0%':   { opacity: '0', transform: 'translateY(30px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
       backgroundImage: {
