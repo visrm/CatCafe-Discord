@@ -9,5 +9,5 @@ export const siteConfig = {
   channels: '50+',
   github: 'https://github.com/catcafe',
   email: 'hello@catcafe.gg',
-  siteUrl: 'https://cat-cafe-discord.vercel.app/',
+  siteUrl: 'https://cat-cafe-discord.vercel.app',
 } as const
