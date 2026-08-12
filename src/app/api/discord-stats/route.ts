@@ -18,7 +18,7 @@ export async function GET() {
   }
 
   try {
-    const [guildRes, presenceRes] = await fetch(
+    const response = await fetch(
       `https://discord.com/api/v10/guilds/${GUILD_ID}?with_counts=true`,
       {
         headers: { Authorization: `Bot ${BOT_TOKEN}` },
@@ -26,11 +26,11 @@ export async function GET() {
       }
     )
 
-    if (!presenceRes.ok) {
-      throw new Error(`Discord API error: ${presenceRes.status}`)
+    if (!response.ok) {
+      throw new Error(`Discord API error: ${response.status}`)
     }
 
-    const guild = await presenceRes.json()
+    const guild = await response.json()
 
     return NextResponse.json({
       memberCount: guild.approximate_member_count ?? 0,
