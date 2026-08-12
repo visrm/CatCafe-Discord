@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'CatCafe India — 42,000 People, One Discord, Always Online',
+    default: 'CatCafe India — 53,000 People, One Discord, Always Online',
     template: '%s | CatCafe India',
   },
   description:
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     google: "w6NUiZO5uyHHC7uKJOp4nGC1Tq3a8Zm7yf8cjt1foMo"
   },
   openGraph: {
-    title: 'CatCafe India — 42,000 People, One Discord, Always Online',
+    title: 'CatCafe India — 53,000 People, One Discord, Always Online',
     description: '2,500+ people online right now. Free to join, takes about 10 seconds.',
     url: 'https://discord.gg/catcafe',
     siteName: 'Cat Cafe India',
