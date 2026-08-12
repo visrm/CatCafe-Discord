@@ -3,26 +3,26 @@ import { siteConfig } from '@/lib/config'
 const pillars = [
   {
     emoji: '🤝',
-    title: 'Inclusive & Welcoming',
-    description: 'We believe great communities start with respect. Everyone gets a warm welcome, no matter their background.',
+    title: 'Everyone Gets A Seat',
+    description: 'Your first message here doesn\'t sit unanswered. Someone usually replies within minutes — always within the hour.',
     color: '#FF5F57',
   },
   {
     emoji: '💡',
-    title: 'Curious & Creative',
-    description: 'A place to share ideas, show your work, ask dumb questions, and celebrate each other\'s curiosity.',
+    title: 'No Question Too Small',
+    description: 'Ask the thing you\'re too embarrassed to Google. Post the thing you made at 2am. We\'ve all been the new person asking obvious questions.',
     color: '#FFD166',
   },
   {
     emoji: '🎉',
-    title: 'Fun First',
-    description: 'Events, games, memes, music — we know how to have a good time. Serious sometimes, silly always.',
+    title: 'Something\'s Always On',
+    description: 'Trivia on Tuesdays, movie nights on Fridays, a meme thread that never really ends. You\'ll run out of time before you run out of things to do.',
     color: '#06D6A0',
   },
   {
     emoji: '🛡️',
-    title: 'Safe & Moderated',
-    description: 'A dedicated mod team keeps things chill. Clear rules, quick action, zero tolerance for toxicity.',
+    title: 'Mods Who Actually Show Up',
+    description: 'Report something and a real person handles it — usually inside the hour, not the week. Zero tolerance means zero tolerance.',
     color: '#118AB2',
   },
 ]
@@ -40,12 +40,13 @@ export default function About() {
             About Us
           </span>
           <h2 className="font-display font-medium text-5xl md:text-6xl text-white mb-6">
-            More than a server —<br />
-            <span className="text-[#FFD166]">it's a home.</span>
+            We started with 12 people<br />
+            <span className="text-[#FFD166]">in a voice channel.</span>
           </h2>
           <p className="text-[#8892B0] text-md max-w-2xl mx-auto leading-relaxed">
-            {siteConfig.name} started as a small hangout and grew into a thriving community
-            of {siteConfig.memberCount} members. We're proof that genuine connections still happen online.
+            That was a few years ago. {siteConfig.name} is now one of India's largest Discord
+            communities, at {siteConfig.memberCount} members — but the rule hasn't changed:
+            come as you are, leave when you're tired of laughing.
           </p>
         </div>
 

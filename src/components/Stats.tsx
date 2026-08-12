@@ -106,9 +106,9 @@ export default function Stats() {
               By the Numbers
             </span>
             <h2 className="font-display font-medium text-5xl md:text-6xl text-white">
-              The proof is in
+              Not vibes.
               <br />
-              <span className="text-[#FF5F57]">the people.</span>
+              <span className="text-[#FF5F57]">Just numbers.</span>
             </h2>
           </div>
 

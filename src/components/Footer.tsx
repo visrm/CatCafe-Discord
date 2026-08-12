@@ -17,7 +17,7 @@ export default function Footer() {
               <span className="font-display text-xl text-white">{siteConfig.name}</span>
             </div>
             <p className="text-[#8892B0] text-sm leading-relaxed max-w-xs">
-              A vibrant Discord community where real connections happen. Always welcoming, always growing.
+              {siteConfig.memberCount} people, one Discord server, zero corporate speak.
             </p>
             <div className="flex gap-3 mt-5">
               <a

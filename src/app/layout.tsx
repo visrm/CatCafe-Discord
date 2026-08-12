@@ -3,19 +3,19 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'CatCafe India — Join the Fun on Discord',
+    default: 'CatCafe India — 53,000 People, One Discord, Always Online',
     template: '%s | CatCafe India',
   },
   description:
-    'A vibrant, welcoming Discord community where curious people hang out, share ideas, and have fun together. Join thousands of members today!',
+    '2,500+ people online right now. Join India\'s biggest Discord hangout — free, instant, and there\'s always someone around to talk to.',
   keywords: ['discord', 'community', 'server', 'chat', 'friends', 'hangout'],
   authors: [{ name: 'CatCafe India Team' }],
   verification: {
     google: "w6NUiZO5uyHHC7uKJOp4nGC1Tq3a8Zm7yf8cjt1foMo"
   },
   openGraph: {
-    title: 'CatCafe India — Join the Fun on Discord',
-    description: 'A vibrant, welcoming Discord community where curious people hang out.',
+    title: 'CatCafe India — 53,000 People, One Discord, Always Online',
+    description: '2,500+ people online right now. Free to join, takes about 10 seconds.',
     url: 'https://discord.gg/catcafe',
     siteName: 'Cat Cafe India',
     images: [

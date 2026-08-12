@@ -30,16 +30,16 @@ export default function JoinCTA() {
                 </div>
 
                 <h2 className="font-display font-medium text-5xl md:text-6xl text-white mb-4 leading-tight">
-                  Ready to join the
+                  {siteConfig.memberCount} people are in.
                   <br />
                   <span className="bg-gradient-to-r from-[#FF5F57] to-[#FFD166] bg-clip-text text-transparent">
-                    good vibes?
+                    You're still outside.
                   </span>
                 </h2>
 
                 <p className="text-[#8892B0] text-md mb-10 max-w-md mx-auto leading-relaxed">
-                  Over {siteConfig.memberCount} members are waiting to welcome
-                  you. It takes 10 seconds to join.
+                  Click below, pick a couple of interests, and you're in —
+                  before your coffee gets cold. No sign-up form, no catch.
                 </p>
 
                 <a
@@ -49,7 +49,7 @@ export default function JoinCTA() {
                   className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#FF5F57] text-white font-bold text-xl shadow-xl hover:shadow-[#FF5F57]/20 hover:scale-105 hover:bg-[#ff4038] transition-all duration-200"
                 >
                   <DiscordIcon className="w-7 h-7" />
-                  Join {siteConfig.name}
+                  Join {siteConfig.name} — It's Free
                   <span>🎉</span>
                 </a>
               </div>
