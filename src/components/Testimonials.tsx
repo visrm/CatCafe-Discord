@@ -53,11 +53,11 @@ export default function Testimonials() {
             Member Voices
           </span>
           <h2 className="font-display font-medium text-5xl md:text-6xl text-white mb-4">
-            Don't take our word,<br />
-            <span className="text-[#118AB2]">see theirs.</span>
+            Ask them,<br />
+            <span className="text-[#118AB2]">not us.</span>
           </h2>
           <p className="text-[#8892B0] text-md max-w-xl mx-auto">
-            Real words from real members who call this place home.
+            Nobody was paid or prompted. This is just what people typed when we asked.
           </p>
         </div>
 

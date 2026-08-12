@@ -44,7 +44,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E2540] border border-[#FF5F57]/30 text-sm font-semibold text-[#FF5F57] mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-[#06D6A0] animate-pulse" />
-          {siteConfig.onlineCount} members online right now
+          {siteConfig.onlineCount} people online, talking, right now
         </div>
 
         {/* Headline */}
@@ -52,16 +52,16 @@ export default function Hero() {
           className="font-display font-medium text-6xl sm:text-7xl md:text-7xl leading-none mb-6"
           style={{ lineHeight: 0.9 }}
         >
-          <span className="text-white">Your new</span>
+          <span className="text-white">{siteConfig.memberCount} people</span>
           <br />
           <span 
           className="bg-gradient-to-r from-[#FF5F57] via-[#FFD166] to-[#06D6A0] bg-clip-text text-transparent"
           style={{ lineHeight: 0.9 }}
           >
-            favourite place
+            already found it.
           </span>
           <br />
-          <span className="text-white" style={{ lineHeight: 0.9 }}>on the internet.</span>
+          <span className="text-white" style={{ lineHeight: 0.9 }}>Have you?</span>
         </h1>
 
         {/* Sub */}
@@ -82,14 +82,14 @@ export default function Hero() {
             className="group px-8 py-4 rounded-2xl bg-[#FF5F57] text-white font-bold text-lg shadow-xl hover:shadow-[#FF5F57]/20 hover:scale-105 transition-all duration-200 flex items-center gap-3"
           >
             <DiscordIcon className="w-6 h-6" />
-            Join the Community
+            Join Free — Takes 10 Seconds
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
           <a
             href="#about"
             className="px-8 py-4 rounded-2xl border border-white/10 text-white font-bold text-lg hover:bg-white/5 transition-all duration-200"
           >
-            Learn More
+            See What's Inside
           </a>
         </div>
 

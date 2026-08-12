@@ -1,43 +1,43 @@
 const features = [
   {
     emoji: '🎙️',
-    title: 'Voice & Stage Events',
-    description: 'Weekly AMAs, listening parties, gaming nights, and live community events you won\'t want to miss.',
+    title: 'Live Every Week',
+    description: 'AMAs, listening parties, late-night gaming — pick a night, any night, something\'s on. Set one reminder and never plan an evening again.',
     tag: 'Events',
     tagColor: '#FF5F57',
   },
   {
     emoji: '🏆',
-    title: 'Roles & Ranks',
-    description: 'Earn unique roles as you participate. Show off your loyalty and unlock exclusive perks & channels.',
+    title: 'Level Up As You Show Up',
+    description: 'Every message and event you join adds up. Hit a milestone and a channel unlocks — no waitlist, no application.',
     tag: 'Rewards',
     tagColor: '#FFD166',
   },
   {
     emoji: '🤖',
-    title: 'Smart Bots',
-    description: 'Music, moderation, leveling, games, polls and more — powered by custom bots built for our community.',
+    title: 'Bots Handle The Boring Stuff',
+    description: 'Music queues itself, spam gets caught before you see it, polls run themselves. You just show up and talk.',
     tag: 'Bots',
     tagColor: '#06D6A0',
   },
   {
     emoji: '💬',
-    title: '50+ Topic Channels',
-    description: 'From memes to motivation, tech to travel — there\'s a channel for every interest. Jump in anywhere.',
+    title: 'A Channel For Your Thing',
+    description: 'Anime at 1am, career advice at noon, recipe swaps on a Sunday. 50+ channels means you\'re never the only one into it.',
     tag: 'Channels',
     tagColor: '#118AB2',
   },
   {
     emoji: '🎨',
-    title: 'Creative Showcases',
-    description: 'Share your art, music, writing, projects, or anything you\'re proud of. We hype each other up here.',
+    title: 'Post It Before You Overthink It',
+    description: 'Half-finished painting, rough demo, first draft — post it anyway. People here clap for effort, not just polish.',
     tag: 'Creative',
     tagColor: '#FF5F57',
   },
   {
     emoji: '🛡️',
-    title: 'Active Moderation',
-    description: '24/7 moderation team keeping the space safe, friendly, and drama-free. Report once, handled fast.',
+    title: 'Someone\'s Always On Duty',
+    description: 'Moderators cover every timezone. Flag something once and it\'s handled — not just noted for later.',
     tag: 'Safety',
     tagColor: '#06D6A0',
   },
@@ -55,11 +55,11 @@ export default function Features() {
             What We Offer
           </span>
           <h2 className="font-display font-medium text-5xl md:text-6xl text-white mb-4">
-            Everything you need,<br />
-            <span className="text-[#06D6A0]">nothing you don't.</span>
+            Six reasons people<br />
+            <span className="text-[#06D6A0]">stop lurking.</span>
           </h2>
           <p className="text-[#8892B0] text-md max-w-xl mx-auto">
-            Packed with features to make every visit feel worth it.
+            Here's what's actually inside. No fluff.
           </p>
         </div>
 
