@@ -11,23 +11,20 @@ export async function GET() {
   // Return mock data if env vars are not configured
   if (!GUILD_ID || !BOT_TOKEN) {
     return NextResponse.json({
-      memberCount: 12400,
-      onlineCount: 1200,
+      memberCount: 53400,
+      onlineCount: 2200,
       source: 'mock',
     })
   }
 
   try {
-    const [guildRes, presenceRes] = await Promise.all([
-      fetch(`https://discord.com/api/v10/guilds/${GUILD_ID}`, {
+    const [guildRes, presenceRes] = await fetch(
+      `https://discord.com/api/v10/guilds/${GUILD_ID}?with_counts=true`,
+      {
         headers: { Authorization: `Bot ${BOT_TOKEN}` },
         next: { revalidate: 60 },
-      }),
-      fetch(`https://discord.com/api/v10/guilds/${GUILD_ID}?with_counts=true`, {
-        headers: { Authorization: `Bot ${BOT_TOKEN}` },
-        next: { revalidate: 60 },
-      }),
-    ])
+      }
+    )
 
     if (!presenceRes.ok) {
       throw new Error(`Discord API error: ${presenceRes.status}`)
@@ -44,7 +41,7 @@ export async function GET() {
     console.error('Discord API fetch error:', error)
     // Graceful fallback
     return NextResponse.json(
-      { memberCount: 12400, onlineCount: 1200, source: 'fallback' },
+      { memberCount: 53400, onlineCount: 2200, source: 'fallback' },
       { status: 200 }
     )
   }
