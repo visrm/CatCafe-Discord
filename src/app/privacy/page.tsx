@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { siteConfig } from '@/lib/config'
 
 export const metadata: Metadata = {
@@ -49,42 +51,38 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
-      <div className="min-h-screen bg-[#0A0F1E] pt-28 pb-24 px-6">
+      <Navbar />
+      <main className="pt-28 pb-24 px-6">
         <div className="max-w-3xl mx-auto">
-          {/* Back link */}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-[#8892B0] text-sm hover:text-white transition-colors mb-10"
-          >
-            ← Back to Home
-          </Link>
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy' }]} />
 
           {/* Header */}
           <div className="mb-12">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[#FF5F57]/10 text-[#FF5F57] text-sm font-bold uppercase tracking-widest mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
               Legal
             </span>
-            <h1 className="font-display text-5xl text-white mb-4">Privacy Policy</h1>
-            <p className="text-[#8892B0] text-sm">
-              Last updated: <span className="text-white font-semibold">January 1, 2025</span>
+            <h1 className="font-display text-4xl md:text-5xl text-primary mb-4">Privacy Policy</h1>
+            <p className="text-muted text-sm">
+              Last updated: <span className="text-primary font-semibold">January 1, 2025</span>
             </p>
-            <p className="text-[#8892B0] mt-4 leading-relaxed">
-              At <strong className="text-white">{siteConfig.name}</strong>, we take your privacy seriously.
+            <p className="text-muted mt-4 leading-relaxed">
+              At <strong className="text-primary">{siteConfig.name}</strong>, we take your privacy seriously.
               This policy explains what data we collect, how we use it, and your rights regarding that data.
             </p>
           </div>
 
           {/* Sections */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6">
             {sections.map(section => (
-              <div key={section.title} className="bg-[#1E2540] rounded-2xl p-7 border border-white/5">
-                <h2 className="font-display text-xl text-white mb-3">{section.title}</h2>
-                <p className="text-[#8892B0] text-sm leading-relaxed">{section.content}</p>
+              <div key={section.title} className="bg-surface rounded-2xl p-7 border border-subtle card-glow">
+                <h2 className="font-display text-xl text-primary mb-3">{section.title}</h2>
+                <p className="text-muted text-sm leading-relaxed">{section.content}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </main>
+      <Footer />
     </>
   )
 }

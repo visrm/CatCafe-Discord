@@ -1,6 +1,6 @@
-# ✦ YourCommunity — Discord Landing Page
+# ✦ CatCafe India — Discord Community Site
 
-A vibrant, playful Next.js 14 landing page for your Discord community. Built for SEO, scalability, and easy customisation.
+A premium, editorial Next.js 14 site for a Discord community. Multi-page, dark/light theming, live server stats, and a scalable staff directory. Built for SEO, scalability, and easy customisation.
 
 ---
 
@@ -27,30 +27,41 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 ```
 src/
 ├── app/
-│   ├── layout.tsx              # Root layout with SEO metadata
-│   ├── page.tsx                # Home page (assembles all sections)
-│   ├── globals.css             # Global styles, CSS variables, animations
+│   ├── layout.tsx              # Root layout, fonts (Fraunces + Inter), theme provider
+│   ├── page.tsx                # Condensed home page — hero, live stats strip, explore grid
+│   ├── globals.css             # Design tokens (dark/light), premium background treatment
 │   ├── not-found.tsx           # Custom 404 page
-│   ├── sitemap.ts              # Auto-generated sitemap.xml
+│   ├── sitemap.ts              # Auto-generated sitemap.xml (includes staff routes)
 │   ├── robots.ts               # robots.txt
+│   ├── about/page.tsx          # About page
+│   ├── features/page.tsx       # Features page
+│   ├── stats/page.tsx          # Full server stats page (live data)
+│   ├── members/page.tsx        # Member testimonials page
+│   ├── faq/page.tsx            # FAQ page
+│   ├── rules/page.tsx          # Community Rules page
+│   ├── staff/page.tsx          # Staff directory, grouped by team
+│   ├── staff/[id]/page.tsx     # Individual staff portfolio page (breadcrumbed)
 │   ├── privacy/page.tsx        # Privacy Policy page
 │   ├── terms/page.tsx          # Terms of Service page
-│   ├── rules/page.tsx          # Community Rules page
 │   └── api/
 │       └── discord-stats/
 │           └── route.ts        # Live member count from Discord API
 ├── components/
-│   ├── Navbar.tsx              # Sticky nav with mobile menu
+│   ├── Navbar.tsx              # Sticky nav, mobile menu, theme toggle
+│   ├── ThemeProvider.tsx       # next-themes wrapper (class-based dark/light)
+│   ├── ThemeToggle.tsx         # Dark/light toggle button
+│   ├── Breadcrumbs.tsx         # Shared breadcrumb trail
 │   ├── Hero.tsx                # Hero section with CTA
 │   ├── About.tsx               # About / community pillars
 │   ├── Features.tsx            # Feature highlights grid
-│   ├── Stats.tsx               # Animated stat counters
+│   ├── Stats.tsx                # Stat counters — fetches /api/discord-stats client-side
 │   ├── Testimonials.tsx        # Member testimonials
-│   ├── JoinCTA.tsx             # Mid-page & bottom CTA banner
+│   ├── JoinCTA.tsx             # Bottom CTA banner
 │   ├── FAQ.tsx                 # Accordion FAQ
 │   └── Footer.tsx              # Footer with links
 └── lib/
-    └── config.ts               # ⭐ Single source of truth for all branding
+    ├── config.ts               # ⭐ Single source of truth for branding + staff directory
+    └── discord.ts              # Shared Discord API fetch logic (used by the API route)
 ```
 
 ---
@@ -62,15 +73,15 @@ All branding, links, and copy live in **one file**:
 ```ts
 // src/lib/config.ts
 export const siteConfig = {
-  name: 'YourCommunity',
-  tagline: 'Where cool people hang out.',
+  name: 'CatCafe India',
+  tagline: '...',
   description: '...',
   discordInvite: 'https://discord.gg/your-invite-code', // 🔁 Change this!
-  memberCount: '12,400+',
-  onlineCount: '1,200+',
+  memberCount: '53,000+',
+  onlineCount: '2,500+',
   channels: '50+',
-  email: 'hello@yourcommunity.gg',
-  siteUrl: 'https://yourcommunity.gg',
+  email: '',
+  siteUrl: 'https://cat-cafe-discord.vercel.app',
 }
 ```
 
@@ -80,14 +91,15 @@ export const siteConfig = {
 - [ ] `memberCount`, `onlineCount`, `channels` — real stats (or use the live API)
 - [ ] `siteUrl`, `email` — your real domain and contact email
 - [ ] `DISCORD_BOT_TOKEN` + `DISCORD_GUILD_ID` in `.env.local` for live stats
+- [ ] `staffDirectory` — replace the sample staff with your real team
 - [ ] `/public/og-image.png` — 1200×630px Open Graph image
 - [ ] `/public/favicon.ico` — your favicon
 
 ---
 
-## 🔌 Live Discord Stats (Optional)
+## 🔌 Live Discord Stats
 
-The `/api/discord-stats` route fetches real member and online counts from the Discord API.
+The `/api/discord-stats` route (backed by `src/lib/discord.ts`) fetches real member and online counts from the Discord API, refreshed every 60 seconds. The `Stats` component fetches this route client-side and animates the counters once the data loads — used both in the compact homepage strip and the full `/stats` page.
 
 **Setup:**
 1. Go to [discord.com/developers/applications](https://discord.com/developers/applications)
@@ -96,37 +108,53 @@ The `/api/discord-stats` route fetches real member and online counts from the Di
 4. Invite the bot to your server with `guilds` scope
 5. Copy your Server ID (right-click server → Copy ID) → `DISCORD_GUILD_ID`
 
-If not configured, the API gracefully falls back to the static values in `config.ts`.
+If not configured, the API gracefully falls back to sample values.
 
 ---
 
-## 🎨 Theming & Colours
+## 🎨 Theming
 
-Colours are defined as CSS variables in `globals.css` and as Tailwind tokens in `tailwind.config.js`:
+The site ships with a full **dark / light** theme (toggle in the navbar, powered by `next-themes`), a premium background treatment (soft radial glows + fine film grain, no more cartoon blobs), and an editorial type pairing: **Fraunces** for display headings, **Inter** for body text — loaded via `next/font/google` in `layout.tsx`.
 
-| Variable       | Value     | Usage                  |
-|----------------|-----------|------------------------|
-| `--coral`      | `#FF5F57` | Primary CTA, accents   |
-| `--yellow`     | `#FFD166` | Secondary highlights   |
-| `--mint`       | `#06D6A0` | Success, feature tags  |
-| `--sky`        | `#118AB2` | Info, links            |
-| `--navy`       | `#0A0F1E` | Page background        |
-| `--ink`        | `#1A1F35` | Section background     |
-| `--card`       | `#1E2540` | Card backgrounds       |
-| `--muted`      | `#8892B0` | Body text, labels      |
+Design tokens live as CSS variables in `globals.css` (one block for `.dark`, one for `.light`) and are exposed as semantic Tailwind classes in `tailwind.config.js`:
+
+| Token           | Usage                              |
+|-----------------|-------------------------------------|
+| `bg-page`       | Page background                     |
+| `bg-surface`    | Card / panel background             |
+| `bg-surface-2`  | Alternating section background      |
+| `text-primary`  | Primary text                        |
+| `text-muted`    | Secondary / label text              |
+| `border-subtle` | Hairline borders                    |
+| `brand-coral` / `brand-yellow` / `brand-mint` / `brand-sky` | Accent colors, used sparingly |
+
+Because everything reads from these tokens, adding a new theme or retuning the palette is a `globals.css` change — no component edits needed.
+
+---
+
+## 👥 Staff & Portfolio Pages
+
+`/staff` lists the team grouped by department, and `/staff/[id]` renders an individual breadcrumbed portfolio page for each person. Both pages read entirely from `staffDirectory` in `src/lib/config.ts` — to add, remove, or edit a staff member, edit that array; the routes (including static params for pre-rendering) update automatically. Swap the sample entries for a CMS or database call later without touching the page components, as long as the shape matches `StaffMember`.
 
 ---
 
 ## 📄 Pages
 
-| Route        | Description                     |
-|--------------|---------------------------------|
-| `/`          | Landing page (all sections)     |
-| `/rules`     | Community Rules                 |
-| `/privacy`   | Privacy Policy                  |
-| `/terms`     | Terms of Service                |
-| `/sitemap.xml` | Auto-generated by Next.js     |
-| `/robots.txt`  | Auto-generated by Next.js     |
+| Route             | Description                          |
+|--------------------|---------------------------------------|
+| `/`                | Condensed landing page                |
+| `/about`           | About / community pillars             |
+| `/features`        | Feature highlights                    |
+| `/stats`           | Full live server stats                |
+| `/members`         | Member testimonials                   |
+| `/staff`           | Staff directory                       |
+| `/staff/[id]`      | Individual staff portfolio            |
+| `/faq`             | Frequently asked questions            |
+| `/rules`           | Community Rules                       |
+| `/privacy`         | Privacy Policy                        |
+| `/terms`           | Terms of Service                      |
+| `/sitemap.xml`     | Auto-generated by Next.js             |
+| `/robots.txt`      | Auto-generated by Next.js             |
 
 ---
 
@@ -154,7 +182,8 @@ Or connect your GitHub repo to [vercel.com](https://vercel.com) for automatic de
 |-------------------|--------------------------------------|
 | Next.js 14        | Framework (App Router, SSR/SSG)      |
 | TypeScript        | Type safety                          |
-| Tailwind CSS      | Utility-first styling                |
+| Tailwind CSS      | Utility-first styling, token-based theming |
+| next-themes       | Dark / light mode                    |
 | Framer Motion     | Animations (ready to use)            |
 | next-seo          | Extended SEO metadata helpers        |
 | Discord REST API  | Live member/online count             |
@@ -167,7 +196,7 @@ Or connect your GitHub repo to [vercel.com](https://vercel.com) for automatic de
 Ideas for future additions:
 - **Blog / Announcements** — Add `src/app/blog` with MDX support via `next-mdx-remote`
 - **Events page** — Pull from a CMS (Sanity, Contentful) or static MDX files
-- **Dark/Light toggle** — Add `next-themes`
+- **Real staff data source** — Swap `staffDirectory` for a CMS or database query
 - **Localisation** — Add `next-intl` for multiple languages
 - **CMS integration** — Replace static copy with Sanity Studio
 

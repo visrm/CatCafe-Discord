@@ -1,62 +1,33 @@
-import { siteConfig } from "@/lib/config";
+import { siteConfig } from '@/lib/config'
 import DiscordIcon from '@/components/DiscordIcon'
 
 export default function JoinCTA() {
   return (
-    <>
-      <section className="py-28 px-6 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto relative">
-          {/* Card */}
-          <div className="relative bg-gradient-to-br from-[#FF5F57] via-[#ff7a52] to-[#FFD166] rounded-3xl p-1 shadow-2xl shadow-[#FF5F57]/20">
-            <div className="bg-[#12172A] rounded-[22px] p-14 text-center relative overflow-hidden">
-              {/* Background decorations */}
-              <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-                <div className="absolute -top-12 -left-12 w-48 h-48 bg-[#FF5F57]/10 rounded-full blur-2xl" />
-                <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-[#FFD166]/10 rounded-full blur-2xl" />
-              </div>
+    <section className="py-24 px-6 relative overflow-hidden">
+      <div className="max-w-4xl mx-auto relative">
+        <div className="bg-surface border border-subtle rounded-3xl p-10 md:p-14 text-center relative overflow-hidden card-glow">
+          <h2 className="font-display font-medium text-4xl md:text-5xl text-primary mb-4 leading-tight">
+            {siteConfig.memberCount} people are in.
+            <br />
+            <span className="italic text-brand-coral">You&apos;re still outside.</span>
+          </h2>
 
-              <div className="relative z-10">
-                {/* Floating emoji row */}
-                <div className="flex justify-center gap-4 text-3xl mb-8">
-                  {["🎉", "🚀", "✨", "💬", "🎮"].map((e, i) => (
-                    <span
-                      key={i}
-                      className="animate-float"
-                      style={{ animationDelay: `${i * 0.3}s` }}
-                    >
-                      {e}
-                    </span>
-                  ))}
-                </div>
+          <p className="text-muted text-base mb-10 max-w-md mx-auto leading-relaxed">
+            Click below, pick a couple of interests, and you&apos;re in —
+            before your coffee gets cold. No sign-up form, no catch.
+          </p>
 
-                <h2 className="font-display font-medium text-5xl md:text-6xl text-white mb-4 leading-tight">
-                  {siteConfig.memberCount} people are in.
-                  <br />
-                  <span className="bg-gradient-to-r from-[#FF5F57] to-[#FFD166] bg-clip-text text-transparent">
-                    You're still outside.
-                  </span>
-                </h2>
-
-                <p className="text-[#8892B0] text-md mb-10 max-w-md mx-auto leading-relaxed">
-                  Click below, pick a couple of interests, and you're in —
-                  before your coffee gets cold. No sign-up form, no catch.
-                </p>
-
-                <a
-                  href={siteConfig.discordInvite}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#FF5F57] text-white font-bold text-xl shadow-xl hover:shadow-[#FF5F57]/20 hover:scale-105 hover:bg-[#ff4038] transition-all duration-200"
-                >
-                  <DiscordIcon className="w-7 h-7" />
-                  Join {siteConfig.name} — It's Free
-                  <span>🎉</span>
-                </a>
-              </div>
-            </div>
-          </div>
+          <a
+            href={siteConfig.discordInvite}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-9 py-4 rounded-2xl bg-brand-coral text-white font-semibold text-lg shadow-xl hover:opacity-90 hover:scale-[1.02] transition-all duration-200"
+          >
+            <DiscordIcon className="w-6 h-6" />
+            Join {siteConfig.name} — It&apos;s Free
+          </a>
         </div>
-      </section>
-    </>
-  );
+      </div>
+    </section>
+  )
 }
