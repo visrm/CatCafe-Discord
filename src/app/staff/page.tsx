@@ -24,10 +24,10 @@ export default function StaffPage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
               The Team
             </span>
-            <h1 className="font-display font-medium text-4xl md:text-5xl text-primary mb-4">
+            <h1 className="font-display text-4xl md:text-5xl text-primary mb-4">
               People behind
               <br />
-              <span className="italic text-brand-sky">the server.</span>
+              <span className="text-brand-sky">the server.</span>
             </h1>
             <p className="text-muted text-base max-w-xl mx-auto leading-relaxed">
               {staffDirectory.length} people keep {siteConfig.name} running — moderating, building,

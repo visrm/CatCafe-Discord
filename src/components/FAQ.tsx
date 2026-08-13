@@ -66,10 +66,10 @@ export default function FAQ() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
             FAQ
           </span>
-          <h2 className="font-display font-medium text-4xl md:text-5xl text-primary mb-4">
+          <h2 className="font-display text-4xl md:text-5xl text-primary mb-4">
             Got questions?
             <br />
-            <span className="italic text-brand-yellow">We got answers.</span>
+            <span className="text-brand-yellow">We got answers.</span>
           </h2>
         </div>
 

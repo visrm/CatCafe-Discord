@@ -17,11 +17,11 @@ export default function Hero() {
 
         {/* Headline */}
         <h1
-          className="font-display font-medium text-5xl sm:text-6xl md:text-7xl leading-[1.05] mb-6 text-primary"
+          className="font-display text-5xl sm:text-6xl md:text-7xl leading-[1.05] mb-6 text-primary"
         >
           {siteConfig.memberCount} people
           <br />
-          <span className="italic text-brand-yellow">already found it.</span>
+          <span className="text-brand-yellow">already found it.</span>
           <br />
           Have you?
         </h1>

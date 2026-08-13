@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
-import { Fraunces, Inter } from 'next/font/google'
+import { Balthazar, Inter } from 'next/font/google'
 import ThemeProvider from '@/components/ThemeProvider'
 import { siteConfig } from '@/lib/config'
 import './globals.css'
 
-const fraunces = Fraunces({
+// Balthazar only ships a single 400 (regular) weight, no italic —
+// used sparingly for display headings, paired with Inter for body text.
+const balthazar = Balthazar({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
+  weight: ['400'],
   variable: '--font-display',
   display: 'swap',
 })
@@ -71,7 +72,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${fraunces.variable} ${inter.variable} antialiased font-body`} suppressHydrationWarning>
+      <body className={`${balthazar.variable} ${inter.variable} antialiased font-body`} suppressHydrationWarning>
         <ThemeProvider>
           <div className="premium-bg min-h-screen">
             <div className="relative z-10">{children}</div>

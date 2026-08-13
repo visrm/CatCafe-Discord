@@ -38,6 +38,7 @@ export default function Footer() {
               {[
                 { label: 'About Us',    href: '/about' },
                 { label: 'Features',    href: '/features' },
+                { label: 'Services',    href: '/services' },
                 { label: 'Members',     href: '/members' },
                 { label: 'Staff',       href: '/staff' },
                 { label: 'FAQ',         href: '/faq' },

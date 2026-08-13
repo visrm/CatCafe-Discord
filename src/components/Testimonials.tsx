@@ -45,10 +45,10 @@ export default function Testimonials() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
             Member Voices
           </span>
-          <h2 className="font-display font-medium text-4xl md:text-5xl text-primary mb-4">
+          <h2 className="font-display text-4xl md:text-5xl text-primary mb-4">
             Ask them,
             <br />
-            <span className="italic text-brand-sky">not us.</span>
+            <span className="text-brand-sky">not us.</span>
           </h2>
           <p className="text-muted text-base max-w-xl mx-auto">
             Nobody was paid or prompted. This is just what people typed when we asked.

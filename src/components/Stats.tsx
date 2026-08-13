@@ -116,10 +116,10 @@ export default function Stats({ compact = false }: { compact?: boolean }) {
             <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
               By the Numbers
             </span>
-            <h2 className="font-display font-medium text-4xl md:text-5xl text-primary">
+            <h2 className="font-display text-4xl md:text-5xl text-primary">
               Not vibes.
               <br />
-              <span className="italic text-brand-coral">Just numbers.</span>
+              <span className="text-brand-coral">Just numbers.</span>
             </h2>
             <p className="text-muted text-sm mt-4">
               {live?.source === 'live'

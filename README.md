@@ -27,7 +27,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 ```
 src/
 ├── app/
-│   ├── layout.tsx              # Root layout, fonts (Fraunces + Inter), theme provider
+│   ├── layout.tsx              # Root layout, fonts (Balthazar + Inter), theme provider
 │   ├── page.tsx                # Condensed home page — hero, live stats strip, explore grid
 │   ├── globals.css             # Design tokens (dark/light), premium background treatment
 │   ├── not-found.tsx           # Custom 404 page
@@ -41,11 +41,17 @@ src/
 │   ├── rules/page.tsx          # Community Rules page
 │   ├── staff/page.tsx          # Staff directory, grouped by team
 │   ├── staff/[id]/page.tsx     # Individual staff portfolio page (breadcrumbed)
+│   ├── services/page.tsx       # Services index — medium cards per service
+│   ├── services/[id]/page.tsx  # Plans for one service + shared CTA
+│   ├── services/[id]/inquire/page.tsx  # Inquiry form for that service
 │   ├── privacy/page.tsx        # Privacy Policy page
 │   ├── terms/page.tsx          # Terms of Service page
 │   └── api/
-│       └── discord-stats/
-│           └── route.ts        # Live member count from Discord API
+│       ├── discord-stats/
+│       │   └── route.ts        # Live member count from Discord API
+│       └── services/
+│           └── inquire/
+│               └── route.ts    # Posts inquiry form submissions to a Discord webhook
 ├── components/
 │   ├── Navbar.tsx              # Sticky nav, mobile menu, theme toggle
 │   ├── ThemeProvider.tsx       # next-themes wrapper (class-based dark/light)
@@ -56,11 +62,12 @@ src/
 │   ├── Features.tsx            # Feature highlights grid
 │   ├── Stats.tsx                # Stat counters — fetches /api/discord-stats client-side
 │   ├── Testimonials.tsx        # Member testimonials
+│   ├── ServiceInquireForm.tsx  # Client form used by /services/[id]/inquire
 │   ├── JoinCTA.tsx             # Bottom CTA banner
 │   ├── FAQ.tsx                 # Accordion FAQ
 │   └── Footer.tsx              # Footer with links
 └── lib/
-    ├── config.ts               # ⭐ Single source of truth for branding + staff directory
+    ├── config.ts               # ⭐ Single source of truth for branding + staff + services
     └── discord.ts              # Shared Discord API fetch logic (used by the API route)
 ```
 
@@ -91,7 +98,9 @@ export const siteConfig = {
 - [ ] `memberCount`, `onlineCount`, `channels` — real stats (or use the live API)
 - [ ] `siteUrl`, `email` — your real domain and contact email
 - [ ] `DISCORD_BOT_TOKEN` + `DISCORD_GUILD_ID` in `.env.local` for live stats
+- [ ] `DISCORD_INQUIRY_WEBHOOK_URL` in `.env.local` for the services inquiry form
 - [ ] `staffDirectory` — replace the sample staff with your real team
+- [ ] `servicesDirectory` — replace sample plans/pricing with your real offerings
 - [ ] `/public/og-image.png` — 1200×630px Open Graph image
 - [ ] `/public/favicon.ico` — your favicon
 
@@ -114,7 +123,7 @@ If not configured, the API gracefully falls back to sample values.
 
 ## 🎨 Theming
 
-The site ships with a full **dark / light** theme (toggle in the navbar, powered by `next-themes`), a premium background treatment (soft radial glows + fine film grain, no more cartoon blobs), and an editorial type pairing: **Fraunces** for display headings, **Inter** for body text — loaded via `next/font/google` in `layout.tsx`.
+The site ships with a full **dark / light** theme (toggle in the navbar, powered by `next-themes`), a premium background treatment (soft radial glows + fine film grain, no more cartoon blobs), and an editorial type pairing: **Balthazar** for display headings, **Inter** for body text — loaded via `next/font/google` in `layout.tsx`.
 
 Design tokens live as CSS variables in `globals.css` (one block for `.dark`, one for `.light`) and are exposed as semantic Tailwind classes in `tailwind.config.js`:
 
@@ -138,6 +147,21 @@ Because everything reads from these tokens, adding a new theme or retuning the p
 
 ---
 
+## 💼 Services & Inquiry Form
+
+`/services` lists each offering as a medium card ("View Plans"), `/services/[id]` shows that service's plans/pricing behind one shared CTA ("Submit an Inquiry"), and `/services/[id]/inquire` renders the request form. All copy, plans, add-ons, and pricing come from `servicesDirectory` in `src/lib/config.ts` — add a service there and its pages appear automatically, same pattern as staff.
+
+On submit, the form `POST`s to `/api/services/inquire` (never directly to Discord), which validates the payload server-side and posts a formatted embed — service, plan, budget, contact email, Discord ID, and category-specific details (promo copy / server invite, etc.) — to a single Discord webhook. A hidden honeypot field silently discards obvious bot submissions.
+
+**Setup:**
+1. In your Discord server, go to a channel → **Edit Channel → Integrations → Webhooks → New Webhook**
+2. Copy the webhook URL → `DISCORD_INQUIRY_WEBHOOK_URL` in `.env.local`
+3. All inquiries (both services) currently post to this one channel/webhook — split by service later by adding a second webhook URL and branching in `src/app/api/services/inquire/route.ts`
+
+If the webhook isn't configured, the API returns a clear error instead of failing silently.
+
+---
+
 ## 📄 Pages
 
 | Route             | Description                          |
@@ -149,6 +173,9 @@ Because everything reads from these tokens, adding a new theme or retuning the p
 | `/members`         | Member testimonials                   |
 | `/staff`           | Staff directory                       |
 | `/staff/[id]`      | Individual staff portfolio            |
+| `/services`        | Services index                        |
+| `/services/[id]`   | Plans for one service + inquiry CTA   |
+| `/services/[id]/inquire` | Inquiry form for that service   |
 | `/faq`             | Frequently asked questions            |
 | `/rules`           | Community Rules                       |
 | `/privacy`         | Privacy Policy                        |

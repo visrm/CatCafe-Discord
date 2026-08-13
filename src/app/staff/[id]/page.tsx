@@ -62,7 +62,7 @@ export default function StaffMemberPage({ params }: Props) {
               >
                 {member.team}
               </span>
-              <h1 className="font-display font-medium text-3xl md:text-4xl text-primary">{member.name}</h1>
+              <h1 className="font-display text-3xl md:text-4xl text-primary">{member.name}</h1>
               <p className="text-muted text-base mt-1">{member.role}</p>
             </div>
           </div>

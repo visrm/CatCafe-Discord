@@ -32,10 +32,10 @@ export default function About() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
             About Us
           </span>
-          <h2 className="font-display font-medium text-4xl md:text-5xl text-primary mb-6">
+          <h2 className="font-display text-4xl md:text-5xl text-primary mb-6">
             We started with 12 people
             <br />
-            <span className="italic text-brand-yellow">in a voice channel.</span>
+            <span className="text-brand-yellow">in a voice channel.</span>
           </h2>
           <p className="text-muted text-base max-w-2xl mx-auto leading-relaxed">
             That was a few years ago. {siteConfig.name} is now one of India&apos;s largest Discord
@@ -54,7 +54,7 @@ export default function About() {
               <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4 bg-surface-2 border border-subtle">
                 {pillar.icon}
               </div>
-              <h3 className="font-display font-medium text-lg text-primary mb-2">{pillar.title}</h3>
+              <h3 className="font-display text-lg text-primary mb-2">{pillar.title}</h3>
               <p className="text-muted text-sm leading-relaxed">{pillar.description}</p>
             </div>
           ))}

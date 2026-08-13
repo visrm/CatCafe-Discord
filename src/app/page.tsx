@@ -20,6 +20,12 @@ const explore = [
     description: 'Weekly events, a leveling system, custom bots, and 50+ channels for whatever you\'re into.',
   },
   {
+    href: '/services',
+    icon: '📣',
+    title: 'Services',
+    description: 'Advertise your product or promote your Discord server to our members.',
+  },
+  {
     href: '/members',
     icon: '💬',
     title: 'Members',
@@ -65,10 +71,10 @@ export default function Home() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
                 Explore {siteConfig.name}
               </span>
-              <h2 className="font-display font-medium text-4xl md:text-5xl text-primary">
+              <h2 className="font-display text-4xl md:text-5xl text-primary">
                 Everything, in
                 <br />
-                <span className="italic text-brand-yellow">its own place.</span>
+                <span className="text-brand-yellow">its own place.</span>
               </h2>
             </div>
 
@@ -80,7 +86,7 @@ export default function Home() {
                   className="group bg-surface rounded-2xl p-7 card-glow transition-all duration-300 hover:bg-surface-hover"
                 >
                   <div className="text-2xl mb-4">{item.icon}</div>
-                  <h3 className="font-display font-medium text-lg text-primary mb-2">{item.title}</h3>
+                  <h3 className="font-display text-lg text-primary mb-2">{item.title}</h3>
                   <p className="text-muted text-sm leading-relaxed mb-4">{item.description}</p>
                   <span className="text-xs font-semibold uppercase tracking-widest text-brand-sky group-hover:translate-x-1 inline-block transition-transform">
                     Learn more →

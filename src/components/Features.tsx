@@ -46,10 +46,10 @@ export default function Features() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
             What We Offer
           </span>
-          <h2 className="font-display font-medium text-4xl md:text-5xl text-primary mb-4">
+          <h2 className="font-display text-4xl md:text-5xl text-primary mb-4">
             Six reasons people
             <br />
-            <span className="italic text-brand-mint">stop lurking.</span>
+            <span className="text-brand-mint">stop lurking.</span>
           </h2>
           <p className="text-muted text-base max-w-xl mx-auto">
             Here&apos;s what&apos;s actually inside. No fluff.
@@ -69,7 +69,7 @@ export default function Features() {
                   {f.tag}
                 </span>
               </div>
-              <h3 className="font-display font-medium text-lg text-primary mb-2">{f.title}</h3>
+              <h3 className="font-display text-lg text-primary mb-2">{f.title}</h3>
               <p className="text-muted text-sm leading-relaxed">{f.description}</p>
 
               <div className="mt-5 h-0.5 w-0 group-hover:w-full transition-all duration-500 rounded-full bg-brand-yellow" />

@@ -6,10 +6,10 @@ export default function JoinCTA() {
     <section className="py-24 px-6 relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative">
         <div className="bg-surface border border-subtle rounded-3xl p-10 md:p-14 text-center relative overflow-hidden card-glow">
-          <h2 className="font-display font-medium text-4xl md:text-5xl text-primary mb-4 leading-tight">
+          <h2 className="font-display text-4xl md:text-5xl text-primary mb-4 leading-tight">
             {siteConfig.memberCount} people are in.
             <br />
-            <span className="italic text-brand-coral">You&apos;re still outside.</span>
+            <span className="text-brand-coral">You&apos;re still outside.</span>
           </h2>
 
           <p className="text-muted text-base mb-10 max-w-md mx-auto leading-relaxed">
