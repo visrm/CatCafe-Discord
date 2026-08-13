@@ -1,124 +1,140 @@
-"use client";
+'use client'
 
-import { useEffect, useRef, useState } from "react";
-import { siteConfig } from "@/lib/config";
+import { useEffect, useRef, useState } from 'react'
+import { siteConfig } from '@/lib/config'
 
-const stats = [
-  {
-    value: 42000,
-    suffix: "",
-    label: "Total Members",
-    emoji: "👥",
-    color: "#FFFFFF",
-  },
-  {
-    value: 2500,
-    suffix: "",
-    label: "Online Right Now",
-    emoji: "🟢",
-    color: "#FFFFFF",
-  },
-  {
-    value: 50,
-    suffix: "+",
-    label: "Active Channels",
-    emoji: "💬",
-    color: "#FFFFFF",
-  },
-  {
-    value: 97,
-    suffix: "%",
-    label: "Satisfaction Rate",
-    emoji: "❤️",
-    color: "#FFFFFF",
-  },
-];
-
-function useCountUp(target: number, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    let startTime: number;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [target, duration, start]);
-  return count;
+type LiveStats = {
+  memberCount: number
+  onlineCount: number
+  source: 'live' | 'mock' | 'fallback'
 }
 
-function StatCard({ stat }: { stat: (typeof stats)[0] }) {
-  const [inView, setInView] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const count = useCountUp(stat.value, 1800, inView);
+function useCountUp(target: number, duration = 1800, start = false) {
+  const [count, setCount] = useState(0)
+  useEffect(() => {
+    if (!start) return
+    let startTime: number
+    let raf: number
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp
+      const progress = Math.min((timestamp - startTime) / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setCount(Math.floor(eased * target))
+      if (progress < 1) raf = requestAnimationFrame(step)
+    }
+    raf = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(raf)
+  }, [target, duration, start])
+  return count
+}
+
+function StatCard({
+  value,
+  suffix = '',
+  label,
+  icon,
+  loading,
+}: {
+  value: number
+  suffix?: string
+  label: string
+  icon: string
+  loading?: boolean
+}) {
+  const [inView, setInView] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  const count = useCountUp(value, 1800, inView && !loading)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setInView(true);
+        if (entry.isIntersecting) setInView(true)
       },
-      { threshold: 0.5 },
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+      { threshold: 0.5 }
+    )
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <>
-      <div
-        ref={ref}
-        className="bg-[#1E2540] rounded-3xl p-8 text-center card-glow transition-all duration-300 group"
-      >
-        <div className="text-3xl mb-4 group-hover:animate-wiggle inline-block">
-          {stat.emoji}
-        </div>
-        <div
-          className="font-display text-4xl md:text-6xl mb-2"
-          style={{ color: stat.color }}
-        >
-          {count.toLocaleString()}
-          {stat.suffix}
-        </div>
-        <div className="text-[#8892B0] font-semibold text-xs uppercase tracking-widest">
-          {stat.label}
-        </div>
+    <div ref={ref} className="bg-surface rounded-2xl p-8 text-center card-glow transition-all duration-300">
+      <div className="text-2xl mb-4 inline-block">{icon}</div>
+      <div className="font-display text-3xl md:text-5xl mb-2 text-primary">
+        {loading ? (
+          <span className="inline-block w-20 h-9 bg-surface-2 rounded-lg animate-pulse align-middle" />
+        ) : (
+          <>
+            {count.toLocaleString()}
+            {suffix}
+          </>
+        )}
       </div>
-    </>
-  );
+      <div className="text-muted font-semibold text-xs uppercase tracking-widest">{label}</div>
+    </div>
+  )
 }
 
-export default function Stats() {
-  return (
-    <>
-      <section id="stats" className="py-28 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FF5F57]/5 blur-3xl rounded-full" />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#06D6A0]/5 blur-3xl rounded-full" />
-        </div>
+/**
+ * Fetches live counts from /api/discord-stats (which itself calls the
+ * Discord API, or falls back to sample values when unconfigured) and
+ * merges them with the static config values used for channel count.
+ */
+export default function Stats({ compact = false }: { compact?: boolean }) {
+  const [live, setLive] = useState<LiveStats | null>(null)
 
-        <div className="max-w-6xl mx-auto relative z-10">
+  useEffect(() => {
+    let cancelled = false
+    fetch('/api/discord-stats')
+      .then((res) => res.json())
+      .then((data: LiveStats) => {
+        if (!cancelled) setLive(data)
+      })
+      .catch(() => {
+        if (!cancelled) setLive(null)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const loading = live === null
+  const memberCount = live?.memberCount ?? 0
+  const onlineCount = live?.onlineCount ?? 0
+
+  const stats = [
+    { value: memberCount, suffix: '', label: 'Total Members', icon: '👥' },
+    { value: onlineCount, suffix: '', label: 'Online Right Now', icon: '🟢' },
+    { value: 50, suffix: '+', label: 'Active Channels', icon: '💬' },
+    { value: 97, suffix: '%', label: 'Satisfaction Rate', icon: '❤️' },
+  ]
+
+  return (
+    <section id="stats" className={compact ? 'px-6' : 'py-24 px-6 relative overflow-hidden'}>
+      <div className="max-w-6xl mx-auto relative z-10">
+        {!compact && (
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 rounded-full bg-[#FF5F57]/10 text-[#FF5F57] text-sm font-bold uppercase tracking-widest mb-2">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
               By the Numbers
             </span>
-            <h2 className="font-display font-medium text-5xl md:text-6xl text-white">
+            <h2 className="font-display font-medium text-4xl md:text-5xl text-primary">
               Not vibes.
               <br />
-              <span className="text-[#FF5F57]">Just numbers.</span>
+              <span className="italic text-brand-coral">Just numbers.</span>
             </h2>
+            <p className="text-muted text-sm mt-4">
+              {live?.source === 'live'
+                ? 'Live counts, pulled straight from Discord.'
+                : 'Sample counts shown — connect a bot token for live data.'}
+            </p>
           </div>
+        )}
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat) => (
-              <StatCard key={stat.label} stat={stat} />
-            ))}
-          </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((stat) => (
+            <StatCard key={stat.label} {...stat} loading={loading} />
+          ))}
         </div>
-      </section>
-    </>
-  );
+      </div>
+    </section>
+  )
 }

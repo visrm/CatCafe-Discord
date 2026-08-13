@@ -1,48 +1,10 @@
 import { NextResponse } from 'next/server'
+import { getDiscordStats } from '@/lib/discord'
 
-// Replace GUILD_ID and BOT_TOKEN with your actual values
-// Store BOT_TOKEN in .env.local as DISCORD_BOT_TOKEN
-const GUILD_ID = process.env.DISCORD_GUILD_ID
-const BOT_TOKEN = process.env.DISCORD_BOT_TOKEN
-
+// Store DISCORD_BOT_TOKEN / DISCORD_GUILD_ID in .env.local — see .env.example
 export const revalidate = 60 // Cache for 60 seconds (ISR)
 
 export async function GET() {
-  // Return mock data if env vars are not configured
-  if (!GUILD_ID || !BOT_TOKEN) {
-    return NextResponse.json({
-      memberCount: 53400,
-      onlineCount: 2200,
-      source: 'mock',
-    })
-  }
-
-  try {
-    const response = await fetch(
-      `https://discord.com/api/v10/guilds/${GUILD_ID}?with_counts=true`,
-      {
-        headers: { Authorization: `Bot ${BOT_TOKEN}` },
-        next: { revalidate: 60 },
-      }
-    )
-
-    if (!response.ok) {
-      throw new Error(`Discord API error: ${response.status}`)
-    }
-
-    const guild = await response.json()
-
-    return NextResponse.json({
-      memberCount: guild.approximate_member_count ?? 0,
-      onlineCount:  guild.approximate_presence_count ?? 0,
-      source: 'live',
-    })
-  } catch (error) {
-    console.error('Discord API fetch error:', error)
-    // Graceful fallback
-    return NextResponse.json(
-      { memberCount: 53400, onlineCount: 2200, source: 'fallback' },
-      { status: 200 }
-    )
-  }
+  const stats = await getDiscordStats()
+  return NextResponse.json(stats)
 }

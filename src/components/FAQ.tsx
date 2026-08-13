@@ -37,22 +37,20 @@ const faqs = [
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
   return (
-    <div
-      className={`bg-[#1E2540] rounded-2xl overflow-hidden transition-all duration-300 ${open ? 'ring-1 ring-[#D3D3D3]/30' : ''}`}
-    >
+    <div className={`bg-surface rounded-2xl overflow-hidden border transition-all duration-300 ${open ? 'border-brand-yellow/40' : 'border-subtle'}`}>
       <button
         onClick={() => setOpen(!open)}
         className="w-full px-6 py-5 flex items-center justify-between text-left group"
       >
-        <span className="font-bold text-white text-base group-hover:text-[#FFD166] transition-colors">{q}</span>
+        <span className="font-semibold text-primary text-base">{q}</span>
         <span
-          className={`flex-shrink-0 w-7 h-7 rounded-full border border-white/10 flex items-center justify-center text-[#8892B0] transition-all duration-300 ${open ? 'rotate-45 bg-[#FFD166] text-white border-white' : ''}`}
+          className={`flex-shrink-0 w-7 h-7 rounded-full border border-subtle flex items-center justify-center text-muted transition-all duration-300 ${open ? 'rotate-45 bg-brand-yellow text-white border-transparent' : ''}`}
         >
           +
         </span>
       </button>
       {open && (
-        <div className="px-6 pb-6 text-[#8892B0] text-sm leading-relaxed">
+        <div className="px-6 pb-6 text-muted text-sm leading-relaxed">
           {a}
         </div>
       )}
@@ -62,19 +60,16 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-28 px-6 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FFD166]/4 blur-3xl rounded-full" />
-      </div>
-
+    <section id="faq" className="py-24 px-6 relative overflow-hidden">
       <div className="max-w-3xl mx-auto relative z-10">
         <div className="text-center mb-14">
-          <span className="inline-block px-4 py-2 rounded-full bg-[#FFD166]/10 text-[#FFD166] text-sm font-bold uppercase tracking-widest mb-2">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
             FAQ
           </span>
-          <h2 className="font-display font-medium text-5xl md:text-6xl text-white mb-4">
-            Got questions?<br />
-            <span className="text-[#FFD166]">We got answers.</span>
+          <h2 className="font-display font-medium text-4xl md:text-5xl text-primary mb-4">
+            Got questions?
+            <br />
+            <span className="italic text-brand-yellow">We got answers.</span>
           </h2>
         </div>
 
@@ -84,11 +79,11 @@ export default function FAQ() {
           ))}
         </div>
 
-        <p className="text-center text-[#8892B0] mt-10 text-sm">
+        <p className="text-center text-muted mt-10 text-sm">
           Still have questions?{' '}
           <a
             href={`mailto:${siteConfig.email}`}
-            className="text-[#FFD166] font-semibold hover:underline"
+            className="text-brand-yellow font-semibold hover:underline"
           >
             Drop us an email →
           </a>

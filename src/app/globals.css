@@ -1,21 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-display: 'Fredoka One';
-  --font-body: 'Nunito';
+/* ---------------------------------------------------------
+   Design tokens — premium dark & light themes.
+   Font families are wired up via next/font in layout.tsx
+   (--font-display / --font-body CSS variables).
+--------------------------------------------------------- */
+.dark {
+  color-scheme: dark;
 
-  --coral:  #FF5F57;
-  --yellow: #FFD166;
-  --mint:   #06D6A0;
-  --sky:    #118AB2;
-  --navy:   #0A0F1E;
-  --ink:    #1A1F35;
-  --card:   #1E2540;
-  --muted:  #8892B0;
+  --bg: #0A0B0F;
+  --surface: #14161D;
+  --surface-2: #101218;
+  --surface-hover: #1B1E27;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --text-primary: #F2F1ED;
+  --text-muted: #9A9BA5;
+
+  --glow-1: rgba(201, 166, 107, 0.10);
+  --glow-2: rgba(90, 110, 140, 0.10);
+  --glow-3: rgba(160, 90, 80, 0.07);
+  --grain-opacity: 0.05;
+  --hairline: rgba(255, 255, 255, 0.06);
+}
+
+.light {
+  color-scheme: light;
+
+  --bg: #F7F5F1;
+  --surface: #FFFFFF;
+  --surface-2: #F0EDE7;
+  --surface-hover: #ECE8E1;
+  --border-subtle: rgba(20, 20, 20, 0.08);
+  --border-strong: rgba(20, 20, 20, 0.14);
+  --text-primary: #17181C;
+  --text-muted: #6B6C75;
+
+  --glow-1: rgba(201, 166, 107, 0.16);
+  --glow-2: rgba(90, 110, 140, 0.10);
+  --glow-3: rgba(160, 90, 80, 0.08);
+  --grain-opacity: 0.035;
+  --hairline: rgba(20, 20, 20, 0.06);
+}
+
+/* Brand accent — used sparingly against the neutral premium palette */
+:root {
+  --coral:  #C9694F;
+  --yellow: #C9A66B;
+  --mint:   #4E9B85;
+  --sky:    #4C7A94;
 }
 
 html {
@@ -23,51 +58,67 @@ html {
 }
 
 body {
-  background-color: var(--navy);
-  color: #E8EAF6;
+  background-color: var(--bg);
+  color: var(--text-primary);
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--ink); }
-::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 3px; }
+::-webkit-scrollbar-track { background: var(--surface-2); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
 
 /* Selection */
-::selection { background: var(--coral); color: white; }
+::selection { background: var(--yellow); color: #17181C; }
 
-/* Noise overlay utility */
-.noise-overlay::after {
+/* ---------------------------------------------------------
+   Premium background treatment
+   Soft directional glows + fine film grain, theme-aware.
+--------------------------------------------------------- */
+.premium-bg {
+  position: relative;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 12% 8%, var(--glow-1) 0%, transparent 42%),
+    radial-gradient(circle at 88% 22%, var(--glow-2) 0%, transparent 38%),
+    radial-gradient(circle at 50% 100%, var(--glow-3) 0%, transparent 48%);
+}
+
+.premium-bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Glow utilities */
-.glow-coral  { text-shadow: 0 0 40px rgba(255, 95, 87, 0.5); }
-.glow-yellow { text-shadow: 0 0 40px rgba(255, 209, 102, 0.5); }
-.glow-mint   { text-shadow: 0 0 40px rgba(6, 214, 160, 0.5); }
+/* Hairline rule — a restrained, editorial divider */
+.hairline {
+  height: 1px;
+  background: var(--hairline);
+}
 
+/* Subtle card elevation used across surfaces */
 .card-glow {
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 1px var(--border-subtle), 0 12px 32px -12px rgba(0, 0, 0, 0.35);
+}
+.light .card-glow {
+  box-shadow: 0 0 0 1px var(--border-subtle), 0 8px 24px -12px rgba(20, 20, 20, 0.12);
 }
 
-/* Blob shapes */
-.blob {
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  animation: blob-morph 8s ease-in-out infinite;
-}
-@keyframes blob-morph {
-  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-  50%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-}
-
-/* Dot grid background */
+/* Fine dot grid used behind hero content */
 .dot-grid {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background-image: radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.5;
+}
+
+/* Gentle float utility kept minimal for a premium feel */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
 }
