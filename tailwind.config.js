@@ -11,6 +11,7 @@ module.exports = {
       fontFamily: {
         display: ['var(--font-display)', 'serif'],
         body: ['var(--font-body)', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       colors: {
         brand: {
@@ -24,6 +25,9 @@ module.exports = {
         'surface-2': 'var(--surface-2)',
         'surface-hover': 'var(--surface-hover)',
         primary:     'var(--text-primary)',
+        // Mid-contrast step between `primary` and `muted` — for copy that
+        // needs to read clearly without competing with the headline.
+        secondary:   'var(--text-secondary)',
         muted:       'var(--text-muted)',
         subtle:      'var(--border-subtle)',
         strong:      'var(--border-strong)',

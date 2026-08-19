@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Balthazar, Inter } from 'next/font/google'
+import { Balthazar, Inter, IBM_Plex_Mono } from 'next/font/google'
 import ThemeProvider from '@/components/ThemeProvider'
 import { siteConfig } from '@/lib/config'
 import './globals.css'
@@ -17,6 +17,16 @@ const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-body',
+  display: 'swap',
+})
+
+// Third, distinct type family reserved for kickers, stat counters, and
+// nav/eyebrow labels — gives copy a "data/editorial" accent instead of
+// leaning on Inter for every weight in the hierarchy.
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['500', '600'],
+  variable: '--font-mono',
   display: 'swap',
 })
 
@@ -60,8 +70,10 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    // Site icon — sourced from the brand logo in /public/logo.webp.
+    icon: '/logo.webp',
+    shortcut: '/logo.webp',
+    apple: '/logo.webp',
   },
 }
 
@@ -72,7 +84,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${balthazar.variable} ${inter.variable} antialiased font-body`} suppressHydrationWarning>
+      <body className={`${balthazar.variable} ${inter.variable} ${plexMono.variable} antialiased font-body`} suppressHydrationWarning>
         <ThemeProvider>
           <div className="premium-bg min-h-screen">
             <div className="relative z-10">{children}</div>
