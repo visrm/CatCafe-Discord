@@ -42,13 +42,7 @@ const explore = [
     icon: '❓',
     title: 'FAQ',
     description: 'Everything you need to know before you join — age limits, rules, and getting started.',
-  },
-  {
-    href: '/stats',
-    icon: '📊',
-    title: 'Server Stats',
-    description: 'Live member and activity numbers, pulled straight from Discord.',
-  },
+  }
 ]
 
 export default function Home() {
