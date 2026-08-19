@@ -12,6 +12,25 @@ export default function Hero() {
           without flattening the background texture entirely. */}
       <div className="hero-veil" aria-hidden="true" />
 
+      {/* Decorative cat cutouts — purely cosmetic, hidden from
+          screen readers and on small screens where they'd crowd the
+          copy. Sit above the dot grid/veil (z-[1]) but below the
+          text column (z-10). */}
+      <div className="hidden md:block absolute inset-0 z-[1] pointer-events-none select-none" aria-hidden="true">
+        <span className="absolute top-[14%] right-[10%] text-6xl motion-safe:animate-[float_6s_ease-in-out_infinite]">
+          🐱
+        </span>
+        <span className="absolute top-[46%] right-[6%] text-4xl -rotate-6 motion-safe:animate-[float_7s_ease-in-out_infinite] [animation-delay:1s]">
+          🐈
+        </span>
+        <span className="absolute top-[64%] right-[16%] text-3xl rotate-3 motion-safe:animate-[float_5s_ease-in-out_infinite] [animation-delay:0.5s]">
+          🐱
+        </span>
+        <span className="absolute top-[76%] right-[4%] text-2xl -rotate-12 motion-safe:animate-[float_6s_ease-in-out_infinite] [animation-delay:1.5s]">
+          🐾
+        </span>
+      </div>
+
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         {/* Badge */}
@@ -59,20 +78,6 @@ export default function Hero() {
           >
             See What's Inside
           </Link>
-        </div>
-
-        {/* Stats row */}
-        <div className="mt-16 grid grid-cols-3 gap-6 max-w-lg mx-auto">
-          {[
-            { value: siteConfig.memberCount, label: 'Members' },
-            { value: siteConfig.onlineCount, label: 'Online Now' },
-            { value: siteConfig.channels,    label: 'Channels' },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="font-mono font-semibold text-3xl text-primary">{stat.value}</div>
-              <div className="kicker text-xs text-secondary mt-1">{stat.label}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

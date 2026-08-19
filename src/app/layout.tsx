@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${siteConfig.name} — 53,000 People, One Discord, Always Online`,
     description: '2,500+ people online right now. Free to join, takes about 10 seconds.',
-    url: siteConfig.discordInvite,
+    url: siteConfig.siteUrl,
     siteName: siteConfig.name,
     images: [
       {
@@ -70,11 +70,26 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    // Site icon — sourced from the brand logo in /public/logo.webp.
-    icon: '/logo.webp',
-    shortcut: '/logo.webp',
-    apple: '/logo.webp',
+    // Full icon set generated from /public/logo.webp.
+    // `favicon.ico` (multi-res 16/32/48, dark-backed) covers legacy
+    // browsers and Google Search's favicon crawler; the PNGs cover
+    // modern browsers/PWA install prompts at their native sizes.
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    // Apple requires a fully opaque icon — iOS applies its own rounded
+    // mask, so this is square with a solid backing, not transparent.
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: ['/favicon.ico'],
   },
+  manifest: '/site.webmanifest',
 }
 
 export default function RootLayout({
