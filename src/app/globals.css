@@ -17,12 +17,13 @@
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.14);
   --text-primary: #F2F1ED;
-  --text-muted: #9A9BA5;
+  --text-secondary: #C7C9D6;
+  --text-muted: #A7A9B4;
 
   --glow-1: rgba(201, 166, 107, 0.10);
   --glow-2: rgba(90, 110, 140, 0.10);
   --glow-3: rgba(160, 90, 80, 0.07);
-  --grain-opacity: 0.05;
+  --grain-opacity: 0.035;
   --hairline: rgba(255, 255, 255, 0.06);
 }
 
@@ -36,12 +37,13 @@
   --border-subtle: rgba(20, 20, 20, 0.08);
   --border-strong: rgba(20, 20, 20, 0.14);
   --text-primary: #17181C;
+  --text-secondary: #3E4048;
   --text-muted: #6B6C75;
 
   --glow-1: rgba(201, 166, 107, 0.16);
   --glow-2: rgba(90, 110, 140, 0.10);
   --glow-3: rgba(160, 90, 80, 0.08);
-  --grain-opacity: 0.035;
+  --grain-opacity: 0.02;
   --hairline: rgba(20, 20, 20, 0.06);
 }
 
@@ -78,6 +80,10 @@ body {
    Soft directional glows + fine film grain, theme-aware.
 --------------------------------------------------------- */
 .premium-bg {
+  /* Establishes its own stacking context so the grain layer below can
+     never end up above page content, regardless of z-index changes
+     elsewhere on the page. */
+  isolation: isolate;
   position: relative;
   background-color: var(--bg);
   background-image:
@@ -110,11 +116,45 @@ body {
   box-shadow: 0 0 0 1px var(--border-subtle), 0 8px 24px -12px rgba(20, 20, 20, 0.12);
 }
 
-/* Fine dot grid used behind hero content */
+/* Fine dot grid used behind hero content.
+   IMPORTANT: `opacity` must live on a decorative pseudo-element, never
+   directly on the section — a plain `opacity` on the section itself
+   would fade the *entire* element, headline/buttons included, which
+   was the real cause of the hero reading as low-contrast/"opaque".
+   Apply this class to a `position: relative` container; the pattern
+   renders on ::after, behind any `relative z-10` content inside it. */
 .dot-grid {
+  position: relative;
+}
+.dot-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
   background-image: radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
   background-size: 32px 32px;
-  opacity: 0.5;
+  opacity: 0.35;
+}
+
+/* Soft vignette that sits strictly behind hero content (z-index 0) to
+   lift contrast against the dot grid / grain without hiding either. */
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 65% 55% at 50% 38%, var(--bg) 0%, transparent 72%);
+  opacity: 0.85;
+}
+
+/* Uppercase, tracked mono label — used for kickers/eyebrows across
+   marketing sections to give copy a third, distinct typographic voice. */
+.kicker {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 /* Gentle float utility kept minimal for a premium feel */

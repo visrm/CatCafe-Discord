@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { siteConfig } from '@/lib/config'
+import Logo from '@/components/Logo'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -11,9 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-yellow to-brand-coral flex items-center justify-center text-white font-display text-lg">
-                ✦
-              </span>
+              <Logo size={36} />
               <span className="font-display text-xl text-primary">{siteConfig.name}</span>
             </div>
             <p className="text-muted text-sm leading-relaxed max-w-xs">

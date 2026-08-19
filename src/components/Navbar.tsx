@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { siteConfig } from '@/lib/config'
 import ThemeToggle from '@/components/ThemeToggle'
+import Logo from '@/components/Logo'
 
 const navLinks = [
   { label: 'About',    href: '/about' },
@@ -36,9 +37,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-yellow to-brand-coral flex items-center justify-center text-white font-display text-lg shadow-lg group-hover:scale-105 transition-transform">
-            ✦
-          </span>
+          <Logo size={36} className="shadow-lg group-hover:scale-105 transition-transform" />
           <span className="font-display text-xl text-primary tracking-wide">
             {siteConfig.name}
           </span>
