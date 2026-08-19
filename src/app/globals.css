@@ -116,10 +116,22 @@ body {
   box-shadow: 0 0 0 1px var(--border-subtle), 0 8px 24px -12px rgba(20, 20, 20, 0.12);
 }
 
-/* Fine dot grid used behind hero content. Kept low-opacity and paired
-   with the grain-opacity trim above so the two texture layers don't
-   stack into a hazy, low-contrast wash over the hero copy. */
+/* Fine dot grid used behind hero content.
+   IMPORTANT: `opacity` must live on a decorative pseudo-element, never
+   directly on the section — a plain `opacity` on the section itself
+   would fade the *entire* element, headline/buttons included, which
+   was the real cause of the hero reading as low-contrast/"opaque".
+   Apply this class to a `position: relative` container; the pattern
+   renders on ::after, behind any `relative z-10` content inside it. */
 .dot-grid {
+  position: relative;
+}
+.dot-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
   background-image: radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
   background-size: 32px 32px;
   opacity: 0.35;
