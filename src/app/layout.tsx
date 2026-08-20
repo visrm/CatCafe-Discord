@@ -31,20 +31,44 @@ const plexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: `${siteConfig.name} — 53,000 People, One Discord, Always Online`,
+    default: `${siteConfig.name} — ${siteConfig.memberCount} People, One Discord, Always Online`,
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    '2,500+ people online right now. Join India\'s biggest Discord hangout — free, instant, and there\'s always someone around to talk to.',
-  keywords: ['discord', 'community', 'server', 'chat', 'friends', 'hangout'],
+    "CatCafe India is one of India's largest active Discord communities — a social Discord server where you can make friends, chat, and hang out with 2,500+ Indians online right now. Free and instant to join.",
+  keywords: [
+    'catcafe',
+    'catcafe india',
+    'india',
+    'indian discord server',
+    'india discord server',
+    'indian social server',
+    'discord server',
+    'social discord server',
+    'make friends',
+    'make friends online',
+    'discord community',
+    'indian discord community',
+    'discord server india',
+    'community',
+    'server',
+    'chat',
+    'friends',
+    'hangout',
+  ],
   authors: [{ name: `${siteConfig.name} Team` }],
   verification: {
     google: "w6NUiZO5uyHHC7uKJOp4nGC1Tq3a8Zm7yf8cjt1foMo"
   },
+  alternates: {
+    canonical: siteConfig.siteUrl,
+  },
   openGraph: {
-    title: `${siteConfig.name} — 53,000 People, One Discord, Always Online`,
-    description: '2,500+ people online right now. Free to join, takes about 10 seconds.',
+    title: `${siteConfig.name} — One of India's Biggest Active Discord Communities`,
+    description:
+      "A social Discord server for India — make friends, chat, and hang out. 2,500+ online right now. Free to join, takes about 10 seconds.",
     url: siteConfig.siteUrl,
     siteName: siteConfig.name,
     images: [
@@ -57,6 +81,13 @@ export const metadata: Metadata = {
     ],
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.name} — One of India's Biggest Active Discord Communities`,
+    description:
+      "A social Discord server for India — make friends, chat, and hang out. 2,500+ online right now.",
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -97,9 +128,28 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Organization/WebSite structured data — helps search engines
+  // understand the entity behind the site (name, url, logo, socials)
+  // independent of on-page copy.
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: siteConfig.name,
+    url: siteConfig.siteUrl,
+    logo: `${siteConfig.siteUrl}/logo.webp`,
+    description:
+      "CatCafe India is one of India's biggest active Discord communities — a social Discord server to make friends, chat, and hang out.",
+    sameAs: [siteConfig.discordInvite],
+  }
+
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${balthazar.variable} ${inter.variable} ${plexMono.variable} antialiased font-body`} suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider>
           <div className="premium-bg min-h-screen">
             <div className="relative z-10">{children}</div>
