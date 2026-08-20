@@ -45,25 +45,304 @@ export const staffDirectory: StaffMember[] = [
   {
     id: 'ning',
     name: 'Ning',
-    role: 'Founder & Server Owner',
+    role: 'Founder',
     team: 'Leadership',
-    avatar: '🪐',
-    accentColor: '#C9A66B',
+    avatar: "",
+    accentColor: '#C94C4C',
     location: 'IND',
     joined: '2021',
-    bio: 'Started the server in a six-person voice channel and has been stubborn about keeping it feeling small ever since.',
+    bio: 'The visionary behind the community, Ning turned a six-person private server into a public Indian Discord community after seeing the lack of a wholesome space for Indians on Discord. Still active and always coming up with the next idea, they continue to push the server toward bigger goals while giving its current leadership room to carry the vision forward.',
     portfolio: {
       summary:
-        'Sets the tone and long-term direction for the community — culture, partnerships, and the occasional 2am bug fix.',
+        'Sets the long-term vision and direction of the community, driving its growth, new initiatives, and efforts to build a sustainable future for the server.',
       highlights: [
-        'Grew the server from 12 to 53,000+ members without paid ads',
-        'Designed the original role and leveling system',
-        'Runs the monthly town hall AMA',
+        'Turned a six-person private server into a 54,000+ member community',
+        'Founded the community around the idea of creating a wholesome Indian Discord space',
+        'Continues to drive expansion, new goals, and community monetization efforts',
       ],
-      links: [
-        { label: 'GitHub', url: 'https://github.com' },
-        { label: 'Portfolio', url: 'https://example.com' },
+      links: [],
+    },
+  },
+
+  {
+    id: 'pakomii',
+    name: 'Pakomii',
+    role: 'Server Owner',
+    avatar: "",
+    team: 'Leadership',
+    accentColor: '#A83246',
+    location: 'IND',
+    joined: '2022',
+    bio: 'A reserved but steady presence, Pakomii gradually became the person trusted to keep the server moving whenever Ning was away. She turned that trust into a lasting role at the heart of the community, helping transform Ning’s ideas into reality and keeping the staff together through the inevitable conflicts, dramas, and mishaps.',
+    portfolio: {
+      summary:
+        'Turns the server’s long-term vision into day-to-day execution, overseeing administrators, guiding staff, handling serious issues, and helping keep the community moving forward.',
+      highlights: [
+        'Became a central part of the server’s leadership after earning Ning’s trust',
+        'Successfully handled staff conflicts, server dramas, and difficult situations',
+        'Leads the server’s promotional efforts and works with Ning on future plans',
       ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'vince',
+    name: 'Vince',
+    role: 'Administrator',
+    team: 'Management',
+    avatar: "",
+    accentColor: '#B83B4B',
+    location: 'IND',
+    joined: '2021',
+    bio: 'One of the server’s longest-standing members, Vince has been around for practically every era of the community. Active, laid-back, and deeply familiar with how the server works, he has become the veteran administrator people turn to when something goes wrong, a difficult member issue needs handling, or a decision could use some historical context.',
+    portfolio: {
+      summary:
+        'An all-round administrator who connects members, staff, and leadership through years of experience with the community. He handles member issues, guides staff, provides technical support, and serves as a trusted aide to Pakomii.',
+      highlights: [
+        'Trained multiple generations of staff',
+        'Resolved countless member, staff, and server issues',
+        'Hosted and contributed to numerous community events throughout his time in the server',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'whoisyhwach',
+    name: 'Whoisyhwach',
+    role: 'Administrator',
+    team: 'Management',
+    avatar: "",
+    accentColor: '#C14456',
+    location: 'IND',
+    joined: '',
+    bio: 'A mature, outgoing, and caring administrator with a particular love for games and community activities. Whoisyhwach brings people together through gaming events and other activities while guiding the staff behind them, steadily growing into his administrative role along the way.',
+    portfolio: {
+      summary:
+        'Oversees the server’s activities and events, guiding activity-focused staff and taking ownership of creating a fun and engaging environment for members.',
+      highlights: [
+        'Organises gaming events and community activities',
+        'Guides gaming and activity staff through event planning and execution',
+        'Consistently takes ownership of activities and has helped establish a stronger activity culture',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'aizen',
+    name: 'Aizen',
+    role: 'Senior Support Staff',
+    team: 'Management',
+    avatar: "",
+    accentColor: '#D14A4A',
+    location: 'IND',
+    joined: '',
+    bio: 'Smart, attentive, and exceptionally quick on the support front, Aizen has become one of the server’s most capable hands when members need help. Working closely with Vince, he can handle a large volume of tickets and complicated issues without losing sight of the people behind them.',
+    portfolio: {
+      summary:
+        'A high-performing senior support member who handles member issues, moderation, reports, and complicated cases while also helping guide and support other staff.',
+      highlights: [
+        'Handles large volumes of member tickets swiftly and attentively',
+        'Acts as a close aide to Vince in member and staff matters',
+        'Helps train and support other staff while handling difficult member issues',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'gabii',
+    name: 'Gabii',
+    role: 'Senior Support Staff',
+    team: 'Management',
+    avatar: "",
+    accentColor: '#B93D50',
+    location: 'IND',
+    joined: '',
+    bio: 'A supportive presence within the server’s support team, Gabii helps members navigate their problems while providing a familiar point of contact for the community’s female members. Her work combines everyday member support with the patience needed to keep difficult situations from becoming bigger ones.',
+    portfolio: {
+      summary:
+        'Supports members through tickets, reports, moderation issues, and disputes while helping maintain a welcoming support environment for the community.',
+      highlights: [
+        'Handles member concerns, reports, and support issues',
+        'Helps resolve disputes and complicated member situations',
+        'Provides a supportive point of contact for female members of the community',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'prii',
+    name: 'Prii',
+    role: 'Senior Support Staff',
+    team: 'Management',
+    avatar: "",
+    accentColor: '#C44255',
+    location: 'IND',
+    joined: '',
+    bio: 'A dependable member of the server’s senior support team, Prii helps members through their everyday issues while contributing to the moderation and support operation behind the scenes. She is also part of the staff members who provide a familiar and supportive presence for female members of the community.',
+    portfolio: {
+      summary:
+        'Works across member support, moderation, reports, and dispute resolution while helping maintain a supportive environment for the community.',
+      highlights: [
+        'Handles member questions, support tickets, and reports',
+        'Helps resolve member disputes and moderation issues',
+        'Supports female members as part of the server’s senior support team',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'bibo',
+    name: 'Bibo',
+    role: 'Senior Support Staff',
+    team: 'Management',
+    avatar: "",
+    accentColor: '#A93649',
+    location: 'IND',
+    joined: '',
+    bio: 'A reliable member of the senior support team, Bibo works directly with members to solve problems, handle reports, and keep everyday issues from becoming bigger ones. She also provides support to female members of the community and contributes to the wider staff operation.',
+    portfolio: {
+      summary:
+        'Handles member support and moderation while helping resolve complicated issues, support disputes, and reports within the server.',
+      highlights: [
+        'Handles member concerns and support tickets',
+        'Helps resolve reports, disputes, and moderation issues',
+        'Provides a supportive point of contact for female members',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'luffy',
+    name: 'Luffy',
+    role: 'Lead Staff',
+    team: 'Management',
+    avatar: "",
+    accentColor: '#C63F4F',
+    location: 'IND',
+    joined: '',
+    bio: 'Vocal, opinionated, and never shy about bringing an idea to the table, Luffy is one of the newer Lead Staff members helping turn community ideas into actual activities. With a strong voice of his own and a talent for karaoke, he has made the server’s vocal activities one of his specialties.',
+    portfolio: {
+      summary:
+        'Leads activity staff with a focus on karaoke and community engagement, helping turn ideas into events and overseeing the staff responsible for keeping them running.',
+      highlights: [
+        'Leads the server’s karaoke activity staff',
+        'Organised and oversaw several successful karaoke night events',
+        'Helped increase member participation and vocal engagement through karaoke activities',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'zohaibs',
+    name: 'Zohaibs',
+    role: 'Lead Staff',
+    team: 'Management',
+    avatar: "",
+    accentColor: '#D04747',
+    location: 'IND',
+    joined: '',
+    bio: 'Vocal, opinionated, and highly involved, Zohaibs is the kind of Lead Staff member who is rarely short of an idea. His general-purpose approach, strong gaming focus, and ability to bring members into the community have helped turn passive members into people who actually invest their time in the server.',
+    portfolio: {
+      summary:
+        'Helps lead activity staff across the server, combining a broad operational role with a particular focus on gaming and community engagement.',
+      highlights: [
+        'Leads activity staff and helps higher staff implement new ideas',
+        'Has encouraged members to invest more time and energy into the community',
+        'Helped increase overall community engagement while maintaining activity quality',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'airo',
+    name: 'Airo',
+    role: 'Lead Staff',
+    team: 'Management',
+    avatar: "",
+    accentColor: '#9F3044',
+    location: 'IND',
+    joined: '',
+    bio: 'More reserved than his fellow Lead Staff, Airo lets his consistency do most of the talking. Focused almost entirely on gaming, he has steadily built a reputation for actually making gaming activities happen and encouraging members to spend more time playing together.',
+    portfolio: {
+      summary:
+        'A gaming-focused Lead Staff member who guides gaming activity staff and consistently turns ideas into organised events for the community.',
+      highlights: [
+        'Consistently conducted multiple gaming events',
+        'Helps guide gaming activity staff under the server’s activity administration',
+        'Encouraged a stronger gaming-oriented environment within the community',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'manish',
+    name: 'Manish',
+    role: 'Activity Lead',
+    team: 'Events',
+    avatar: "",
+    accentColor: '#C43E4E',
+    location: 'IND',
+    joined: '',
+    bio: 'A veteran and highly vocal member of the community, Manish brings the kind of energy that makes an activity feel alive. Between streaming, gaming, talking, and the occasional skit, he has proven himself as both a performer and an entertainer in front of members and fellow staff alike.',
+    portfolio: {
+      summary:
+        'An experienced Activity Lead who directly hosts and participates in community activities, using his personality and performance skills to bring members into the action.',
+      highlights: [
+        'Established himself as a veteran performer within the community',
+        'Uses gaming, streaming, conversations, and skits to entertain members',
+        'Directly engages with members to increase participation and activity',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'aki',
+    name: 'Aki',
+    role: 'Activity Lead',
+    team: 'Events',
+    avatar: "",
+    accentColor: '#B83A4B',
+    location: 'IND',
+    joined: '',
+    bio: 'An Activity Lead who helps bring the server’s activities directly to its members.',
+    portfolio: {
+      summary:
+        'Works directly with members through the server’s activities and events.',
+      highlights: [],
+      links: [],
+    },
+  },
+
+  {
+    id: 'nashedi',
+    name: 'Nashedi',
+    role: 'Activity Lead',
+    team: 'Events',
+    avatar: "",
+    accentColor: '#CF4850',
+    location: 'IND',
+    joined: '',
+    bio: 'A newer face among the server’s performers, Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
+    portfolio: {
+      summary:
+        'A relatively new but proven Activity Lead who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
+      highlights: [
+        'Established himself as a performer despite being relatively new to the community',
+        'Uses gaming and conversation to engage members during activities',
+        'Works directly with the community to increase participation and server activity',
+      ],
+      links: [],
     },
   },
 ]
