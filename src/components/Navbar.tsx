@@ -36,11 +36,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          {/* Memphis: echoes the accent-avatar treatment used on the
-              Team/staff cards. Flat and fast-reading — no glass or
-              neumorphism in nav chrome, since it's on every page and
-              every scroll position. */}
-          <span className="m-sticker inline-flex overflow-hidden group-hover:scale-105 transition-transform" style={{ background: 'var(--m-paper)' }}>
+          <span className="m-sticker inline-flex overflow-hidden group-hover:scale-105 transition-transform">
             <Logo size={36} className="!rounded-none" />
           </span>
           <span className="font-display text-xl text-primary tracking-wide">
