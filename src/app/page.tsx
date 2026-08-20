@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import WhyJoin from '@/components/WhyJoin'
+import ZigzagDivider from '@/components/ZigzagDivider'
 import Stats from '@/components/Stats'
 import JoinCTA from '@/components/JoinCTA'
 import Footer from '@/components/Footer'
@@ -51,6 +53,13 @@ export default function Home() {
       <main>
         <Navbar />
         <Hero />
+
+        {/* Divider fill matches the section below it (WhyJoin's teal),
+            not the section above, so the color transition reads as
+            "entering" the next block. */}
+        <ZigzagDivider fill="var(--m-teal)" />
+        <WhyJoin />
+        <ZigzagDivider fill="var(--bg)" />
 
         {/* Condensed live stats strip */}
         <div className="py-16">

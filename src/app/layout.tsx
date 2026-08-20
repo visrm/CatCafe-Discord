@@ -1,21 +1,24 @@
 import type { Metadata } from 'next'
-import { Balthazar, Inter, IBM_Plex_Mono } from 'next/font/google'
+import { Fredoka, Space_Grotesk, IBM_Plex_Mono } from 'next/font/google'
 import ThemeProvider from '@/components/ThemeProvider'
 import { siteConfig } from '@/lib/config'
 import './globals.css'
 
-// Balthazar only ships a single 400 (regular) weight, no italic —
-// used sparingly for display headings, paired with Inter for body text.
-const balthazar = Balthazar({
+// Memphis redesign: Fredoka's rounded geometry is the display voice's
+// whole signature — replaces Balthazar (a serif doesn't fit a Memphis
+// direction). Only the weights the type scale actually uses.
+const fredoka = Fredoka({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['500', '600', '700'],
   variable: '--font-display',
   display: 'swap',
 })
 
-const inter = Inter({
+// Space Grotesk carries over the "distinct from display" job Inter
+// was doing for body copy, just with more character.
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600'],
   variable: '--font-body',
   display: 'swap',
 })
@@ -144,7 +147,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${balthazar.variable} ${inter.variable} ${plexMono.variable} antialiased font-body`} suppressHydrationWarning>
+      <body className={`${fredoka.variable} ${spaceGrotesk.variable} ${plexMono.variable} antialiased font-body`} suppressHydrationWarning>
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger

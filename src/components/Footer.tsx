@@ -12,7 +12,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Logo size={36} />
+              <span className="m-sticker inline-flex overflow-hidden" style={{ background: 'var(--m-paper)' }}>
+                <Logo size={36} className="!rounded-none" />
+              </span>
               <span className="font-display text-xl text-primary">{siteConfig.name}</span>
             </div>
             <p className="text-muted text-sm leading-relaxed max-w-xs">
