@@ -70,25 +70,30 @@ export default function ServiceInquireForm({
 
   if (status === 'success') {
     return (
-      <div className="bg-surface border border-subtle rounded-3xl p-10 text-center card-glow">
+      <div className="m-sticker p-10 text-center" style={{ background: 'var(--m-paper)' }}>
         <div className="text-4xl mb-4">✅</div>
-        <h2 className="font-display text-2xl text-primary mb-3">Inquiry sent</h2>
-        <p className="text-muted text-sm leading-relaxed max-w-sm mx-auto mb-6">
+        <h2 className="font-display font-bold text-2xl text-primary mb-3">Inquiry sent</h2>
+        <p className="text-secondary text-sm leading-relaxed max-w-sm mx-auto mb-6">
           Thanks — our team has received your request and will reach out at the email
           or Discord ID you provided, usually within 24 hours.
         </p>
         <Link
           href="/services"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-subtle text-primary text-sm font-semibold hover:bg-surface-hover transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-[2.5px] text-primary text-sm font-semibold transition-colors"
+          style={{ borderColor: 'var(--m-outline)', background: 'var(--m-paper-2)' }}
         >
-          ← Back to Services
+          ← Back to services
         </Link>
       </div>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-surface border border-subtle rounded-3xl p-7 sm:p-10 card-glow">
+    <form
+      onSubmit={handleSubmit}
+      className="relative rounded-3xl p-7 sm:p-10 border-[2.5px]"
+      style={{ background: 'var(--m-paper)', borderColor: 'var(--m-outline)' }}
+    >
       {/* Honeypot field — hidden from real users, bots tend to fill every field */}
       <div className="absolute w-0 h-0 overflow-hidden opacity-0" aria-hidden="true">
         <label htmlFor="company">Company</label>
@@ -98,7 +103,7 @@ export default function ServiceInquireForm({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
-            Contact Email <span className="text-brand-coral">*</span>
+            Contact email <span style={{ color: 'var(--m-coral)' }}>*</span>
           </label>
           <input
             id="email"
@@ -106,12 +111,13 @@ export default function ServiceInquireForm({
             type="email"
             required
             placeholder="you@example.com"
-            className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-subtle text-primary text-sm placeholder:text-muted focus:outline-none focus:border-strong transition-colors"
+            className="w-full px-4 py-3 rounded-xl text-primary text-sm placeholder:text-muted focus:outline-none transition-colors border-2"
+            style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}
           />
         </div>
         <div>
           <label htmlFor="discordId" className="block text-sm font-medium text-primary mb-2">
-            Discord User ID <span className="text-brand-coral">*</span>
+            Discord user ID <span style={{ color: 'var(--m-coral)' }}>*</span>
           </label>
           <input
             id="discordId"
@@ -119,7 +125,8 @@ export default function ServiceInquireForm({
             type="text"
             required
             placeholder="e.g. yourname or 123456789012345678"
-            className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-subtle text-primary text-sm placeholder:text-muted focus:outline-none focus:border-strong transition-colors"
+            className="w-full px-4 py-3 rounded-xl text-primary text-sm placeholder:text-muted focus:outline-none transition-colors border-2"
+            style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}
           />
         </div>
       </div>
@@ -127,7 +134,7 @@ export default function ServiceInquireForm({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         <div>
           <label htmlFor="serviceId" className="block text-sm font-medium text-primary mb-2">
-            Service Category <span className="text-brand-coral">*</span>
+            Service category <span style={{ color: 'var(--m-coral)' }}>*</span>
           </label>
           <select
             id="serviceId"
@@ -138,7 +145,8 @@ export default function ServiceInquireForm({
               setServiceId(e.target.value)
               setPlanId(nextService?.plans[0]?.id ?? '')
             }}
-            className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-subtle text-primary text-sm focus:outline-none focus:border-strong transition-colors"
+            className="w-full px-4 py-3 rounded-xl text-primary text-sm focus:outline-none transition-colors border-2"
+            style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}
           >
             {services.map((s) => (
               <option key={s.id} value={s.id}>
@@ -149,14 +157,15 @@ export default function ServiceInquireForm({
         </div>
         <div>
           <label htmlFor="planId" className="block text-sm font-medium text-primary mb-2">
-            Plan / Tier
+            Plan / tier
           </label>
           <select
             id="planId"
             name="planId"
             value={planId}
             onChange={(e) => setPlanId(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-subtle text-primary text-sm focus:outline-none focus:border-strong transition-colors"
+            className="w-full px-4 py-3 rounded-xl text-primary text-sm focus:outline-none transition-colors border-2"
+            style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}
           >
             {service?.plans.map((p) => (
               <option key={p.id} value={p.id}>
@@ -172,34 +181,37 @@ export default function ServiceInquireForm({
         <div className="mb-5 flex flex-col gap-5">
           <div>
             <label htmlFor="promoLink" className="block text-sm font-medium text-primary mb-2">
-              Link / Copy to Promote
+              Link / copy to promote
             </label>
             <input
               id="promoLink"
               name="promoLink"
               type="text"
               placeholder="Product link, or paste your ad copy"
-              className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-subtle text-primary text-sm placeholder:text-muted focus:outline-none focus:border-strong transition-colors"
+              className="w-full px-4 py-3 rounded-xl text-primary text-sm placeholder:text-muted focus:outline-none transition-colors border-2"
+              style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}
             />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label htmlFor="preferredTiming" className="block text-sm font-medium text-primary mb-2">
-                Preferred Date / Time
+                Preferred date / time
               </label>
               <input
                 id="preferredTiming"
                 name="preferredTiming"
                 type="text"
                 placeholder="e.g. Sat evening IST"
-                className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-subtle text-primary text-sm placeholder:text-muted focus:outline-none focus:border-strong transition-colors"
+                className="w-full px-4 py-3 rounded-xl text-primary text-sm placeholder:text-muted focus:outline-none transition-colors border-2"
+                style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}
               />
             </div>
             <label
               htmlFor="wantsCustomCopy"
-              className="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-2 border border-subtle cursor-pointer mt-auto"
+              className="flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer mt-auto border-2"
+              style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}
             >
-              <input id="wantsCustomCopy" name="wantsCustomCopy" type="checkbox" className="w-4 h-4 accent-brand-coral" />
+              <input id="wantsCustomCopy" name="wantsCustomCopy" type="checkbox" className="w-4 h-4" style={{ accentColor: 'var(--m-coral)' }} />
               <span className="text-sm text-primary">Add staff-written copy (extra charge)</span>
             </label>
           </div>
@@ -210,26 +222,28 @@ export default function ServiceInquireForm({
         <div className="mb-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
             <label htmlFor="serverInvite" className="block text-sm font-medium text-primary mb-2">
-              Your Discord Server Invite Link
+              Your Discord server invite link
             </label>
             <input
               id="serverInvite"
               name="serverInvite"
               type="text"
               placeholder="discord.gg/yourserver"
-              className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-subtle text-primary text-sm placeholder:text-muted focus:outline-none focus:border-strong transition-colors"
+              className="w-full px-4 py-3 rounded-xl text-primary text-sm placeholder:text-muted focus:outline-none transition-colors border-2"
+              style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}
             />
           </div>
           <div>
             <label htmlFor="eventDateTime" className="block text-sm font-medium text-primary mb-2">
-              Event Date & Time
+              Event date & time
             </label>
             <input
               id="eventDateTime"
               name="eventDateTime"
               type="text"
               placeholder="e.g. 20 Sept, 8pm IST"
-              className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-subtle text-primary text-sm placeholder:text-muted focus:outline-none focus:border-strong transition-colors"
+              className="w-full px-4 py-3 rounded-xl text-primary text-sm placeholder:text-muted focus:outline-none transition-colors border-2"
+              style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}
             />
           </div>
         </div>
@@ -237,7 +251,7 @@ export default function ServiceInquireForm({
 
       <div className="mb-5">
         <label htmlFor="description" className="block text-sm font-medium text-primary mb-2">
-          Text / Description <span className="text-brand-coral">*</span>
+          Text / description <span style={{ color: 'var(--m-coral)' }}>*</span>
         </label>
         <textarea
           id="description"
@@ -246,13 +260,14 @@ export default function ServiceInquireForm({
           minLength={10}
           rows={4}
           placeholder="Tell us what you'd like to promote and any specific requirements"
-          className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-subtle text-primary text-sm placeholder:text-muted focus:outline-none focus:border-strong transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-xl text-primary text-sm placeholder:text-muted focus:outline-none transition-colors resize-none border-2"
+          style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}
         />
       </div>
 
       <div className="mb-6">
         <label htmlFor="budget" className="block text-sm font-medium text-primary mb-2">
-          Budget Constraints <span className="text-brand-coral">*</span>
+          Budget constraints <span style={{ color: 'var(--m-coral)' }}>*</span>
         </label>
         <input
           id="budget"
@@ -260,7 +275,8 @@ export default function ServiceInquireForm({
           type="text"
           required
           placeholder="e.g. up to ₹3,000"
-          className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-subtle text-primary text-sm placeholder:text-muted focus:outline-none focus:border-strong transition-colors"
+          className="w-full px-4 py-3 rounded-xl text-primary text-sm placeholder:text-muted focus:outline-none transition-colors border-2"
+          style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}
         />
       </div>
 
@@ -270,19 +286,23 @@ export default function ServiceInquireForm({
           name="agreedToRules"
           type="checkbox"
           required
-          className="w-4 h-4 mt-0.5 accent-brand-coral"
+          className="w-4 h-4 mt-0.5"
+          style={{ accentColor: 'var(--m-coral)' }}
         />
-        <span className="text-sm text-muted">
+        <span className="text-sm text-secondary">
           I agree that submitted content is subject to staff review and the{' '}
-          <Link href="/rules" className="text-brand-sky hover:underline">
+          <Link href="/rules" className="hover:underline text-[var(--m-teal-dark)] dark:text-[var(--m-teal)]">
             community rules
           </Link>
-          . <span className="text-brand-coral">*</span>
+          . <span style={{ color: 'var(--m-coral)' }}>*</span>
         </span>
       </label>
 
       {status === 'error' && (
-        <div className="mb-6 px-4 py-3 rounded-xl bg-brand-coral/10 border border-brand-coral/30 text-brand-coral text-sm">
+        <div
+          className="mb-6 px-4 py-3 rounded-xl text-sm border-2"
+          style={{ background: 'color-mix(in srgb, var(--m-coral) 12%, var(--m-paper))', borderColor: 'var(--m-coral)', color: 'var(--m-coral-dark)' }}
+        >
           {errorMessage}
         </div>
       )}
@@ -290,9 +310,10 @@ export default function ServiceInquireForm({
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-brand-coral text-white font-semibold text-base shadow-xl hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200"
+        className="m-sticker w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 font-body font-semibold text-base disabled:opacity-60 disabled:cursor-not-allowed"
+        style={{ background: 'var(--m-coral)', color: 'var(--m-on-color-ink)' }}
       >
-        {status === 'submitting' ? 'Submitting…' : 'Submit Inquiry →'}
+        {status === 'submitting' ? 'Submitting…' : 'Submit inquiry →'}
       </button>
     </form>
   )

@@ -28,15 +28,15 @@ export default function StaffPage() {
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Staff' }]} />
 
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
-              The Team
+            <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
+              The team
             </span>
-            <h1 className="font-display text-4xl md:text-5xl text-primary mb-4">
+            <h1 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
               People behind
               <br />
-              <span className="text-brand-sky">the server.</span>
+              <span className="text-[var(--m-violet-dark)] dark:text-[var(--m-violet)]">the server.</span>
             </h1>
-            <p className="text-muted text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-secondary text-base max-w-xl mx-auto leading-relaxed">
               {staffDirectory.length} people keep {siteConfig.name} running — moderating, building,
               and planning what happens next. Click a profile to see what they work on.
             </p>
@@ -44,7 +44,7 @@ export default function StaffPage() {
 
           {teams.map((team) => (
             <div key={team} className="mb-14 last:mb-0">
-              <h2 className="text-sm font-semibold uppercase tracking-widest text-muted mb-5">
+              <h2 className="kicker text-xs text-secondary mb-5">
                 {team}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -74,7 +74,7 @@ export default function StaffPage() {
                         >
                           {member.role}
                         </span>
-                        <p className="text-muted text-sm leading-relaxed">{member.bio}</p>
+                        <p className="text-secondary text-sm leading-relaxed">{member.bio}</p>
                       </Link>
                     )
                   })}

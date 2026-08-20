@@ -45,22 +45,22 @@ export default function RulesPage() {
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Community Rules' }]} />
 
           <div className="mb-12">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
+            <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
               Community
             </span>
-            <h1 className="font-display text-4xl md:text-5xl text-primary mb-4">
+            <h1 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
               Community Rules
             </h1>
-            <p className="text-muted leading-relaxed">
+            <p className="text-secondary leading-relaxed">
               Short version: be kind, keep it appropriate, and listen to staff. Long version below.
             </p>
           </div>
 
           <div className="flex flex-col gap-4">
             {rules.map((rule) => (
-              <div key={rule.title} className="bg-surface rounded-2xl p-6 border border-subtle card-glow">
-                <h2 className="font-display text-lg text-primary mb-2">{rule.title}</h2>
-                <p className="text-muted text-sm leading-relaxed">{rule.content}</p>
+              <div key={rule.title} className="rounded-2xl p-6 border-2" style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}>
+                <h2 className="font-display font-semibold text-lg text-primary mb-2">{rule.title}</h2>
+                <p className="text-secondary text-sm leading-relaxed">{rule.content}</p>
               </div>
             ))}
           </div>

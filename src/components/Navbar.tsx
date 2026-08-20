@@ -64,7 +64,8 @@ export default function Navbar() {
             href={siteConfig.discordInvite}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2 rounded-full bg-brand-coral text-white text-sm font-semibold hover:opacity-90 transition-opacity shadow-lg"
+            className="m-sticker px-6 py-2 font-body text-sm font-semibold"
+            style={{ background: 'var(--m-coral)', color: 'var(--m-on-color-ink)' }}
           >
             Join Server
           </a>
@@ -108,7 +109,8 @@ export default function Navbar() {
             href={siteConfig.discordInvite}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 px-5 py-3 rounded-full bg-brand-coral text-white text-sm font-semibold text-center"
+            className="m-sticker mt-2 px-5 py-3 font-body text-sm font-semibold text-center"
+            style={{ background: 'var(--m-coral)', color: 'var(--m-on-color-ink)' }}
           >
             Join Server →
           </a>

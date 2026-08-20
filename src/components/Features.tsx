@@ -37,42 +37,60 @@ const features = [
   },
 ]
 
+const accents = ['var(--m-mustard)', 'var(--m-coral)', 'var(--m-teal)', 'var(--m-violet)', 'var(--m-pink)', 'var(--m-mustard)']
+
 export default function Features() {
   return (
-    <section id="features" className="py-24 px-6 bg-surface-2 relative overflow-hidden">
+    <section id="features" className="py-24 px-6 relative overflow-hidden">
+      <div className="m-confetti" aria-hidden="true">
+        <div
+          className="m-shape m-shape--dot absolute border-0"
+          style={{ width: 18, height: 18, background: 'var(--m-teal)', top: '8%', left: '5%' }}
+        />
+        <div
+          className="m-shape absolute"
+          style={{ width: 26, height: 26, background: 'var(--m-violet)', top: '85%', right: '6%', transform: 'rotate(16deg)' }}
+        />
+        <div className="m-plus absolute" style={{ width: 22, height: 22, top: '4%', right: '10%' }} />
+      </div>
+
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
-            What We Offer
+          <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
+            What we offer
           </span>
-          <h2 className="font-display text-4xl md:text-5xl text-primary mb-4">
+          <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
             Six reasons people
             <br />
-            <span className="text-brand-mint">stop lurking.</span>
+            <span className="text-[var(--m-teal-dark)] dark:text-[var(--m-teal)]">stop lurking.</span>
           </h2>
-          <p className="text-muted text-base max-w-xl mx-auto">
+          <p className="text-secondary text-base max-w-xl mx-auto">
             Here&apos;s what&apos;s actually inside. No fluff.
           </p>
         </div>
 
-        {/* Feature grid */}
+        {/* Feature grid — flat sticker cards, accent cycling per card */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((f) => (
+          {features.map((f, i) => (
             <div
               key={f.title}
-              className="group bg-surface rounded-2xl p-7 card-glow transition-all duration-300"
+              className="m-sticker p-7"
+              style={{ background: 'var(--m-paper)' }}
             >
               <div className="flex items-start justify-between mb-3">
-                <span className="text-2xl">{f.icon}</span>
-                <span className="px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wide bg-surface-2 border border-subtle text-muted">
+                <span
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-lg border-[3px]"
+                  style={{ background: accents[i % accents.length], borderColor: 'var(--m-outline)' }}
+                >
+                  {f.icon}
+                </span>
+                <span className="kicker text-[10px] px-3 py-1 rounded-full" style={{ border: '2px solid var(--m-outline)' }}>
                   {f.tag}
                 </span>
               </div>
-              <h3 className="font-display text-lg text-primary mb-2">{f.title}</h3>
-              <p className="text-muted text-sm leading-relaxed">{f.description}</p>
-
-              <div className="mt-5 h-0.5 w-0 group-hover:w-full transition-all duration-500 rounded-full bg-brand-yellow" />
+              <h3 className="font-display font-semibold text-lg text-primary mb-2">{f.title}</h3>
+              <p className="text-secondary text-sm leading-relaxed">{f.description}</p>
             </div>
           ))}
         </div>

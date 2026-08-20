@@ -67,35 +67,55 @@ export default function Home() {
         </div>
 
         {/* Explore section — links out to dedicated pages instead of
-            cramming every section onto the homepage */}
-        <section className="py-24 px-6 bg-surface-2">
-          <div className="max-w-6xl mx-auto">
+            cramming every section onto the homepage. Flat sticker cards,
+            cycling through the 4-accent palette per card so the grid
+            doesn't read as one flat wall of paper. */}
+        <section className="py-24 px-6 relative overflow-hidden">
+          <div className="m-confetti" aria-hidden="true">
+            <div
+              className="m-shape m-shape--dot absolute border-0"
+              style={{ width: 16, height: 16, background: 'var(--m-teal)', top: '6%', left: '10%' }}
+            />
+            <div className="m-plus absolute" style={{ width: 22, height: 22, top: '88%', right: '8%' }} />
+          </div>
+
+          <div className="max-w-6xl mx-auto relative z-10">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
+              <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
                 Explore {siteConfig.name}
               </span>
-              <h2 className="font-display text-4xl md:text-5xl text-primary">
+              <h2 className="font-display font-bold text-4xl md:text-5xl text-primary">
                 Everything, in
                 <br />
-                <span className="text-brand-yellow">its own place.</span>
+                <span className="text-[var(--m-mustard-dark)] dark:text-[var(--m-mustard)]">its own place.</span>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {explore.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="group bg-surface rounded-2xl p-7 card-glow transition-all duration-300 hover:bg-surface-hover"
-                >
-                  <div className="text-2xl mb-4">{item.icon}</div>
-                  <h3 className="font-display text-lg text-primary mb-2">{item.title}</h3>
-                  <p className="text-muted text-sm leading-relaxed mb-4">{item.description}</p>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-brand-sky group-hover:translate-x-1 inline-block transition-transform">
-                    Learn more →
-                  </span>
-                </Link>
-              ))}
+              {explore.map((item, i) => {
+                const accents = ['var(--m-mustard)', 'var(--m-coral)', 'var(--m-teal)', 'var(--m-violet)', 'var(--m-pink)', 'var(--m-mustard)']
+                const accent = accents[i % accents.length]
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="group m-sticker p-7 transition-transform duration-150 hover:-translate-y-0.5"
+                    style={{ background: 'var(--m-paper)' }}
+                  >
+                    <div
+                      className="w-11 h-11 rounded-full flex items-center justify-center text-xl border-[3px] mb-4"
+                      style={{ background: accent, borderColor: 'var(--m-outline)' }}
+                    >
+                      {item.icon}
+                    </div>
+                    <h3 className="font-display font-semibold text-lg text-primary mb-2">{item.title}</h3>
+                    <p className="text-secondary text-sm leading-relaxed mb-4">{item.description}</p>
+                    <span className="kicker text-[11px] group-hover:translate-x-1 inline-block transition-transform" style={{ color: 'var(--m-teal)' }}>
+                      Learn more →
+                    </span>
+                  </Link>
+                )
+              })}
             </div>
           </div>
         </section>

@@ -19,41 +19,44 @@ export default function ServicesPage() {
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
 
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
-              For Advertisers & Server Owners
+            <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
+              For advertisers & server owners
             </span>
-            <h1 className="font-display text-4xl md:text-5xl text-primary mb-4">
+            <h1 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
               Reach {siteConfig.memberCount}
               <br />
-              <span className="text-brand-coral">people who are already here.</span>
+              <span className="text-[var(--m-coral-dark)] dark:text-[var(--m-coral)]">people who are already here.</span>
             </h1>
-            <p className="text-muted text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-secondary text-base max-w-xl mx-auto leading-relaxed">
               Whether you&apos;re promoting a product or growing your own Discord server,
               pick a service below to see plans and pricing.
             </p>
           </div>
 
-          {/* Medium service cards */}
+          {/* Medium service cards — service.accentColor stays each
+              service's own hex (unrelated to the Memphis palette),
+              matching the same rule applied on the staff detail page. */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {servicesDirectory.map((service) => (
               <div
                 key={service.id}
-                className="bg-surface rounded-2xl p-8 card-glow transition-all duration-300 flex flex-col"
+                className="m-sticker p-8 flex flex-col"
+                style={{ background: 'var(--m-paper)' }}
               >
                 <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl border border-subtle mb-6"
-                  style={{ backgroundColor: `${service.accentColor}1A` }}
+                  className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl border-[3px] mb-6"
+                  style={{ backgroundColor: `${service.accentColor}1A`, borderColor: 'var(--m-outline)' }}
                 >
                   {service.icon}
                 </div>
 
-                <h2 className="font-display text-2xl text-primary mb-2">{service.name}</h2>
+                <h2 className="font-display font-semibold text-2xl text-primary mb-2">{service.name}</h2>
                 <p className="text-sm font-medium mb-4" style={{ color: service.accentColor }}>
                   {service.tagline}
                 </p>
-                <p className="text-muted text-sm leading-relaxed mb-6 flex-1">{service.summary}</p>
+                <p className="text-secondary text-sm leading-relaxed mb-6 flex-1">{service.summary}</p>
 
-                <div className="flex items-center justify-between text-xs text-muted mb-6">
+                <div className="flex items-center justify-between text-xs font-mono text-secondary mb-6">
                   <span>{service.plans.length} plans available</span>
                   <span>
                     From {service.plans[0]?.price} {service.plans[0]?.unit}
@@ -62,9 +65,10 @@ export default function ServicesPage() {
 
                 <Link
                   href={`/services/${service.id}`}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-coral text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+                  className="m-sticker inline-flex items-center justify-center gap-2 px-6 py-3 font-body text-sm font-semibold"
+                  style={{ background: 'var(--m-coral)', color: 'var(--m-on-color-ink)' }}
                 >
-                  View Plans →
+                  View plans →
                 </Link>
               </div>
             ))}

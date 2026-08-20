@@ -47,43 +47,50 @@ export default function StaffMemberPage({ params }: Props) {
             ]}
           />
 
-          {/* Header */}
+          {/* Header — member.accentColor stays as each person's own
+              individual hex (unrelated to the Memphis palette), per
+              staff/page.tsx's directory cards; only the surrounding
+              chrome (outline weight, radius) picks up the Memphis
+              sticker treatment. */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-10">
             <div
-              className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl border border-subtle flex-shrink-0"
-              style={{ backgroundColor: `${member.accentColor}1A` }}
+              className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl border-[3px] flex-shrink-0"
+              style={{ backgroundColor: `${member.accentColor}1A`, borderColor: 'var(--m-outline)' }}
             >
               {member.avatar}
             </div>
             <div>
               <span
-                className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-2"
-                style={{ backgroundColor: `${member.accentColor}1A`, color: member.accentColor }}
+                className="kicker text-[10px] inline-block px-3 py-1 rounded-full border-2 mb-2"
+                style={{ backgroundColor: `${member.accentColor}1A`, color: member.accentColor, borderColor: 'var(--m-outline)' }}
               >
                 {member.team}
               </span>
-              <h1 className="font-display text-3xl md:text-4xl text-primary">{member.name}</h1>
-              <p className="text-muted text-base mt-1">{member.role}</p>
+              <h1 className="font-display font-bold text-3xl md:text-4xl text-primary">{member.name}</h1>
+              <p className="text-secondary text-base mt-1">{member.role}</p>
             </div>
           </div>
 
           {/* Meta row */}
-          <div className="flex flex-wrap gap-6 mb-10 text-sm text-muted">
+          <div className="flex flex-wrap gap-6 mb-10 text-sm font-mono text-secondary">
             <span>📍 {member.location}</span>
             <span>🗓️ Joined staff in {member.joined}</span>
           </div>
 
-          <p className="text-muted leading-relaxed mb-10">{member.bio}</p>
+          <p className="text-secondary leading-relaxed mb-10">{member.bio}</p>
 
           {/* Portfolio */}
-          <div className="bg-surface rounded-2xl p-7 border border-subtle card-glow mb-8">
-            <h2 className="font-display text-xl text-primary mb-3">What they work on</h2>
-            <p className="text-muted text-sm leading-relaxed mb-6">{member.portfolio.summary}</p>
+          <div className="m-sticker p-7 mb-8" style={{ background: 'var(--m-paper)' }}>
+            <h2 className="font-display font-semibold text-xl text-primary mb-3">What they work on</h2>
+            <p className="text-secondary text-sm leading-relaxed mb-6">{member.portfolio.summary}</p>
 
             <ul className="flex flex-col gap-3">
               {member.portfolio.highlights.map((highlight) => (
                 <li key={highlight} className="flex items-start gap-3 text-sm text-primary/90">
-                  <span className="mt-1 w-1.5 h-1.5 rounded-full bg-brand-yellow flex-shrink-0" />
+                  <span
+                    className="mt-1 w-2 h-2 rounded-full border flex-shrink-0"
+                    style={{ background: 'var(--m-mustard)', borderColor: 'var(--m-outline)' }}
+                  />
                   {highlight}
                 </li>
               ))}
@@ -99,7 +106,8 @@ export default function StaffMemberPage({ params }: Props) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl border border-subtle text-sm font-medium text-primary hover:bg-surface-hover transition-colors"
+                  className="px-4 py-2 rounded-xl border-[2.5px] text-sm font-medium text-primary transition-colors"
+                  style={{ borderColor: 'var(--m-outline)', background: 'var(--m-paper-2)' }}
                 >
                   {link.label} ↗
                 </a>
@@ -109,7 +117,7 @@ export default function StaffMemberPage({ params }: Props) {
 
           <Link
             href="/staff"
-            className="text-sm font-medium text-muted hover:text-primary transition-colors"
+            className="kicker text-xs text-secondary hover:text-primary transition-colors"
           >
             ← Back to all staff
           </Link>

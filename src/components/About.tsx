@@ -23,21 +23,34 @@ const pillars = [
   },
 ]
 
+const accents = ['var(--m-mustard)', 'var(--m-coral)', 'var(--m-teal)', 'var(--m-violet)']
+
 export default function About() {
   return (
     <section id="about" className="py-24 px-6 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+      <div className="m-confetti" aria-hidden="true">
+        <div
+          className="m-shape m-shape--dot absolute border-0"
+          style={{ width: 20, height: 20, background: 'var(--m-mustard)', top: '4%', left: '6%' }}
+        />
+        <div
+          className="m-shape absolute"
+          style={{ width: 28, height: 28, background: 'var(--m-teal)', top: '90%', right: '8%', transform: 'rotate(12deg)' }}
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Section header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
-            About Us
+          <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
+            About us
           </span>
-          <h2 className="font-display text-4xl md:text-5xl text-primary mb-6">
+          <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-6">
             We started with 12 people
             <br />
-            <span className="text-brand-yellow">in a voice channel.</span>
+            <span className="text-[var(--m-mustard-dark)] dark:text-[var(--m-mustard)]">in a voice channel.</span>
           </h2>
-          <p className="text-muted text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-secondary text-base max-w-2xl mx-auto leading-relaxed">
             That was a few years ago. {siteConfig.name} is now one of India&apos;s largest Discord
             communities, at {siteConfig.memberCount} members — but the rule hasn&apos;t changed:
             come as you are, leave when you&apos;re tired of laughing.
@@ -46,16 +59,20 @@ export default function About() {
 
         {/* Pillar cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {pillars.map((pillar) => (
+          {pillars.map((pillar, i) => (
             <div
               key={pillar.title}
-              className="bg-surface rounded-2xl p-6 card-glow transition-all duration-300"
+              className="m-sticker p-6"
+              style={{ background: 'var(--m-paper)' }}
             >
-              <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4 bg-surface-2 border border-subtle">
+              <div
+                className="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4 border-[3px]"
+                style={{ background: accents[i % accents.length], borderColor: 'var(--m-outline)' }}
+              >
                 {pillar.icon}
               </div>
-              <h3 className="font-display text-lg text-primary mb-2">{pillar.title}</h3>
-              <p className="text-muted text-sm leading-relaxed">{pillar.description}</p>
+              <h3 className="font-display font-semibold text-lg text-primary mb-2">{pillar.title}</h3>
+              <p className="text-secondary text-sm leading-relaxed">{pillar.description}</p>
             </div>
           ))}
         </div>

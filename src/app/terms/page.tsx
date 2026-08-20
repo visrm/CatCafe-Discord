@@ -61,14 +61,14 @@ export default function TermsPage() {
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Terms of Service' }]} />
 
           <div className="mb-12">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
+            <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
               Legal
             </span>
-            <h1 className="font-display text-4xl md:text-5xl text-primary mb-4">Terms of Service</h1>
-            <p className="text-muted text-sm">
+            <h1 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">Terms of Service</h1>
+            <p className="text-secondary text-sm">
               Last updated: <span className="text-primary font-semibold">January 1, 2025</span>
             </p>
-            <p className="text-muted mt-4 leading-relaxed">
+            <p className="text-secondary mt-4 leading-relaxed">
               Please read these Terms of Service carefully before using{' '}
               <strong className="text-primary">{siteConfig.name}</strong>. By using this site, you agree to these terms.
             </p>
@@ -76,9 +76,9 @@ export default function TermsPage() {
 
           <div className="flex flex-col gap-6">
             {sections.map((section) => (
-              <div key={section.title} className="bg-surface rounded-2xl p-7 border border-subtle card-glow">
-                <h2 className="font-display text-xl text-primary mb-3">{section.title}</h2>
-                <p className="text-muted text-sm leading-relaxed">{section.content}</p>
+              <div key={section.title} className="rounded-2xl p-7 border-2" style={{ background: 'var(--m-paper-2)', borderColor: 'var(--m-outline)' }}>
+                <h2 className="font-display font-semibold text-xl text-primary mb-3">{section.title}</h2>
+                <p className="text-secondary text-sm leading-relaxed">{section.content}</p>
               </div>
             ))}
           </div>

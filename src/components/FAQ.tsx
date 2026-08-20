@@ -37,20 +37,29 @@ const faqs = [
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className={`bg-surface rounded-2xl overflow-hidden border transition-all duration-300 ${open ? 'border-brand-yellow/40' : 'border-subtle'}`}>
+    <div
+      className="rounded-2xl overflow-hidden border-[2.5px] transition-colors duration-200"
+      style={{ background: 'var(--m-paper)', borderColor: 'var(--m-outline)' }}
+    >
       <button
         onClick={() => setOpen(!open)}
         className="w-full px-6 py-5 flex items-center justify-between text-left group"
       >
-        <span className="font-semibold text-primary text-base">{q}</span>
+        <span className="font-body font-semibold text-primary text-base">{q}</span>
         <span
-          className={`flex-shrink-0 w-7 h-7 rounded-full border border-subtle flex items-center justify-center text-muted transition-all duration-300 ${open ? 'rotate-45 bg-brand-yellow text-white border-transparent' : ''}`}
+          className="flex-shrink-0 w-7 h-7 rounded-full border-[2.5px] flex items-center justify-center transition-transform duration-200"
+          style={{
+            borderColor: 'var(--m-outline)',
+            background: open ? 'var(--m-mustard)' : 'transparent',
+            color: open ? 'var(--m-on-color-ink)' : 'var(--text-secondary)',
+            transform: open ? 'rotate(45deg)' : 'none',
+          }}
         >
           +
         </span>
       </button>
       {open && (
-        <div className="px-6 pb-6 text-muted text-sm leading-relaxed">
+        <div className="px-6 pb-6 text-secondary text-sm leading-relaxed">
           {a}
         </div>
       )}
@@ -61,15 +70,23 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function FAQ() {
   return (
     <section id="faq" className="py-24 px-6 relative overflow-hidden">
+      <div className="m-confetti" aria-hidden="true">
+        <div
+          className="m-shape m-shape--dot absolute border-0"
+          style={{ width: 16, height: 16, background: 'var(--m-coral)', top: '6%', left: '8%' }}
+        />
+        <div className="m-plus absolute" style={{ width: 22, height: 22, top: '90%', right: '10%' }} />
+      </div>
+
       <div className="max-w-3xl mx-auto relative z-10">
         <div className="text-center mb-14">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
             FAQ
           </span>
-          <h2 className="font-display text-4xl md:text-5xl text-primary mb-4">
+          <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
             Got questions?
             <br />
-            <span className="text-brand-yellow">We got answers.</span>
+            <span className="text-[var(--m-mustard-dark)] dark:text-[var(--m-mustard)]">We got answers.</span>
           </h2>
         </div>
 
@@ -79,11 +96,11 @@ export default function FAQ() {
           ))}
         </div>
 
-        <p className="text-center text-muted mt-10 text-sm">
+        <p className="text-center text-secondary mt-10 text-sm">
           Still have questions?{' '}
           <a
             href={`mailto:${siteConfig.email}`}
-            className="text-brand-yellow font-semibold hover:underline"
+            className="font-semibold hover:underline text-[var(--m-mustard-dark)] dark:text-[var(--m-mustard)]"
           >
             Drop us an email →
           </a>
