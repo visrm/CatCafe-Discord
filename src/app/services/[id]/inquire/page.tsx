@@ -47,13 +47,13 @@ export default function ServiceInquirePage({ params, searchParams }: Props) {
           />
 
           <div className="mb-10">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
+            <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
               {service.name}
             </span>
-            <h1 className="font-display text-3xl md:text-4xl text-primary mb-3">
+            <h1 className="font-display font-bold text-3xl md:text-4xl text-primary mb-3">
               Submit an inquiry
             </h1>
-            <p className="text-muted text-sm leading-relaxed">
+            <p className="text-secondary text-sm leading-relaxed">
               Fill in the details below — our team reviews every request and replies at the
               contact info you provide, usually within 24 hours.
             </p>

@@ -33,12 +33,14 @@ function StatCard({
   suffix = '',
   label,
   icon,
+  color,
   loading,
 }: {
   value: number
   suffix?: string
   label: string
   icon: string
+  color: string
   loading?: boolean
 }) {
   const [inView, setInView] = useState(false)
@@ -57,9 +59,14 @@ function StatCard({
   }, [])
 
   return (
-    <div ref={ref} className="bg-surface rounded-2xl p-8 text-center card-glow transition-all duration-300">
-      <div className="text-2xl mb-4 inline-block">{icon}</div>
-      <div className="font-display text-3xl md:text-5xl mb-2 text-primary">
+    <div ref={ref} className="m-neu rounded-2xl p-8 text-center">
+      <div
+        className="w-11 h-11 mx-auto mb-4 rounded-full flex items-center justify-center text-xl border-[3px]"
+        style={{ background: color, borderColor: 'var(--m-outline)' }}
+      >
+        {icon}
+      </div>
+      <div className="font-display font-bold text-3xl md:text-5xl mb-2 text-primary">
         {loading ? (
           <span className="inline-block w-20 h-9 bg-surface-2 rounded-lg animate-pulse align-middle" />
         ) : (
@@ -69,7 +76,7 @@ function StatCard({
           </>
         )}
       </div>
-      <div className="text-muted font-semibold text-xs uppercase tracking-widest">{label}</div>
+      <div className="kicker text-[11px] text-secondary">{label}</div>
     </div>
   )
 }
@@ -102,10 +109,10 @@ export default function Stats({ compact = false }: { compact?: boolean }) {
   const onlineCount = live?.onlineCount ?? 0
 
   const stats = [
-    { value: memberCount, suffix: '', label: 'Total Members', icon: '👥' },
-    { value: onlineCount, suffix: '', label: 'Online Right Now', icon: '🟢' },
-    { value: 50, suffix: '+', label: 'Active Channels', icon: '💬' },
-    { value: 97, suffix: '%', label: 'Satisfaction Rate', icon: '❤️' },
+    { value: memberCount, suffix: '', label: 'Total Members', icon: '👥', color: 'var(--m-mustard)' },
+    { value: onlineCount, suffix: '', label: 'Online Right Now', icon: '🟢', color: 'var(--m-teal)' },
+    { value: 50, suffix: '+', label: 'Active Channels', icon: '💬', color: 'var(--m-violet)' },
+    { value: 97, suffix: '%', label: 'Satisfaction Rate', icon: '❤️', color: 'var(--m-pink)' },
   ]
 
   return (
@@ -113,15 +120,15 @@ export default function Stats({ compact = false }: { compact?: boolean }) {
       <div className="max-w-6xl mx-auto relative z-10">
         {!compact && (
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-subtle text-muted text-xs font-semibold uppercase tracking-widest mb-4">
-              By the Numbers
+            <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
+              By the numbers
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-primary">
+            <h2 className="font-display font-bold text-4xl md:text-5xl text-primary">
               Not vibes.
               <br />
-              <span className="text-brand-coral">Just numbers.</span>
+              <span className="text-[var(--m-coral-dark)] dark:text-[var(--m-coral)]">Just numbers.</span>
             </h2>
-            <p className="text-muted text-sm mt-4">
+            <p className="text-secondary text-sm mt-4">
               {live?.source === 'live'
                 ? 'Live counts, pulled straight from Discord.'
                 : 'Sample counts shown — connect a bot token for live data.'}

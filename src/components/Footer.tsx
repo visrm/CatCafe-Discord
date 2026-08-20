@@ -12,7 +12,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Logo size={36} />
+              <span className="inline-flex overflow-hidden">
+                <Logo size={36} className="!rounded-none" />
+              </span>
               <span className="font-display text-xl text-primary">{siteConfig.name}</span>
             </div>
             <p className="text-muted text-sm leading-relaxed max-w-xs">
@@ -23,7 +25,8 @@ export default function Footer() {
                 href={siteConfig.discordInvite}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-xl bg-brand-coral text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+                className="m-sticker inline-flex px-4 py-2 font-body text-sm font-semibold"
+                style={{ background: 'var(--m-coral)', color: 'var(--m-on-color-ink)' }}
               >
                 Join Discord
               </a>
@@ -32,7 +35,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-primary font-semibold text-sm tracking-wide mb-4">Navigate</h4>
+            <h4 className="kicker text-xs text-primary mb-4">Navigate</h4>
             <ul className="flex flex-col gap-2">
               {[
                 { label: 'About Us',    href: '/about' },
@@ -53,7 +56,7 @@ export default function Footer() {
 
           {/* Legal / Contact */}
           <div>
-            <h4 className="text-primary font-semibold text-sm tracking-wide mb-4">Legal</h4>
+            <h4 className="kicker text-xs text-primary mb-4">Legal</h4>
             <ul className="flex flex-col gap-2">
               <li>
                 <Link href="/privacy" className="text-muted text-sm hover:text-primary transition-colors">

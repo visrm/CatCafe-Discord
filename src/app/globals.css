@@ -47,12 +47,54 @@
   --hairline: rgba(20, 20, 20, 0.06);
 }
 
-/* Brand accent — used sparingly against the neutral premium palette */
+/* Brand accent — used sparingly against the neutral premium palette.
+   NOTE: kept alongside the Memphis tokens below during migration — see
+   the removal step at the end of the Memphis rollout before deleting
+   these or any component still referencing them directly. */
 :root {
   --coral:  #C9694F;
   --yellow: #C9A66B;
   --mint:   #4E9B85;
   --sky:    #4C7A94;
+}
+
+/* ---------------------------------------------------------
+   Memphis redesign — design tokens.
+   Same .dark / .light attachment points as the premium theme
+   above, so next-themes' existing class toggle drives both.
+--------------------------------------------------------- */
+:root {
+  --m-coral: #FF6B4A;
+  --m-coral-dark: #C2431F;
+  --m-mustard: #FFC93C;
+  --m-mustard-dark: #C99200;
+  --m-teal: #23C4A5;
+  --m-teal-dark: #0B7D6B;
+  --m-violet: #7C6CFF;
+  --m-violet-dark: #4B39C4;
+  --m-pink: #FF6F9C;
+}
+
+.dark {
+  --m-ink: #17151E;
+  --m-outline: #FBF3E4;
+  --m-paper: #17151E;
+  --m-paper-2: #1F1C29;
+  --m-shelf: #221F2C;
+  --m-neu-light: #2A2735;
+  --m-neu-shadow: #0E0C13;
+  --m-on-color-ink: #16141C;
+}
+
+.light {
+  --m-ink: #16141C;
+  --m-outline: #16141C;
+  --m-paper: #FFF9F0;
+  --m-paper-2: #FFF1DE;
+  --m-shelf: #FDEFE0;
+  --m-neu-light: #FFFFFF;
+  --m-neu-shadow: #E4D9C6;
+  --m-on-color-ink: #16141C;
 }
 
 html {
@@ -161,4 +203,77 @@ body {
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-10px); }
+}
+
+/* ---------------------------------------------------------
+   Memphis redesign — confetti shapes, dividers, and surface
+   treatments (glass / neumorphism / flat sticker).
+   See memphis-redesign-instructions.md §3–4 for placement rules —
+   these are shared primitives, don't hand-roll one-off versions
+   of them per component.
+--------------------------------------------------------- */
+.m-shape { position: absolute; border: 3px solid var(--m-outline); }
+.m-shape--dot { border-radius: 50%; }
+.m-shape--sticker {
+  border: 2.5px solid var(--m-outline);
+  box-shadow: 5px 5px 0 var(--m-outline);
+}
+.m-plus { position: relative; }
+.m-plus::before, .m-plus::after { content: ''; position: absolute; background: var(--m-outline); }
+.m-plus::before { width: 100%; height: 20%; top: 40%; left: 0; }
+.m-plus::after  { width: 20%; height: 100%; left: 40%; top: 0; }
+
+/* Confetti layer — absolutely positioned, below content (z-10),
+   scattered in the margins/negative space around text. Never place
+   this behind a paragraph or button. */
+.m-confetti {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Glass — only inside a section with shape/color decoration behind
+   it (currently: hero "online now" badge only). On a flat background
+   this reads as a rendering bug, not a design choice — don't reach
+   for it there. */
+.m-glass {
+  background: color-mix(in srgb, var(--m-paper) 55%, transparent);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1.5px solid color-mix(in srgb, var(--m-outline) 35%, transparent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Neumorphism — only on a flat --m-shelf / --m-paper-2 background
+   (secondary CTA, stat chips). Needs a calm, near-monochrome surface
+   to read as "extruded". */
+.m-neu {
+  background: var(--m-neu-light);
+  border: none;
+  box-shadow: 6px 6px 14px var(--m-neu-shadow), -6px -6px 14px color-mix(in srgb, var(--m-neu-light) 90%, white 10%);
+}
+.m-neu:active, .m-neu[aria-pressed='true'] {
+  box-shadow: inset 4px 4px 10px var(--m-neu-shadow), inset -4px -4px 10px color-mix(in srgb, var(--m-neu-light) 90%, white 10%);
+}
+
+/* Flat sticker — the default for anything load-bearing: primary CTA,
+   feature cards, staff cards, badges/pills. Glass and neumorphism
+   both reduce contrast, the wrong tradeoff for text everyone needs
+   to read or a button everyone needs to hit. */
+.m-sticker {
+  border: 2.5px solid var(--m-outline);
+  border-radius: 16px;
+  box-shadow: 5px 5px 0 var(--m-outline);
+}
+
+/* Zigzag divider fill lives on the SVG polygon itself (per-instance
+   `fill` prop on ZigzagDivider) — no shared class needed here beyond
+   sizing, which the component sets directly via Tailwind. */
+
+@media (prefers-reduced-motion: reduce) {
+  .m-squiggle-animate,
+  .m-cat-float {
+    animation: none !important;
+  }
 }
