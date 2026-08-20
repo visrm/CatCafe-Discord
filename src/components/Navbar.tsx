@@ -36,7 +36,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="m-sticker inline-flex overflow-hidden group-hover:scale-105 transition-transform">
+          <span className="inline-flex overflow-hidden group-hover:scale-105 transition-transform">
             <Logo size={36} className="!rounded-none" />
           </span>
           <span className="font-display text-xl text-primary tracking-wide">
