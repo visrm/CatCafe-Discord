@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     canonical: siteConfig.siteUrl,
   },
   openGraph: {
-    title: `${siteConfig.name} — One of India's Biggest Active Discord Communities`,
+    title: `${siteConfig.name} — One of India's Largest Active Discord Communities`,
     description:
       "A social Discord server for India — make friends, chat, and hang out. 2,500+ online right now. Free to join, takes about 10 seconds.",
     url: siteConfig.siteUrl,
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${siteConfig.name} — One of India's Biggest Active Discord Communities`,
+    title: `${siteConfig.name} — One of India's Largest Active Discord Communities`,
     description:
       "A social Discord server for India — make friends, chat, and hang out. 2,500+ online right now.",
     images: ['/og-image.png'],
@@ -138,7 +138,7 @@ export default function RootLayout({
     url: siteConfig.siteUrl,
     logo: `${siteConfig.siteUrl}/logo.webp`,
     description:
-      "CatCafe India is one of India's biggest active Discord communities — a social Discord server to make friends, chat, and hang out.",
+      "CatCafe India is one of India's largest active Discord communities — a social Discord server to make friends, chat, and hang out.",
     sameAs: [siteConfig.discordInvite],
   }
 
