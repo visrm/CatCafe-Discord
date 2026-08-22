@@ -67,8 +67,7 @@ export default function AnimatedThemeToggler({ className = '' }: { className?: s
       ref={btnRef}
       onClick={toggle}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      className={`theme-toggle w-9 h-9 rounded-full border-[2px] flex items-center justify-center text-primary transition-colors overflow-hidden ${className}`}
-      style={{ borderColor: 'var(--m-outline, var(--border-subtle))' }}
+      className={`theme-toggle w-9 h-9 rounded-full border border-subtle flex items-center justify-center text-primary hover:bg-surface-hover transition-colors overflow-hidden ${className}`}
     >
       <svg
         className="w-4 h-4 absolute transition-all duration-500"
