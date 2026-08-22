@@ -145,7 +145,7 @@ export default function Home() {
               <span className="text-[var(--m-teal-dark)] dark:text-[var(--m-teal)]">Genuinely global.</span>
             </h2>
             <div className="m-sticker p-4 md:p-6" style={{ background: 'var(--m-paper)' }}>
-              <DottedMap markers={communityMarkers} />
+              <DottedMap markers={communityMarkers} pulse />
             </div>
           </div>
         </section>

@@ -60,11 +60,19 @@ function pointInPoly(x: number, y: number, poly: [number, number][]) {
   return inside
 }
 
-export type MapMarker = { lat: number; lon: number }
+export type MapMarker = { lat: number; lon: number; pulse?: boolean }
 
 const ACCENTS = ['var(--m-coral)', 'var(--m-teal)', 'var(--m-mustard)', 'var(--m-violet)', 'var(--m-pink)']
 
-export default function DottedMap({ markers = [] as MapMarker[] }: { markers?: MapMarker[] }) {
+type DottedMapProps = {
+  markers?: MapMarker[]
+  /** Enables the pulse-ring animation on every marker. A marker can
+   *  still opt out individually with `pulse: false`. Mirrors magicui's
+   *  DottedMap `pulse` prop / per-marker `Marker.pulse` override. */
+  pulse?: boolean
+}
+
+export default function DottedMap({ markers = [] as MapMarker[], pulse = false }: DottedMapProps) {
   const svgRef = useRef<SVGSVGElement>(null)
 
   useEffect(() => {
@@ -109,19 +117,43 @@ export default function DottedMap({ markers = [] as MapMarker[] }: { markers?: M
       return [x, y]
     }
 
-    markers.forEach(({ lat, lon }, i) => {
+    const markersGroup = document.createElementNS(svgNS, 'g')
+    svg.appendChild(markersGroup)
+
+    markers.forEach((marker, i) => {
+      const { lat, lon } = marker
       const [x, y] = snapToDot(lat, lon)
+      const color = ACCENTS[i % ACCENTS.length]
+      // Per-marker override wins; otherwise falls back to the
+      // component-level `pulse` prop — same precedence as magicui's
+      // DottedMap (`marker.pulse` overrides the shared `pulse` prop).
+      const shouldPulse = marker.pulse ?? pulse
+
+      if (shouldPulse) {
+        // PulseMarker — an expanding, fading ring behind the dot,
+        // each one desynced with a random negative animation-delay so
+        // the map doesn't pulse in lockstep.
+        const ring = document.createElementNS(svgNS, 'circle')
+        ring.setAttribute('cx', String(x))
+        ring.setAttribute('cy', String(y))
+        ring.setAttribute('r', '3.4')
+        ring.setAttribute('fill', color)
+        ring.setAttribute('class', 'm-map-pulse-ring')
+        ring.style.animationDelay = `${-(Math.random() * 2).toFixed(2)}s`
+        markersGroup.appendChild(ring)
+      }
+
       const c = document.createElementNS(svgNS, 'circle')
       c.setAttribute('cx', String(x))
       c.setAttribute('cy', String(y))
       c.setAttribute('r', '3.4')
-      c.setAttribute('fill', ACCENTS[i % ACCENTS.length])
+      c.setAttribute('fill', color)
       c.setAttribute('stroke', 'var(--m-outline)')
       c.setAttribute('stroke-width', '1.2')
       c.setAttribute('class', 'm-map-dot m-map-dot--marked')
-      svg.appendChild(c)
+      markersGroup.appendChild(c)
     })
-  }, [markers])
+  }, [markers, pulse])
 
   return (
     <svg

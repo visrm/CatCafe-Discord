@@ -355,10 +355,25 @@ body {
   opacity: 1;
 }
 
+/* PulseMarker — an expanding, fading ring drawn behind a marked dot
+   (see magicui.design's DottedMap `pulse` prop / `Marker.pulse`).
+   transform-box/transform-origin keep the scale centered on the SVG
+   circle itself rather than the element's bounding box. */
+.m-map-pulse-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: m-map-pulse 2s ease-out infinite;
+}
+@keyframes m-map-pulse {
+  0%   { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(3.2); opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .m-squiggle-animate,
   .m-cat-float,
-  .m-velocity-row {
+  .m-velocity-row,
+  .m-map-pulse-ring {
     animation: none !important;
   }
 }
