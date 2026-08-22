@@ -294,32 +294,6 @@ body {
 :root { --m-grid-line: rgba(22, 20, 28, 0.05); }
 .dark { --m-grid-line: rgba(251, 243, 228, 0.06); }
 
-/* Morphing blobs — soft, low-opacity, continuously reshaping via
-   border-radius keyframes (no external animation lib needed). Fixed
-   position so they drift behind scrolled content site-wide. */
-.m-blob-field {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-.m-blob {
-  position: absolute;
-  opacity: 0.16;
-  animation: m-blob-morph 16s ease-in-out infinite, m-blob-drift 24s ease-in-out infinite;
-}
-@keyframes m-blob-morph {
-  0%, 100% { border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%; }
-  25%      { border-radius: 58% 42% 35% 65% / 60% 55% 45% 40%; }
-  50%      { border-radius: 65% 35% 42% 58% / 35% 60% 40% 65%; }
-  75%      { border-radius: 35% 65% 58% 42% / 55% 45% 65% 35%; }
-}
-@keyframes m-blob-drift {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50%      { transform: translate(28px, -36px) rotate(18deg); }
-}
-
 /* ===== Comic Text ===== */
 .m-comic-text {
   font-family: var(--font-display), sans-serif;
@@ -384,7 +358,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .m-squiggle-animate,
   .m-cat-float,
-  .m-blob,
   .m-velocity-row {
     animation: none !important;
   }

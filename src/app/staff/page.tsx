@@ -56,8 +56,8 @@ export default function StaffPage() {
                       <Link
                         key={member.id}
                         href={`/staff/${member.id}`}
-                        className="group rounded-2xl p-5 transition-colors duration-300"
-                        style={{ background: 'var(--m-paper-2)' }}
+                        className="group rounded-2xl p-5 transition-colors duration-300 ease-out"
+                        style={{ background: 'var(--m-paper-2)', transitionDelay: `${(i % 3) * 60}ms` }}
                       >
                         <div
                           className="w-16 h-16 rounded-2xl border-[3px] flex items-center justify-center text-2xl mb-3.5"

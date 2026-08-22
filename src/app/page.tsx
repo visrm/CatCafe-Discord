@@ -57,9 +57,14 @@ export default function Home() {
         <Hero />
 
         {/* Scroll-reactive marquee — reads out the server's tagline
-            in the same breath the badge/hero already uses it, right
-            below the fold where the hero's motion hands off to it. */}
-        <ScrollBasedVelocity text={`${siteConfig.name}🌻Indian Discord Server・Make Friends・Hindi English・Asia Asian Gaming Kpop Chilling 🐈　`} />
+            in the same breath the badge/hero already uses it. Pulled
+            up with a negative margin so it overlaps the bottom of the
+            hero (cropping the corner triangle decoration) instead of
+            sitting flush below it — z-20 keeps it above the hero's
+            confetti layer (z-1) so the crop reads as intentional. */}
+        <div className="relative z-20" style={{ marginTop: '-64px' }}>
+          <ScrollBasedVelocity text={`${siteConfig.name}🌻Indian Discord Server・Make Friends・Hindi English・Asia Asian Gaming Kpop Chilling 🐈　`} />
+        </div>
 
         {/* Divider fill matches the section below it (WhyJoin's teal),
             not the section above, so the color transition reads as
@@ -106,18 +111,18 @@ export default function Home() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="group m-sticker p-7 transition-transform duration-150 hover:-translate-y-0.5"
-                    style={{ background: 'var(--m-paper)' }}
+                    className="group m-sticker p-7 transition-transform duration-300 ease-out hover:-translate-y-0.5"
+                    style={{ background: 'var(--m-paper)', transitionDelay: `${(i % 3) * 60}ms` }}
                   >
                     <div
-                      className="w-11 h-11 rounded-full flex items-center justify-center text-xl border-[3px] mb-4"
-                      style={{ background: accent, borderColor: 'var(--m-outline)' }}
+                      className="w-11 h-11 rounded-full flex items-center justify-center text-xl border-[3px] mb-4 transition-transform duration-300 ease-out group-hover:scale-105"
+                      style={{ background: accent, borderColor: 'var(--m-outline)', transitionDelay: '80ms' }}
                     >
                       {item.icon}
                     </div>
                     <h3 className="font-display font-semibold text-lg text-primary mb-2">{item.title}</h3>
                     <p className="text-secondary text-sm leading-relaxed mb-4">{item.description}</p>
-                    <span className="kicker text-[11px] group-hover:translate-x-1 inline-block transition-transform" style={{ color: 'var(--m-teal)' }}>
+                    <span className="kicker text-[11px] group-hover:translate-x-1 inline-block transition-transform duration-300 ease-out" style={{ color: 'var(--m-teal)', transitionDelay: '120ms' }}>
                       Learn more →
                     </span>
                   </Link>

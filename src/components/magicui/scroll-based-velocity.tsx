@@ -32,10 +32,13 @@ function VelocityRow({ text, baseVelocity }: ScrollVelocityRowProps) {
     window.addEventListener('scroll', onScroll, { passive: true })
 
     const tick = () => {
-      // Base drift + a nudge proportional to how fast the user just
-      // scrolled, clamped so a huge scroll jump doesn't fling the text.
-      const boost = Math.max(-8, Math.min(8, velocity.current * 0.5))
-      offset.current += baseVelocity + boost
+      // Base drift + a speed boost proportional to how fast the user
+      // just scrolled. The boost only ever adds magnitude — direction
+      // is locked to this row's own baseVelocity sign, so speeding up
+      // never flips row A and row B onto the same heading.
+      const dir = baseVelocity < 0 ? -1 : 1
+      const boost = Math.max(0, Math.min(8, Math.abs(velocity.current) * 0.5))
+      offset.current += dir * (Math.abs(baseVelocity) + boost)
       velocity.current *= 0.9 // decay toward the base speed each frame
 
       if (rowRef.current) {
