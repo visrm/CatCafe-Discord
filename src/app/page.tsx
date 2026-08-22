@@ -7,7 +7,8 @@ import Stats from '@/components/Stats'
 import JoinCTA from '@/components/JoinCTA'
 import Footer from '@/components/Footer'
 import ScrollBasedVelocity from '@/components/magicui/scroll-based-velocity'
-import DottedMap, { communityMarkers } from '@/components/magicui/dotted-map'
+import { DottedMap } from '@/components/magicui/dotted-map'
+import { communityMarkers } from '@/lib/map-markers'
 import { siteConfig } from '@/lib/config'
 
 const explore = [
@@ -145,7 +146,20 @@ export default function Home() {
               <span className="text-[var(--m-teal-dark)] dark:text-[var(--m-teal)]">Genuinely global.</span>
             </h2>
             <div className="m-sticker p-4 md:p-6" style={{ background: 'var(--m-paper)' }}>
-              <DottedMap markers={communityMarkers} pulse />
+              {/* Real magicui.design DottedMap (via `svg-dotted-map`),
+                  not the hand-rolled polygon version this used to be.
+                  `pulse` turns on its built-in animated pulse ring for
+                  every marker; color/dot styling is tuned to the
+                  Memphis palette via CSS variables. */}
+              <DottedMap
+                markers={communityMarkers}
+                pulse
+                dotColor="var(--text-secondary)"
+                markerColor="var(--m-coral)"
+                dotRadius={0.35}
+                mapSamples={3500}
+                className="opacity-90"
+              />
             </div>
           </div>
         </section>
