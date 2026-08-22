@@ -155,6 +155,15 @@ export default function RootLayout({
         />
         <ThemeProvider>
           <div className="premium-bg min-h-screen">
+            {/* Site-wide grid lines + morphing Memphis blobs — fixed,
+                z-0, sits behind every page's content (see globals.css). */}
+            <div className="m-grid-lines" aria-hidden="true" />
+            <div className="m-blob-field" aria-hidden="true">
+              <div className="m-blob" style={{ width: 380, height: 380, background: 'var(--m-teal)', top: '-8%', left: '-10%' }} />
+              <div className="m-blob" style={{ width: 300, height: 300, background: 'var(--m-coral)', top: '35%', right: '-8%', animationDelay: '-4s, -8s' }} />
+              <div className="m-blob" style={{ width: 240, height: 240, background: 'var(--m-violet)', bottom: '-6%', left: '18%', animationDelay: '-9s, -3s' }} />
+              <div className="m-blob" style={{ width: 180, height: 180, background: 'var(--m-mustard)', top: '65%', left: '-4%', animationDelay: '-6s, -14s' }} />
+            </div>
             <div className="relative z-10">{children}</div>
           </div>
         </ThemeProvider>

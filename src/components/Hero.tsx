@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { siteConfig } from '@/lib/config'
 import DiscordIcon from '@/components/DiscordIcon'
+import ComicText from '@/components/magicui/comic-text'
+import CoolMode from '@/components/magicui/cool-mode'
 
 export default function Hero() {
   return (
@@ -131,7 +133,7 @@ export default function Hero() {
             </svg>
           </span>
           <span className="block font-display font-semibold text-[28px] md:text-[40px] leading-[1.15] text-primary mt-2.5">
-            Have you?
+            <ComicText rotate={-3}>Have you?</ComicText>
           </span>
         </h1>
 
@@ -143,16 +145,18 @@ export default function Hero() {
         {/* CTAs — flat sticker primary (load-bearing action stays full
             contrast), neumorphic secondary, both inside a flat shelf. */}
         <div className="inline-flex flex-wrap items-center justify-center gap-4 rounded-[24px] px-[22px] py-[18px]" style={{ background: 'var(--m-shelf)' }}>
-          <a
-            href={siteConfig.discordInvite}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="m-sticker inline-flex items-center gap-2.5 px-[26px] py-[15px] font-body font-semibold text-base"
-            style={{ background: 'var(--m-coral)', color: 'var(--m-on-color-ink)' }}
-          >
-            <DiscordIcon className="w-5 h-5" />
-            Join Free — 10 Seconds
-          </a>
+          <CoolMode particles={['🐈', '✦', '★']}>
+            <a
+              href={siteConfig.discordInvite}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-sticker inline-flex items-center gap-2.5 px-[26px] py-[15px] font-body font-semibold text-base"
+              style={{ background: 'var(--m-coral)', color: 'var(--m-on-color-ink)' }}
+            >
+              <DiscordIcon className="w-5 h-5" />
+              Join Free — 10 Seconds
+            </a>
+          </CoolMode>
           <Link
             href="/about"
             className="m-neu inline-flex items-center px-6 py-[15px] rounded-2xl font-body font-semibold text-base text-primary"

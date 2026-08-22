@@ -271,9 +271,121 @@ body {
    `fill` prop on ZigzagDivider) — no shared class needed here beyond
    sizing, which the component sets directly via Tailwind. */
 
+/* ---------------------------------------------------------
+   Instruction #1 additions — global grid lines + morphing
+   background blobs, comic text, dock, scroll-velocity marquee,
+   and the dotted map. Grid/blobs are fixed and site-wide (mounted
+   once in layout.tsx); everything else is opt-in per component.
+--------------------------------------------------------- */
+
+/* Fixed grid-line backdrop, sits behind every page's content at the
+   root level. Deliberately faint — a texture, not a foreground shape,
+   same job the confetti shapes already do at hero scale. */
+.m-grid-lines {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--m-grid-line) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, var(--m-grid-line) 1.5px, transparent 1.5px);
+  background-size: 44px 44px;
+}
+:root { --m-grid-line: rgba(22, 20, 28, 0.05); }
+.dark { --m-grid-line: rgba(251, 243, 228, 0.06); }
+
+/* Morphing blobs — soft, low-opacity, continuously reshaping via
+   border-radius keyframes (no external animation lib needed). Fixed
+   position so they drift behind scrolled content site-wide. */
+.m-blob-field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.m-blob {
+  position: absolute;
+  opacity: 0.16;
+  animation: m-blob-morph 16s ease-in-out infinite, m-blob-drift 24s ease-in-out infinite;
+}
+@keyframes m-blob-morph {
+  0%, 100% { border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%; }
+  25%      { border-radius: 58% 42% 35% 65% / 60% 55% 45% 40%; }
+  50%      { border-radius: 65% 35% 42% 58% / 35% 60% 40% 65%; }
+  75%      { border-radius: 35% 65% 58% 42% / 55% 45% 65% 35%; }
+}
+@keyframes m-blob-drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(28px, -36px) rotate(18deg); }
+}
+
+/* ===== Comic Text ===== */
+.m-comic-text {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  -webkit-text-stroke: 2.5px var(--m-outline);
+  paint-order: stroke fill;
+  display: inline-block;
+  position: relative;
+  text-shadow: 4px 4px 0 var(--m-outline);
+}
+.m-comic-text::after {
+  content: '';
+  position: absolute;
+  inset: -14px -20px;
+  background-image: radial-gradient(var(--m-outline) 2px, transparent 2px);
+  background-size: 10px 10px;
+  opacity: 0.16;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* ===== Dock ===== */
+.m-dock-item {
+  will-change: transform;
+  transform-origin: bottom center;
+}
+
+/* ===== Scroll-based velocity marquee ===== */
+.m-velocity-band {
+  padding: 32px 0;
+  background: var(--m-mustard);
+  border-top: 3px solid var(--m-outline);
+  border-bottom: 3px solid var(--m-outline);
+  overflow: hidden;
+}
+.m-velocity-row {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  will-change: transform;
+}
+.m-velocity-row span {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  color: var(--m-on-color-ink, #16141C);
+  padding: 0 28px;
+}
+.m-velocity-row + .m-velocity-row {
+  margin-top: 14px;
+}
+
+/* ===== Dotted map ===== */
+.m-map-dot {
+  fill: var(--text-secondary);
+  opacity: 0.35;
+}
+.m-map-dot--marked {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .m-squiggle-animate,
-  .m-cat-float {
+  .m-cat-float,
+  .m-blob,
+  .m-velocity-row {
     animation: none !important;
   }
 }

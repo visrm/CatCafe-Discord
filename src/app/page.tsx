@@ -6,6 +6,8 @@ import ZigzagDivider from '@/components/ZigzagDivider'
 import Stats from '@/components/Stats'
 import JoinCTA from '@/components/JoinCTA'
 import Footer from '@/components/Footer'
+import ScrollBasedVelocity from '@/components/magicui/scroll-based-velocity'
+import DottedMap, { communityMarkers } from '@/components/magicui/dotted-map'
 import { siteConfig } from '@/lib/config'
 
 const explore = [
@@ -53,6 +55,11 @@ export default function Home() {
       <main>
         <Navbar />
         <Hero />
+
+        {/* Scroll-reactive marquee — reads out the server's tagline
+            in the same breath the badge/hero already uses it, right
+            below the fold where the hero's motion hands off to it. */}
+        <ScrollBasedVelocity text={`${siteConfig.name}🌻Indian Discord Server・Make Friends・Hindi English・Asia Asian Gaming Kpop Chilling 🐈　`} />
 
         {/* Divider fill matches the section below it (WhyJoin's teal),
             not the section above, so the color transition reads as
@@ -116,6 +123,24 @@ export default function Home() {
                   </Link>
                 )
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Where members join from — mostly India, genuinely global.
+            Marker density does the talking; no counts printed on the map. */}
+        <section className="py-20 px-6 relative overflow-hidden">
+          <div className="max-w-4xl mx-auto relative z-10 text-center">
+            <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
+              From India, to everywhere
+            </span>
+            <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-8">
+              Mostly India.
+              <br />
+              <span className="text-[var(--m-teal-dark)] dark:text-[var(--m-teal)]">Genuinely global.</span>
+            </h2>
+            <div className="m-sticker p-4 md:p-6" style={{ background: 'var(--m-paper)' }}>
+              <DottedMap markers={communityMarkers} />
             </div>
           </div>
         </section>
