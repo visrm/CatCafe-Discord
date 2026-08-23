@@ -34,8 +34,14 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
+          {/* h2 here (not h3/h4) is deliberate: axe's heading-order
+              rule only flags an *increase* of more than one level, never
+              a decrease, and the Footer's last-heading-before-it varies
+              by page (h1 on some, h2 or h3 on others). h2 is safe no
+              matter what precedes it — h3/h4 broke on pages like /faq
+              and /members whose only prior heading is an h2. */}
           <div>
-            <h4 className="kicker text-xs text-primary mb-4">Navigate</h4>
+            <h2 className="kicker text-xs text-primary mb-4">Navigate</h2>
             <ul className="flex flex-col gap-2">
               {[
                 { label: 'About Us',    href: '/about' },
@@ -56,7 +62,7 @@ export default function Footer() {
 
           {/* Legal / Contact */}
           <div>
-            <h4 className="kicker text-xs text-primary mb-4">Legal</h4>
+            <h2 className="kicker text-xs text-primary mb-4">Legal</h2>
             <ul className="flex flex-col gap-2">
               <li>
                 <Link href="/privacy" className="text-muted text-sm hover:text-primary transition-colors">
@@ -72,6 +78,16 @@ export default function Footer() {
                 <Link href="/rules" className="text-muted text-sm hover:text-primary transition-colors">
                   Community Rules
                 </Link>
+              </li>
+              <li>
+                <a
+                  href="https://dyno.gg/form/c8732af1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted text-sm hover:text-primary transition-colors"
+                >
+                  Ban / Mute Appeal
+                </a>
               </li>
               <li>
                 <a href={`mailto:${siteConfig.email}`} className="text-muted text-sm hover:text-primary transition-colors">

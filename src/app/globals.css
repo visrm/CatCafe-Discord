@@ -38,7 +38,12 @@
   --border-strong: rgba(20, 20, 20, 0.14);
   --text-primary: #17181C;
   --text-secondary: #3E4048;
-  --text-muted: #6B6C75;
+  /* Darkened from #6B6C75 — the old value landed at ~4.46:1 against
+     --surface-2 (#F0EDE7, the darkest surface .text-muted sits on,
+     e.g. the Footer), just under the 4.5:1 AA floor for normal-size
+     text. #5C5E67 clears it with margin (~5.3:1) on every surface
+     token, since surface-2 is the worst case. */
+  --text-muted: #5C5E67;
 
   --glow-1: rgba(201, 166, 107, 0.16);
   --glow-2: rgba(90, 110, 140, 0.10);

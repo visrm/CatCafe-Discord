@@ -19,4 +19,7 @@ export const communityMarkers: Marker[] = [
   { lat: 25.3, lng: 51.5 }, // Qatar
   { lat: 4.2, lng: 73.5 }, // Maldives
   { lat: 39.9, lng: 116.4 }, { lat: 31.2, lng: 121.5 }, // China
+  { lat: -23.55, lng: -46.63 }, { lat: -22.9, lng: -43.2 }, // Brazil (São Paulo, Rio de Janeiro)
+  { lat: -34.6, lng: -58.4 }, // Argentina (Buenos Aires)
+  { lat: 4.7, lng: -74.1 }, // Colombia (Bogotá)
 ]

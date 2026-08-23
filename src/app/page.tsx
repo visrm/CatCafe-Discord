@@ -123,7 +123,7 @@ export default function Home() {
                     </div>
                     <h3 className="font-display font-semibold text-lg text-primary mb-2">{item.title}</h3>
                     <p className="text-secondary text-sm leading-relaxed mb-4">{item.description}</p>
-                    <span className="kicker text-[11px] group-hover:translate-x-1 inline-block transition-transform duration-300 ease-out" style={{ color: 'var(--m-teal)', transitionDelay: '120ms' }}>
+                    <span className="kicker text-[11px] group-hover:translate-x-1 inline-block transition-transform duration-300 ease-out text-[var(--m-teal-dark)] dark:text-[var(--m-teal)]" style={{ transitionDelay: '120ms' }}>
                       Learn more →
                     </span>
                   </Link>

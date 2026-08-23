@@ -8,7 +8,7 @@ import CoolMode from '@/components/magicui/cool-mode'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden dot-grid pt-24 pb-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
       {/* Contrast veil — sits behind the copy (z-0), above the page's
           grain/glow layers, so headline and body text stay legible
           without flattening the background texture entirely. */}
