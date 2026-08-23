@@ -97,7 +97,7 @@ export default function Home() {
               <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
                 Explore {siteConfig.name}
               </span>
-              <h2 className="font-display font-bold text-4xl md:text-5xl text-primary">
+              <h2 className="font-display font-bold text-4xl md:text-6xl text-primary">
                 Everything, in
                 <br />
                 <span className="text-[var(--m-mustard-dark)] dark:text-[var(--m-mustard)]">its own place.</span>
@@ -140,7 +140,7 @@ export default function Home() {
             <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
               From India, to everywhere
             </span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-8">
+            <h2 className="font-display font-bold text-4xl md:text-6xl text-primary mb-8">
               Mostly India.
               <br />
               <span className="text-[var(--m-teal-dark)] dark:text-[var(--m-teal)]">Genuinely global.</span>

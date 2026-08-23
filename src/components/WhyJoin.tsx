@@ -38,7 +38,7 @@ const reasons = [
 
 export default function WhyJoin() {
   return (
-    <section className="dot-grid relative overflow-hidden py-[90px] px-6" style={{ background: 'var(--m-teal)' }}>
+    <section className="dot-grid dot-grid--vivid relative overflow-hidden py-[90px] px-6" style={{ background: 'var(--m-teal)' }}>
       {/* Confetti — margins/negative space only, never behind copy or a
           card. Halftone texture reuses the shared .dot-grid class. */}
       <div className="m-confetti" aria-hidden="true">
@@ -59,7 +59,7 @@ export default function WhyJoin() {
 
       <div className="relative z-10 max-w-[1080px] mx-auto" style={{ color: 'var(--m-on-color-ink)' }}>
         <div className="kicker text-xs mb-2.5 opacity-75">Why join</div>
-        <h2 className="font-display font-bold text-[32px] md:text-[42px] leading-[1.1] mb-11 max-w-[560px]">
+        <h2 className="font-display font-bold text-4xl md:text-6xl leading-[1.05] mb-11 max-w-[560px]">
           Everything a good hangout needs, none of the performance.
         </h2>
 

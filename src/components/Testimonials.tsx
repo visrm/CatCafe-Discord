@@ -85,7 +85,7 @@ export default function Testimonials() {
           <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
             Member voices
           </span>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
+          <h2 className="font-display font-bold text-4xl md:text-6xl text-primary mb-4">
             Ask them,
             <br />
             <span className="text-[var(--m-violet-dark)] dark:text-[var(--m-violet)]">not us.</span>

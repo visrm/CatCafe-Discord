@@ -176,7 +176,21 @@ body {
   pointer-events: none;
   background-image: radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
   background-size: 32px 32px;
-  opacity: 0.35;
+}
+/* --border-strong is already a low-alpha color (0.14) — a further
+   `opacity` here would compound with it multiplicatively (0.14 × 0.35
+   ≈ 0.05), which is why this pattern was reading as invisible instead
+   of "subtle". Alpha lives on the color alone now. */
+
+/* Stronger variant for sections sitting on a solid Memphis color block
+   (JoinCTA, WhyJoin) — --border-strong is calibrated for the neutral
+   page background and disappears against a saturated fill. Fixed to
+   --m-on-color-ink (always dark, matches every accent block) at real
+   visible alpha, closer-set dots for a denser halftone texture. */
+.dot-grid--vivid::after {
+  background-image: radial-gradient(circle, var(--m-on-color-ink) 1.6px, transparent 1.6px);
+  background-size: 22px 22px;
+  opacity: 0.16;
 }
 
 /* Soft vignette that sits strictly behind hero content (z-index 0) to

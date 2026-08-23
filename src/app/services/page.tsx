@@ -22,7 +22,7 @@ export default function ServicesPage() {
             <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
               For advertisers & server owners
             </span>
-            <h1 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
+            <h1 className="font-display font-bold text-4xl md:text-6xl text-primary mb-4">
               Reach {siteConfig.memberCount}
               <br />
               <span className="text-[var(--m-coral-dark)] dark:text-[var(--m-coral)]">people who are already here.</span>

@@ -60,7 +60,7 @@ export default function Features() {
           <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
             What we offer
           </span>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
+          <h2 className="font-display font-bold text-4xl md:text-6xl text-primary mb-4">
             Six reasons people
             <br />
             <span className="text-[var(--m-teal-dark)] dark:text-[var(--m-teal)]">stop lurking.</span>

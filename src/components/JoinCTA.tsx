@@ -3,7 +3,7 @@ import DiscordIcon from '@/components/DiscordIcon'
 
 export default function JoinCTA() {
   return (
-    <section className="dot-grid py-24 px-6 relative overflow-hidden" style={{ background: 'var(--m-violet)' }}>
+    <section className="dot-grid dot-grid--vivid py-24 px-6 relative overflow-hidden" style={{ background: 'var(--m-violet)' }}>
       {/* Confetti — margins only, never behind the card. Halftone dot
           texture comes from the shared .dot-grid class (same one Hero
           uses), not a new pattern. */}
@@ -29,7 +29,7 @@ export default function JoinCTA() {
 
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="m-sticker p-10 md:p-14 text-center" style={{ background: 'var(--m-paper)' }}>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4 leading-[1.1]">
+          <h2 className="font-display font-bold text-4xl md:text-6xl text-primary mb-4 leading-[1.1]">
             {siteConfig.memberCount} people are in.
             <br />
             <span className="text-[var(--m-coral-dark)] dark:text-[var(--m-coral)]">You&apos;re still outside.</span>

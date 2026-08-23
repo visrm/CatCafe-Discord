@@ -31,7 +31,7 @@ export default function StaffPage() {
             <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
               The team
             </span>
-            <h1 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
+            <h1 className="font-display font-bold text-4xl md:text-6xl text-primary mb-4">
               People behind
               <br />
               <span className="text-[var(--m-violet-dark)] dark:text-[var(--m-violet)]">the server.</span>

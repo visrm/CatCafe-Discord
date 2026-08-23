@@ -123,7 +123,7 @@ export default function Stats({ compact = false }: { compact?: boolean }) {
             <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
               By the numbers
             </span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-primary">
+            <h2 className="font-display font-bold text-4xl md:text-6xl text-primary">
               Not vibes.
               <br />
               <span className="text-[var(--m-coral-dark)] dark:text-[var(--m-coral)]">Just numbers.</span>
