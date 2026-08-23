@@ -38,8 +38,9 @@ const reasons = [
 
 export default function WhyJoin() {
   return (
-    <section className="relative overflow-hidden py-[90px] px-6" style={{ background: 'var(--m-teal)' }}>
-      {/* Confetti — margins/negative space only, never behind copy or a card. */}
+    <section className="dot-grid relative overflow-hidden py-[90px] px-6" style={{ background: 'var(--m-teal)' }}>
+      {/* Confetti — margins/negative space only, never behind copy or a
+          card. Halftone texture reuses the shared .dot-grid class. */}
       <div className="m-confetti" aria-hidden="true">
         <div
           className="m-shape m-shape--dot absolute border-0"
@@ -49,6 +50,10 @@ export default function WhyJoin() {
         <div
           className="m-shape absolute"
           style={{ width: 34, height: 34, background: 'var(--m-coral)', top: '70%', right: '8%', transform: 'rotate(20deg)' }}
+        />
+        <div
+          className="absolute"
+          style={{ right: '9%', top: '35%', width: 0, height: 0, borderLeft: '18px solid transparent', borderRight: '18px solid transparent', borderBottom: '30px solid var(--m-violet)' }}
         />
       </div>
 

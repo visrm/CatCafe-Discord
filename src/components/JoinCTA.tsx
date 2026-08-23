@@ -3,8 +3,10 @@ import DiscordIcon from '@/components/DiscordIcon'
 
 export default function JoinCTA() {
   return (
-    <section className="py-24 px-6 relative overflow-hidden" style={{ background: 'var(--m-violet)' }}>
-      {/* Confetti — margins only, never behind the card. */}
+    <section className="dot-grid py-24 px-6 relative overflow-hidden" style={{ background: 'var(--m-violet)' }}>
+      {/* Confetti — margins only, never behind the card. Halftone dot
+          texture comes from the shared .dot-grid class (same one Hero
+          uses), not a new pattern. */}
       <div className="m-confetti" aria-hidden="true">
         <div
           className="m-shape m-shape--dot absolute border-0"
@@ -15,6 +17,14 @@ export default function JoinCTA() {
           style={{ width: 30, height: 30, background: 'var(--m-pink)', bottom: '14%', right: '10%', transform: 'rotate(14deg)' }}
         />
         <div className="m-plus absolute" style={{ width: 26, height: 26, top: '18%', right: '14%' }} />
+        <div
+          className="absolute"
+          style={{ left: '7%', top: '38%', width: 0, height: 0, borderLeft: '20px solid transparent', borderRight: '20px solid transparent', borderBottom: '34px solid var(--m-mustard)' }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{ right: '12%', bottom: '-40px', width: 120, height: 120, border: '3px dashed var(--m-outline)' }}
+        />
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
