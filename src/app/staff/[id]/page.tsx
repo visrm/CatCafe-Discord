@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import Dock from '@/components/magicui/dock'
 import { staffDirectory } from '@/lib/config'
 
 type Props = {
@@ -97,21 +98,17 @@ export default function StaffMemberPage({ params }: Props) {
             </ul>
           </div>
 
-          {/* Links */}
+          {/* Links — Memphis dock instead of flat pills, magnifying on
+              hover. Falls back to nothing when a member has none. */}
           {member.portfolio.links.length > 0 && (
-            <div className="flex flex-wrap gap-3 mb-10">
-              {member.portfolio.links.map((link) => (
-                <a
-                  key={link.url}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl border-[2.5px] text-sm font-medium text-primary transition-colors"
-                  style={{ borderColor: 'var(--m-outline)', background: 'var(--m-paper-2)' }}
-                >
-                  {link.label} ↗
-                </a>
-              ))}
+            <div className="mb-10">
+              <Dock
+                items={member.portfolio.links.map((link) => ({
+                  label: link.label,
+                  href: link.url,
+                  icon: <span className="font-display font-semibold text-sm">{link.label.slice(0, 2).toUpperCase()}</span>,
+                }))}
+              />
             </div>
           )}
 

@@ -38,8 +38,9 @@ const reasons = [
 
 export default function WhyJoin() {
   return (
-    <section className="relative overflow-hidden py-[90px] px-6" style={{ background: 'var(--m-teal)' }}>
-      {/* Confetti — margins/negative space only, never behind copy or a card. */}
+    <section className="dot-grid dot-grid--vivid relative overflow-hidden py-[90px] px-6" style={{ background: 'var(--m-teal)' }}>
+      {/* Confetti — margins/negative space only, never behind copy or a
+          card. Halftone texture reuses the shared .dot-grid class. */}
       <div className="m-confetti" aria-hidden="true">
         <div
           className="m-shape m-shape--dot absolute border-0"
@@ -50,11 +51,15 @@ export default function WhyJoin() {
           className="m-shape absolute"
           style={{ width: 34, height: 34, background: 'var(--m-coral)', top: '70%', right: '8%', transform: 'rotate(20deg)' }}
         />
+        <div
+          className="absolute"
+          style={{ right: '9%', top: '35%', width: 0, height: 0, borderLeft: '18px solid transparent', borderRight: '18px solid transparent', borderBottom: '30px solid var(--m-violet)' }}
+        />
       </div>
 
       <div className="relative z-10 max-w-[1080px] mx-auto" style={{ color: 'var(--m-on-color-ink)' }}>
         <div className="kicker text-xs mb-2.5 opacity-75">Why join</div>
-        <h2 className="font-display font-bold text-[32px] md:text-[42px] leading-[1.1] mb-11 max-w-[560px]">
+        <h2 className="font-display font-bold text-4xl md:text-6xl leading-[1.05] mb-11 max-w-[560px]">
           Everything a good hangout needs, none of the performance.
         </h2>
 

@@ -38,7 +38,12 @@
   --border-strong: rgba(20, 20, 20, 0.14);
   --text-primary: #17181C;
   --text-secondary: #3E4048;
-  --text-muted: #6B6C75;
+  /* Darkened from #6B6C75 — the old value landed at ~4.46:1 against
+     --surface-2 (#F0EDE7, the darkest surface .text-muted sits on,
+     e.g. the Footer), just under the 4.5:1 AA floor for normal-size
+     text. #5C5E67 clears it with margin (~5.3:1) on every surface
+     token, since surface-2 is the worst case. */
+  --text-muted: #5C5E67;
 
   --glow-1: rgba(201, 166, 107, 0.16);
   --glow-2: rgba(90, 110, 140, 0.10);
@@ -176,7 +181,21 @@ body {
   pointer-events: none;
   background-image: radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
   background-size: 32px 32px;
-  opacity: 0.35;
+}
+/* --border-strong is already a low-alpha color (0.14) — a further
+   `opacity` here would compound with it multiplicatively (0.14 × 0.35
+   ≈ 0.05), which is why this pattern was reading as invisible instead
+   of "subtle". Alpha lives on the color alone now. */
+
+/* Stronger variant for sections sitting on a solid Memphis color block
+   (JoinCTA, WhyJoin) — --border-strong is calibrated for the neutral
+   page background and disappears against a saturated fill. Fixed to
+   --m-on-color-ink (always dark, matches every accent block) at real
+   visible alpha, closer-set dots for a denser halftone texture. */
+.dot-grid--vivid::after {
+  background-image: radial-gradient(circle, var(--m-on-color-ink) 1.6px, transparent 1.6px);
+  background-size: 22px 22px;
+  opacity: 0.16;
 }
 
 /* Soft vignette that sits strictly behind hero content (z-index 0) to
@@ -271,9 +290,86 @@ body {
    `fill` prop on ZigzagDivider) — no shared class needed here beyond
    sizing, which the component sets directly via Tailwind. */
 
+/* ---------------------------------------------------------
+   Instruction #1 additions — global grid lines + morphing
+   background blobs, comic text, dock, scroll-velocity marquee,
+   and the dotted map. Grid/blobs are fixed and site-wide (mounted
+   once in layout.tsx); everything else is opt-in per component.
+--------------------------------------------------------- */
+
+/* Fixed grid-line backdrop, sits behind every page's content at the
+   root level. Deliberately faint — a texture, not a foreground shape,
+   same job the confetti shapes already do at hero scale. */
+.m-grid-lines {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--m-grid-line) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, var(--m-grid-line) 1.5px, transparent 1.5px);
+  background-size: 44px 44px;
+}
+:root { --m-grid-line: rgba(22, 20, 28, 0.05); }
+.dark { --m-grid-line: rgba(251, 243, 228, 0.06); }
+
+/* ===== Comic Text ===== */
+.m-comic-text {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  -webkit-text-stroke: 2.5px var(--m-outline);
+  paint-order: stroke fill;
+  display: inline-block;
+  position: relative;
+  text-shadow: 4px 4px 0 var(--m-outline);
+}
+.m-comic-text::after {
+  content: '';
+  position: absolute;
+  inset: -14px -20px;
+  background-image: radial-gradient(var(--m-outline) 2px, transparent 2px);
+  background-size: 10px 10px;
+  opacity: 0.16;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* ===== Dock ===== */
+.m-dock-item {
+  will-change: transform;
+  transform-origin: bottom center;
+}
+
+/* ===== Scroll-based velocity marquee ===== */
+.m-velocity-band {
+  padding: 32px 0;
+  background: var(--m-mustard);
+  border-top: 3px solid var(--m-outline);
+  border-bottom: 3px solid var(--m-outline);
+  overflow: hidden;
+}
+.m-velocity-row {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  will-change: transform;
+}
+.m-velocity-row span {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  color: var(--m-on-color-ink, #16141C);
+  padding: 0 28px;
+}
+.m-velocity-row + .m-velocity-row {
+  margin-top: 14px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .m-squiggle-animate,
-  .m-cat-float {
+  .m-cat-float,
+  .m-velocity-row,
+  .m-map-pulse-ring {
     animation: none !important;
   }
 }

@@ -63,7 +63,7 @@ export default function PrivacyPage() {
             <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
               Legal
             </span>
-            <h1 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">Privacy Policy</h1>
+            <h1 className="font-display font-bold text-4xl md:text-6xl text-primary mb-4">Privacy Policy</h1>
             <p className="text-secondary text-sm">
               Last updated: <span className="text-primary font-semibold">January 1, 2025</span>
             </p>

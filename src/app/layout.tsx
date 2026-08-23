@@ -155,6 +155,11 @@ export default function RootLayout({
         />
         <ThemeProvider>
           <div className="premium-bg min-h-screen">
+            {/* Site-wide grid lines — fixed, z-0, sits behind every
+                page's content (see globals.css). The morphing blob
+                field was removed: too much constant background motion
+                competing with foreground content. */}
+            <div className="m-grid-lines" aria-hidden="true" />
             <div className="relative z-10">{children}</div>
           </div>
         </ThemeProvider>

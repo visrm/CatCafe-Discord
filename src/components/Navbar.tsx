@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { siteConfig } from '@/lib/config'
-import ThemeToggle from '@/components/ThemeToggle'
+import AnimatedThemeToggler from '@/components/magicui/animated-theme-toggler'
 import Logo from '@/components/Logo'
 
 const navLinks = [
@@ -59,7 +59,7 @@ export default function Navbar() {
 
         {/* CTA + theme toggle */}
         <div className="hidden lg:flex items-center gap-3">
-          <ThemeToggle />
+          <AnimatedThemeToggler />
           <a
             href={siteConfig.discordInvite}
             target="_blank"
@@ -73,7 +73,7 @@ export default function Navbar() {
 
         {/* Mobile controls */}
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
+          <AnimatedThemeToggler />
           <button
             className="text-primary p-2"
             onClick={() => setMenuOpen(!menuOpen)}

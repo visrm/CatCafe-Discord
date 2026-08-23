@@ -103,7 +103,7 @@ export default function ServiceInquireForm({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
-            Contact email <span style={{ color: 'var(--m-coral)' }}>*</span>
+            Contact email <span className="text-[var(--m-coral-dark)] dark:text-[var(--m-coral)]">*</span>
           </label>
           <input
             id="email"
@@ -117,7 +117,7 @@ export default function ServiceInquireForm({
         </div>
         <div>
           <label htmlFor="discordId" className="block text-sm font-medium text-primary mb-2">
-            Discord user ID <span style={{ color: 'var(--m-coral)' }}>*</span>
+            Discord user ID <span className="text-[var(--m-coral-dark)] dark:text-[var(--m-coral)]">*</span>
           </label>
           <input
             id="discordId"
@@ -134,7 +134,7 @@ export default function ServiceInquireForm({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         <div>
           <label htmlFor="serviceId" className="block text-sm font-medium text-primary mb-2">
-            Service category <span style={{ color: 'var(--m-coral)' }}>*</span>
+            Service category <span className="text-[var(--m-coral-dark)] dark:text-[var(--m-coral)]">*</span>
           </label>
           <select
             id="serviceId"
@@ -251,7 +251,7 @@ export default function ServiceInquireForm({
 
       <div className="mb-5">
         <label htmlFor="description" className="block text-sm font-medium text-primary mb-2">
-          Text / description <span style={{ color: 'var(--m-coral)' }}>*</span>
+          Text / description <span className="text-[var(--m-coral-dark)] dark:text-[var(--m-coral)]">*</span>
         </label>
         <textarea
           id="description"
@@ -267,7 +267,7 @@ export default function ServiceInquireForm({
 
       <div className="mb-6">
         <label htmlFor="budget" className="block text-sm font-medium text-primary mb-2">
-          Budget constraints <span style={{ color: 'var(--m-coral)' }}>*</span>
+          Budget constraints <span className="text-[var(--m-coral-dark)] dark:text-[var(--m-coral)]">*</span>
         </label>
         <input
           id="budget"
@@ -294,7 +294,7 @@ export default function ServiceInquireForm({
           <Link href="/rules" className="hover:underline text-[var(--m-teal-dark)] dark:text-[var(--m-teal)]">
             community rules
           </Link>
-          . <span style={{ color: 'var(--m-coral)' }}>*</span>
+          . <span className="text-[var(--m-coral-dark)] dark:text-[var(--m-coral)]">*</span>
         </span>
       </label>
 
