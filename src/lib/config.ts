@@ -293,7 +293,7 @@ export const staffDirectory: StaffMember[] = [
     accentColor: '#B83A4B',
     location: 'IND',
     joined: '',
-    bio: 'An Assistant Staff who helps bring the server’s activities directly to its members.',
+    bio: 'An Assistant Staff who helps bring the server’s activities directly to its members. A veteran and highly vocal member of the community, Akii brings the calm energy, pacing through conversations, and other activities that keeps members engaged and participating.',
     portfolio: {
       summary:
         'Works directly with members through the server’s activities and events.',
@@ -315,7 +315,7 @@ export const staffDirectory: StaffMember[] = [
     accentColor: '#CF4850',
     location: 'IND',
     joined: '',
-    bio: 'A newer face among the server’s performers, Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
+    bio: 'Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
     portfolio: {
       summary:
         'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
@@ -337,7 +337,7 @@ export const staffDirectory: StaffMember[] = [
     accentColor: '#CF4850',
     location: 'IND',
     joined: '',
-    bio: 'A newer face among the server’s performers, Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
+    bio: 'A newer face among the server’s performers, Sylus has already shown that his competence and enthusiastic nature through games, karaokes, conversations to keep members engaged.',
     portfolio: {
       summary:
         'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
