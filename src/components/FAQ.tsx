@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: 'How do I get started once I join?',
-    a: 'Read the #rules channel, introduce yourself in #introductions, and pick your roles in #role-select. After that — just jump in! Everyone is friendly.',
+    a: 'Read the #guidelines channel. After that — just jump in! Everyone is friendly.',
   },
   {
     q: 'What kind of content is allowed?',
@@ -22,11 +22,11 @@ const faqs = [
   },
   {
     q: 'How do I report someone?',
-    a: 'Use the @Moderator ping in any channel or DM a mod directly. We take reports seriously and respond quickly.',
+    a: 'Use the #help-desk channel to create ticket. We take reports seriously and respond quickly.',
   },
   {
     q: 'Can I invite my friends?',
-    a: 'Absolutely! You can share the invite link on this page or generate a new one from within the server. The more the merrier.',
+    a: 'Absolutely! You can share the invite link on this page or generate a new one from within the server. The more the merrier. Additionally, we also have customizable roles for members.',
   },
   {
     q: 'Are there ways to get special roles or perks?',

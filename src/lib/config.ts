@@ -297,7 +297,11 @@ export const staffDirectory: StaffMember[] = [
     portfolio: {
       summary:
         'Works directly with members through the server’s activities and events.',
-      highlights: [],
+      highlights: [
+        'Established himself as a veteran performer within the community',
+        'Uses events and conversations to entertain members',
+        'Directly engages with members to increase participation and activity',
+      ],
       links: [],
     },
   },
