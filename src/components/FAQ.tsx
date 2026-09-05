@@ -26,11 +26,11 @@ const faqs = [
   },
   {
     q: 'Can I invite my friends?',
-    a: 'Absolutely! You can share the invite link on this page or generate a new one from within the server. The more the merrier. Additionally, we also have customizable roles for members.',
+    a: 'Absolutely! You can share the invite link on this page or generate a new one from within the server. The more the merrier.',
   },
   {
     q: 'Are there ways to get special roles or perks?',
-    a: 'Yes! Stay active, participate in events, and show community spirit to earn XP and level-based roles. There are also special roles for contributors and event winners.',
+    a: 'Yes! Stay active, participate in events, and show community spirit to earn XP and level-based roles. There are also special roles for contributors and event winners.\nAdditionally, we also have customizable roles for members.',
   },
 ]
 
