@@ -315,7 +315,7 @@ export const staffDirectory: StaffMember[] = [
     accentColor: '#CF4850',
     location: 'IND',
     joined: '',
-    bio: 'Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
+    bio: 'A newer face among Assistant Staffs, Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
     portfolio: {
       summary:
         'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
@@ -337,7 +337,7 @@ export const staffDirectory: StaffMember[] = [
     accentColor: '#CF4850',
     location: 'IND',
     joined: '',
-    bio: 'A newer face among the server’s performers, Sylus has already shown that his competence and enthusiastic nature through games, karaokes, conversations to keep members engaged.',
+    bio: 'A newer face among the server’s performers, Sylus is competent and enthusiastic, spreading his influence within the server through games, karaokes and engaging conversations.',
     portfolio: {
       summary:
         'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
