@@ -337,7 +337,7 @@ export const staffDirectory: StaffMember[] = [
     accentColor: '#CF4850',
     location: 'IND',
     joined: '',
-    bio: 'A newer face among the server’s performers, Sylus is competent and enthusiastic, spreading his influence within the server through games, karaokes and engaging conversations.',
+    bio: 'Another new face among the server’s performers, Sylus is competent and enthusiastic, spreading his influence within the server through games, karaokes and engaging conversations.',
     portfolio: {
       summary:
         'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
