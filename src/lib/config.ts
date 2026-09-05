@@ -43,8 +43,8 @@ export type StaffMember = {
 
 export const staffDirectory: StaffMember[] = [
   {
-    id: 'ning',
-    name: 'Ning',
+    id: 'keisam',
+    name: 'Keisam',
     role: 'Founder',
     team: 'Leadership',
     avatar: "🦊",
@@ -108,49 +108,27 @@ export const staffDirectory: StaffMember[] = [
     },
   },
 
-  {
-    id: 'whoisyhwach',
-    name: 'Whoisyhwach',
-    role: 'Administrator',
-    team: 'Management',
-    avatar: "🦁",
-    accentColor: '#C14456',
-    location: 'IND',
-    joined: '',
-    bio: 'A mature, outgoing, and caring administrator with a particular love for games and community activities. Whoisyhwach brings people together through gaming events and other activities while guiding the staff behind them, steadily growing into his administrative role along the way.',
-    portfolio: {
-      summary:
-        'Oversees the server’s activities and events, guiding activity-focused staff and taking ownership of creating a fun and engaging environment for members.',
-      highlights: [
-        'Organises gaming events and community activities',
-        'Guides gaming and activity staff through event planning and execution',
-        'Consistently takes ownership of activities and has helped establish a stronger activity culture',
-      ],
-      links: [],
-    },
-  },
-
-  {
-    id: 'aizen',
-    name: 'Aizen',
-    role: 'Senior Support Staff',
-    team: 'Management',
-    avatar: "🐨",
-    accentColor: '#D14A4A',
-    location: 'IND',
-    joined: '',
-    bio: 'Smart, attentive, and exceptionally quick on the support front, Aizen has become one of the server’s most capable hands when members need help. Working closely with Vince, he can handle a large volume of tickets and complicated issues without losing sight of the people behind them.',
-    portfolio: {
-      summary:
-        'A high-performing senior support member who handles member issues, moderation, reports, and complicated cases while also helping guide and support other staff.',
-      highlights: [
-        'Handles large volumes of member tickets swiftly and attentively',
-        'Acts as a close aide to Vince in member and staff matters',
-        'Helps train and support other staff while handling difficult member issues',
-      ],
-      links: [],
-    },
-  },
+//   {
+//     id: 'aizen',
+//     name: 'Aizen',
+//     role: 'Senior Support Staff',
+//     team: 'Management',
+//     avatar: "🐨",
+//     accentColor: '#D14A4A',
+//     location: 'IND',
+//     joined: '',
+//     bio: 'Smart, attentive, and exceptionally quick on the support front, Aizen has become one of the server’s most capable hands when members need help. Working closely with Vince, he can handle a large volume of tickets and complicated issues without losing sight of the people behind them.',
+//     portfolio: {
+//       summary:
+//         'A high-performing senior support member who handles member issues, moderation, reports, and complicated cases while also helping guide and support other staff.',
+//       highlights: [
+//         'Handles large volumes of member tickets swiftly and attentively',
+//         'Acts as a close aide to Vince in member and staff matters',
+//         'Helps train and support other staff while handling difficult member issues',
+//       ],
+//       links: [],
+//     },
+//   },
 
   {
     id: 'gabii',
@@ -240,63 +218,63 @@ export const staffDirectory: StaffMember[] = [
     },
   },
 
-  {
-    id: 'zohaibs',
-    name: 'Zohaibs',
-    role: 'Lead Staff',
-    team: 'Management',
-    avatar: "🐸",
-    accentColor: '#D04747',
-    location: 'IND',
-    joined: '',
-    bio: 'Vocal, opinionated, and highly involved, Zohaibs is the kind of Lead Staff member who is rarely short of an idea. His general-purpose approach, strong gaming focus, and ability to bring members into the community have helped turn passive members into people who actually invest their time in the server.',
-    portfolio: {
-      summary:
-        'Helps lead activity staff across the server, combining a broad operational role with a particular focus on gaming and community engagement.',
-      highlights: [
-        'Leads activity staff and helps higher staff implement new ideas',
-        'Has encouraged members to invest more time and energy into the community',
-        'Helped increase overall community engagement while maintaining activity quality',
-      ],
-      links: [],
-    },
-  },
+//   {
+//     id: 'zohaib',
+//     name: 'Zohaib',
+//     role: 'Lead Staff',
+//     team: 'Management',
+//     avatar: "🐸",
+//     accentColor: '#D04747',
+//     location: 'IND',
+//     joined: '',
+//     bio: 'Vocal, opinionated, and highly involved, Zohaibs is the kind of Lead Staff member who is rarely short of an idea. His general-purpose approach, strong gaming focus, and ability to bring members into the community have helped turn passive members into people who actually invest their time in the server.',
+//     portfolio: {
+//       summary:
+//         'Helps lead activity staff across the server, combining a broad operational role with a particular focus on gaming and community engagement.',
+//       highlights: [
+//         'Leads activity staff and helps higher staff implement new ideas',
+//         'Has encouraged members to invest more time and energy into the community',
+//         'Helped increase overall community engagement while maintaining activity quality',
+//       ],
+//       links: [],
+//     },
+//   },
 
-  {
-    id: 'airo',
-    name: 'Airo',
-    role: 'Lead Staff',
-    team: 'Management',
-    avatar: "🐵",
-    accentColor: '#9F3044',
-    location: 'IND',
-    joined: '',
-    bio: 'More reserved than his fellow Lead Staff, Airo lets his consistency do most of the talking. Focused almost entirely on gaming, he has steadily built a reputation for actually making gaming activities happen and encouraging members to spend more time playing together.',
-    portfolio: {
-      summary:
-        'A gaming-focused Lead Staff member who guides gaming activity staff and consistently turns ideas into organised events for the community.',
-      highlights: [
-        'Consistently conducted multiple gaming events',
-        'Helps guide gaming activity staff under the server’s activity administration',
-        'Encouraged a stronger gaming-oriented environment within the community',
-      ],
-      links: [],
-    },
-  },
+//   {
+//     id: 'airo',
+//     name: 'Airo',
+//     role: 'Lead Staff',
+//     team: 'Management',
+//     avatar: "🐵",
+//     accentColor: '#9F3044',
+//     location: 'IND',
+//     joined: '',
+//     bio: 'More reserved than his fellow Lead Staff, Airo lets his consistency do most of the talking. Focused almost entirely on gaming, he has steadily built a reputation for actually making gaming activities happen and encouraging members to spend more time playing together.',
+//     portfolio: {
+//       summary:
+//         'A gaming-focused Lead Staff member who guides gaming activity staff and consistently turns ideas into organised events for the community.',
+//       highlights: [
+//         'Consistently conducted multiple gaming events',
+//         'Helps guide gaming activity staff under the server’s activity administration',
+//         'Encouraged a stronger gaming-oriented environment within the community',
+//       ],
+//       links: [],
+//     },
+//   },
 
   {
     id: 'manish',
     name: 'Manish',
-    role: 'Activity Lead',
+    role: 'Assistant Staff',
     team: 'Events',
-    avatar: "🐹",
+    avatar: "🦄",
     accentColor: '#C43E4E',
     location: 'IND',
     joined: '',
     bio: 'A veteran and highly vocal member of the community, Manish brings the kind of energy that makes an activity feel alive. Between streaming, gaming, talking, and the occasional skit, he has proven himself as both a performer and an entertainer in front of members and fellow staff alike.',
     portfolio: {
       summary:
-        'An experienced Activity Lead who directly hosts and participates in community activities, using his personality and performance skills to bring members into the action.',
+        'An experienced Assistant Staff who directly hosts and participates in community activities, using his personality and performance skills to bring members into the action.',
       highlights: [
         'Established himself as a veteran performer within the community',
         'Uses gaming, streaming, conversations, and skits to entertain members',
@@ -307,15 +285,15 @@ export const staffDirectory: StaffMember[] = [
   },
 
   {
-    id: 'aki',
-    name: 'Aki',
-    role: 'Activity Lead',
+    id: 'akii',
+    name: 'Akii',
+    role: 'Assistant Staff',
     team: 'Events',
-    avatar: "🐻",
+    avatar: "🦄",
     accentColor: '#B83A4B',
     location: 'IND',
     joined: '',
-    bio: 'An Activity Lead who helps bring the server’s activities directly to its members.',
+    bio: 'An Assistant Staff who helps bring the server’s activities directly to its members.',
     portfolio: {
       summary:
         'Works directly with members through the server’s activities and events.',
@@ -327,7 +305,7 @@ export const staffDirectory: StaffMember[] = [
   {
     id: 'nashedi',
     name: 'Nashedi',
-    role: 'Activity Lead',
+    role: 'Assistant Staff',
     team: 'Events',
     avatar: "🦄",
     accentColor: '#CF4850',
@@ -336,10 +314,32 @@ export const staffDirectory: StaffMember[] = [
     bio: 'A newer face among the server’s performers, Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
     portfolio: {
       summary:
-        'A relatively new but proven Activity Lead who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
+        'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
       highlights: [
         'Established himself as a performer despite being relatively new to the community',
         'Uses gaming and conversation to engage members during activities',
+        'Works directly with the community to increase participation and server activity',
+      ],
+      links: [],
+    },
+  },
+
+    {
+    id: 'sylus',
+    name: 'Sylus',
+    role: 'Assistant Staff',
+    team: 'Events',
+    avatar: "🦄",
+    accentColor: '#CF4850',
+    location: 'IND',
+    joined: '',
+    bio: 'A newer face among the server’s performers, Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
+    portfolio: {
+      summary:
+        'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
+      highlights: [
+        'Established himself as a performer despite being relatively new to the community',
+        'Uses gaming, karaokes and conversation to engage members during activities',
         'Works directly with the community to increase participation and server activity',
       ],
       links: [],
