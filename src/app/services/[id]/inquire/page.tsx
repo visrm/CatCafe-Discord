@@ -46,8 +46,7 @@ export default function ServiceInquirePage({ params, searchParams }: Props) {
             ]}
           />
 
-          {/* TODO: Integrate WebForm to Discord via webhook. */}
-          {/* <div className="mb-10">
+          <div className="mb-10">
             <span className="kicker text-xs inline-block px-4 py-1.5 rounded-full mb-4" style={{ background: 'var(--m-paper-2)', border: '2px solid var(--m-outline)' }}>
               {service.name}
             </span>
@@ -64,7 +63,7 @@ export default function ServiceInquirePage({ params, searchParams }: Props) {
             services={servicesDirectory}
             defaultServiceId={service.id}
             defaultPlanId={searchParams.plan}
-          /> */}
+          />
         </div>
       </main>
       <Footer />
