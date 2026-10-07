@@ -263,6 +263,94 @@ export const staffDirectory: StaffMember[] = [
 //   },
 
   {
+    id: 'nashedi',
+    name: 'Nashedi',
+    role: 'Assistant Staff',
+    team: 'Events',
+    avatar: "🦄",
+    accentColor: '#CF4850',
+    location: 'IND',
+    joined: '2025',
+    bio: 'A newer face among Assistant Staffs, Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
+    portfolio: {
+      summary:
+        'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
+      highlights: [
+        'Established himself as a performer despite being relatively new to the community',
+        'Uses gaming and conversation to engage members during activities',
+        'Works directly with the community to increase participation and server activity',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'sylus',
+    name: 'Sylus',
+    role: 'Assistant Staff',
+    team: 'Events',
+    avatar: "🦄",
+    accentColor: '#CF4850',
+    location: 'IND',
+    joined: '2025',
+    bio: 'Another new face among the server’s performers, Sylus is competent and enthusiastic, spreading his influence within the server through games, karaokes and engaging conversations.',
+    portfolio: {
+      summary:
+        'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
+      highlights: [
+        'Established himself as a performer despite being relatively new to the community',
+        'Uses gaming, karaokes and conversation to engage members during activities',
+        'Works directly with the community to increase participation and server activity',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'shinichi',
+    name: 'Shinichi',
+    role: 'Assistant Staff',
+    team: 'Events',
+    avatar: "🦄",
+    accentColor: '#CF4850',
+    location: 'IND',
+    joined: '2025',
+    bio: 'A New face among the server’s performers, Shinichi brings his influence within the server through karaokes and engaging conversations.',
+    portfolio: {
+      summary:
+        'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
+      highlights: [
+        'Established himself as a performer despite being relatively new to the community',
+        'Uses karaokes and conversation to engage members during activities',
+        'Works directly with the community to increase participation and server activity',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'neko',
+    name: 'Neko',
+    role: 'Assistant Staff',
+    team: 'Events',
+    avatar: "🦄",
+    accentColor: '#CF4850',
+    location: 'IND',
+    joined: '2023',
+    bio: 'A New face among the server’s performers, Neko expands his influence within the server through games, debate/discussions activities and engaging conversations.',
+    portfolio: {
+      summary:
+        'An Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
+      highlights: [
+        'Established himself as a performer in the community with the help of his previous experience as a staff within the community.',
+        'Uses Games & Debates/Discussions and open conversational spaces to engage members during activities',
+        'Works directly with the community to increase participation and server activity',
+      ],
+      links: [],
+    },
+  },
+
+  {
     id: 'manish',
     name: 'Manish',
     role: 'Activity Staff',
@@ -306,49 +394,6 @@ export const staffDirectory: StaffMember[] = [
     },
   },
 
-  {
-    id: 'nashedi',
-    name: 'Nashedi',
-    role: 'Assistant Staff',
-    team: 'Events',
-    avatar: "🦄",
-    accentColor: '#CF4850',
-    location: 'IND',
-    joined: '2025',
-    bio: 'A newer face among Assistant Staffs, Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
-    portfolio: {
-      summary:
-        'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
-      highlights: [
-        'Established himself as a performer despite being relatively new to the community',
-        'Uses gaming and conversation to engage members during activities',
-        'Works directly with the community to increase participation and server activity',
-      ],
-      links: [],
-    },
-  },
-
-    {
-    id: 'sylus',
-    name: 'Sylus',
-    role: 'Assistant Staff',
-    team: 'Events',
-    avatar: "🦄",
-    accentColor: '#CF4850',
-    location: 'IND',
-    joined: '2025',
-    bio: 'Another new face among the server’s performers, Sylus is competent and enthusiastic, spreading his influence within the server through games, karaokes and engaging conversations.',
-    portfolio: {
-      summary:
-        'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
-      highlights: [
-        'Established himself as a performer despite being relatively new to the community',
-        'Uses gaming, karaokes and conversation to engage members during activities',
-        'Works directly with the community to increase participation and server activity',
-      ],
-      links: [],
-    },
-  },
 ]
 
 /**
