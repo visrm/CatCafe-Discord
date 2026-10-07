@@ -59,7 +59,7 @@ export default function ServicesPage() {
                 <div className="flex items-center justify-between text-xs font-mono text-secondary mb-6">
                   <span>{service.plans.length} plans available</span>
                   <span>
-                    From {service.plans[0]?.price} {service.plans[0]?.unit}
+                    {service.plans[0]?.price} {service.plans[0]?.unit}
                   </span>
                 </div>
 

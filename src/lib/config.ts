@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: 'CatCafe India',
-  tagline: '53,000 people. One Discord. Always something happening.',
+  tagline: '58,000 people. One Discord. Always something happening.',
   description:
     'No follower count to build, no profile to perform. Just a Discord server where someone is always online to talk about whatever you\'re into. Drop in for five minutes — see if you stay for five hours.',
   discordInvite: 'https://discord.gg/hk639u8FDg',
-  memberCount: '53,000+',
-  onlineCount: '2,500+',
+  memberCount: '58,000+',
+  onlineCount: '4,500+',
   channels: '50+',
   github: '',
   email: '',
@@ -218,27 +218,27 @@ export const staffDirectory: StaffMember[] = [
     },
   },
 
-//   {
-//     id: 'zohaib',
-//     name: 'Zohaib',
-//     role: 'Lead Staff',
-//     team: 'Management',
-//     avatar: "🐸",
-//     accentColor: '#D04747',
-//     location: 'IND',
-//     joined: '',
-//     bio: 'Vocal, opinionated, and highly involved, Zohaibs is the kind of Lead Staff member who is rarely short of an idea. His general-purpose approach, strong gaming focus, and ability to bring members into the community have helped turn passive members into people who actually invest their time in the server.',
-//     portfolio: {
-//       summary:
-//         'Helps lead activity staff across the server, combining a broad operational role with a particular focus on gaming and community engagement.',
-//       highlights: [
-//         'Leads activity staff and helps higher staff implement new ideas',
-//         'Has encouraged members to invest more time and energy into the community',
-//         'Helped increase overall community engagement while maintaining activity quality',
-//       ],
-//       links: [],
-//     },
-//   },
+  {
+    id: 'zohaib',
+    name: 'Zohaib',
+    role: 'Lead Staff',
+    team: 'Management',
+    avatar: "🐸",
+    accentColor: '#D04747',
+    location: 'IND',
+    joined: '',
+    bio: 'Vocal, opinionated, and highly involved, Zohaibs is the kind of Lead Staff member who is rarely short of an idea. His general-purpose approach, strong gaming focus, and ability to bring members into the community have helped turn passive members into people who actually invest their time in the server.',
+    portfolio: {
+      summary:
+        'Helps lead activity staff across the server, combining a broad operational role with a particular focus on gaming and community engagement.',
+      highlights: [
+        'Leads activity staff and helps higher staff implement new ideas',
+        'Has encouraged members to invest more time and energy into the community',
+        'Helped increase overall community engagement while maintaining activity quality',
+      ],
+      links: [],
+    },
+  },
 
 //   {
 //     id: 'airo',
@@ -354,8 +354,7 @@ export const staffDirectory: StaffMember[] = [
 /**
  * Services directory — single source of truth for /services pages.
  *
- * This is sample data with placeholder pricing. To wire in real
- * offerings, replace the entries below — every page that renders
+ * Edit the entries below to change offerings — every page that renders
  * services reads from this array, so nothing else needs to change.
  */
 export type ServicePlan = {
@@ -363,7 +362,7 @@ export type ServicePlan = {
   id: string
   name: string
   price: string
-  /** Short unit label shown next to the price, e.g. "per hour" */
+  /** Short unit label shown next to the price, e.g. "per 12 hours" */
   unit: string
   description: string
   features: string[]
@@ -396,15 +395,15 @@ export type ServiceCategory = {
 
 export const servicesDirectory: ServiceCategory[] = [
   {
-    id: 'member-advertising',
-    name: 'Member Advertising',
-    tagline: 'Put your product or link in front of 53,000+ engaged members.',
+    id: 'product-advertising',
+    name: 'Product Advertising',
+    tagline: 'Put your product or link in front of 58,000+ engaged members.',
     icon: '📣',
     accentColor: '#C9694F',
     summary:
-      'Hourly and slot-based ad placements using your own copy — or ours — delivered with the right ping for your audience.',
+      'Choose a 12-hour, 24-hour or 30-day promo plan with a role-based or @everyone ping — using your own copy or ours. A giveaway is optional.',
     howItWorks: [
-      'Pick a slot duration and ping tier from the plans below',
+      'Pick the 12h, 24h or 30d promo plan from the plans below',
       'Submit the inquiry form with your product link, copy, and preferred timing',
       'Our team reviews the copy and confirms availability, usually within 24 hours',
       'Your ad goes live in the agreed channel at the scheduled slot',
@@ -412,41 +411,58 @@ export const servicesDirectory: ServiceCategory[] = [
     notes: [
       'All ad copy is subject to staff approval before it goes live',
       'No NSFW content, competing communities, or high-risk financial products',
-      '@everyone pings are reserved for the top tier and limited per day',
-      'Want us to write the copy instead? Add staff copywriting for an extra charge',
+      'Listed prices are starting prices — the final charge may go up based on any additional requirements',
+      'A giveaway is optional for advertisements; any additional giveaway cost is charged to the client',
+      'Want us to write the copy instead? Add staff copywriting for a small extra charge',
     ],
     plans: [
       {
-        id: 'starter',
-        name: 'Starter Slot',
-        price: '₹499',
-        unit: 'per hour',
-        description: 'A single role-ping placement in one relevant channel.',
-        features: ['1 hour visibility', 'Role-based ping', '1 channel', 'Advertiser-provided copy'],
+        id: '12h',
+        name: '12h Promo Plan',
+        price: 'From ₹1,499',
+        unit: 'per 12 hours',
+        description: 'A 12-hour ad placement with a role-based or @everyone ping.',
+        features: [
+          '12 hour display',
+          'Role-based or @everyone ping',
+          'Advertiser-provided copy',
+          'Giveaway optional (extra cost billed to client)',
+        ],
       },
       {
-        id: 'standard',
-        name: 'Standard Slot',
-        price: '₹1,999',
-        unit: 'per 6 hours',
-        description: 'Extended visibility across peak hours with a wider ping.',
-        features: ['6 hour visibility', 'Multi-role ping', 'Up to 2 channels', 'Advertiser-provided copy'],
+        id: '24h',
+        name: '24h Promo Plan',
+        price: 'From ₹1,899',
+        unit: 'per 24 hours',
+        description: 'A full-day ad placement with a role-based or @everyone ping.',
+        features: [
+          '24 hour display',
+          'Role-based or @everyone ping',
+          'Advertiser-provided copy',
+          'Giveaway optional (extra cost billed to client)',
+        ],
         popular: true,
       },
       {
-        id: 'premium',
-        name: 'Premium Slot',
-        price: '₹4,999',
-        unit: 'per 24 hours',
-        description: 'Full-day placement with @everyone reach and a pinned post.',
-        features: ['24 hour visibility', '@everyone ping', 'Pinned in channel', 'Priority scheduling'],
+        id: '30d',
+        name: '30d Promo Plan',
+        price: '₹3,999',
+        unit: 'for 30 days',
+        description:
+          'A month-long presence with your own dedicated channel, plus a giveaway to drive attention.',
+        features: [
+          'Valid for 30 days',
+          'Short ad copy provided by you, posted in a separate channel',
+          'Channel named after your product/service',
+          'Separate giveaway in the giveaway channel with a simple title & CTA',
+        ],
       },
     ],
     addOns: [
       {
         id: 'custom-copy',
         name: 'Staff-Written Copy',
-        price: '+₹799',
+        price: '+₹100',
         description: "Our team writes ad copy tailored to the community's tone and format.",
       },
     ],
@@ -458,52 +474,57 @@ export const servicesDirectory: ServiceCategory[] = [
     icon: '🚀',
     accentColor: '#4C7A94',
     summary:
-      'Promote your Discord server or event to our members, backed by a Nitro or Boost giveaway that drives real signups.',
+      'Promote your Discord server or event to our members with a 12-hour, 24-hour or 30-day promo plan, backed by a giveaway that drives real signups.',
     howItWorks: [
-      "Choose a giveaway tier below — the price includes the Nitro/Boost prize",
+      'Pick the 12h, 24h or 30d promo plan — a giveaway is included with every plan',
       'Submit your server invite and event details in the inquiry form',
-      'We schedule the giveaway alongside a dedicated promotional post',
+      'We schedule the promo with a ping and the giveaway alongside it',
       'Winners are drawn and announced live in the community',
     ],
     notes: [
-      'The giveaway prize (Nitro/Boost) is purchased and gifted directly by our team',
+      'The giveaway is mandatory and included with every plan; the standard reward is ₹500 via UPI',
+      'Listed prices are starting prices — the final charge may go up based on any additional requirements',
       'Promoted servers must comply with Discord ToS — no ban-evasion or raid servers',
       'Event promotions require a public invite link and a confirmed date/time',
     ],
     plans: [
       {
-        id: 'classic',
-        name: 'Nitro Classic Push',
-        price: '₹1,499',
-        unit: 'per giveaway',
-        description: '1-month Nitro Classic giveaway with a dedicated promo post.',
-        features: ['1-month Nitro Classic prize included', 'Dedicated promo post', 'Pinned for 24 hours'],
+        id: '12h',
+        name: '12h Promo Plan',
+        price: 'From ₹1,499',
+        unit: 'per 12 hours',
+        description: 'A 12-hour server or event promo with a ping and a giveaway.',
+        features: [
+          '12 hour display',
+          'Role-based or @everyone ping',
+          'Giveaway included (standard ₹500 UPI reward)',
+        ],
       },
       {
-        id: 'boost',
-        name: 'Nitro Boost Push',
-        price: '₹2,999',
-        unit: 'per giveaway',
-        description: '1-month Nitro Boost giveaway for higher-intent traffic.',
+        id: '24h',
+        name: '24h Promo Plan',
+        price: 'From ₹1,899',
+        unit: 'per 24 hours',
+        description: 'A full-day server or event promo with a ping and a giveaway.',
         features: [
-          '1-month Nitro Boost prize included',
-          'Dedicated promo post',
-          'Pinned for 48 hours',
-          'Featured in #announcements',
+          '24 hour display',
+          'Role-based or @everyone ping',
+          'Giveaway included (standard ₹500 UPI reward)',
         ],
         popular: true,
       },
       {
-        id: 'server-boost',
-        name: 'Server Boost Bundle',
-        price: '₹5,999',
-        unit: 'per event',
-        description: '2x Server Boosts as giveaway prizes for your own server, plus a full promo push.',
+        id: '30d',
+        name: '30d Promo Plan',
+        price: '₹3,999',
+        unit: 'for 30 days',
+        description:
+          'A month-long presence with your own dedicated channel, plus a giveaway to drive signups.',
         features: [
-          '2x Server Boost prizes included',
-          'Dedicated promo post',
-          'Pinned for 72 hours',
-          'Shout-out during a voice event',
+          'Valid for 30 days',
+          'Short promo copy provided by you, posted in a separate channel',
+          'Channel named after your server name',
+          'Separate giveaway in the giveaway channel with a simple title & CTA',
         ],
       },
     ],
