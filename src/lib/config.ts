@@ -454,7 +454,7 @@ export const servicesDirectory: ServiceCategory[] = [
           'Valid for 30 days',
           'Short ad copy provided by you, posted in a separate channel',
           'Channel named after your product/service',
-          'Separate giveaway in the giveaway channel with a simple title & CTA',
+          'Separate giveaway in the giveaway channel',
         ],
       },
     ],
@@ -497,7 +497,7 @@ export const servicesDirectory: ServiceCategory[] = [
         features: [
           '12 hour display',
           'Role-based or @everyone ping',
-          'Giveaway included (standard ₹500 UPI reward)',
+          'Giveaway included',
         ],
       },
       {
@@ -509,7 +509,7 @@ export const servicesDirectory: ServiceCategory[] = [
         features: [
           '24 hour display',
           'Role-based or @everyone ping',
-          'Giveaway included (standard ₹500 UPI reward)',
+          'Giveaway included',
         ],
         popular: true,
       },
