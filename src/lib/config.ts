@@ -90,7 +90,7 @@ export const staffDirectory: StaffMember[] = [
     id: 'vince',
     name: 'Vince',
     role: 'Administrator',
-    team: 'Management',
+    team: 'Leadership',
     avatar: "🐼",
     accentColor: '#B83B4B',
     location: 'IND',
@@ -138,7 +138,7 @@ export const staffDirectory: StaffMember[] = [
     avatar: "🐯",
     accentColor: '#B93D50',
     location: 'IND',
-    joined: '',
+    joined: '2022',
     bio: 'A supportive presence within the server’s support team, Gabii helps members navigate their problems while providing a familiar point of contact for the community’s female members. Her work combines everyday member support with the patience needed to keep difficult situations from becoming bigger ones.',
     portfolio: {
       summary:
@@ -160,7 +160,7 @@ export const staffDirectory: StaffMember[] = [
     avatar: "🐰",
     accentColor: '#C44255',
     location: 'IND',
-    joined: '',
+    joined: '2023',
     bio: 'A dependable member of the server’s senior support team, Prii helps members through their everyday issues while contributing to the moderation and support operation behind the scenes. She is also part of the staff members who provide a familiar and supportive presence for female members of the community.',
     portfolio: {
       summary:
@@ -174,44 +174,44 @@ export const staffDirectory: StaffMember[] = [
     },
   },
 
-  {
-    id: 'bibo',
-    name: 'Bibo',
-    role: 'Senior Support Staff',
-    team: 'Management',
-    avatar: "🦉",
-    accentColor: '#A93649',
-    location: 'IND',
-    joined: '',
-    bio: 'A reliable member of the senior support team, Bibo works directly with members to solve problems, handle reports, and keep everyday issues from becoming bigger ones. She also provides support to female members of the community and contributes to the wider staff operation.',
-    portfolio: {
-      summary:
-        'Handles member support and moderation while helping resolve complicated issues, support disputes, and reports within the server.',
-      highlights: [
-        'Handles member concerns and support tickets',
-        'Helps resolve reports, disputes, and moderation issues',
-        'Provides a supportive point of contact for female members',
-      ],
-      links: [],
-    },
-  },
+  // {
+  //   id: 'bibo',
+  //   name: 'Bibo',
+  //   role: 'Senior Support Staff',
+  //   team: 'Management',
+  //   avatar: "🦉",
+  //   accentColor: '#A93649',
+  //   location: 'IND',
+  //   joined: '',
+  //   bio: 'A reliable member of the senior support team, Bibo works directly with members to solve problems, handle reports, and keep everyday issues from becoming bigger ones. She also provides support to female members of the community and contributes to the wider staff operation.',
+  //   portfolio: {
+  //     summary:
+  //       'Handles member support and moderation while helping resolve complicated issues, support disputes, and reports within the server.',
+  //     highlights: [
+  //       'Handles member concerns and support tickets',
+  //       'Helps resolve reports, disputes, and moderation issues',
+  //       'Provides a supportive point of contact for female members',
+  //     ],
+  //     links: [],
+  //   },
+  // },
 
   {
     id: 'luffy',
     name: 'Luffy',
-    role: 'Lead Staff',
+    role: 'Senior Support Staff',
     team: 'Management',
     avatar: "🐺",
     accentColor: '#C63F4F',
     location: 'IND',
-    joined: '',
+    joined: '2024',
     bio: 'Vocal, opinionated, and never shy about bringing an idea to the table, Luffy is one of the newer Lead Staff members helping turn community ideas into actual activities. With a strong voice of his own and a talent for karaoke, he has made the server’s vocal activities one of his specialties.',
     portfolio: {
       summary:
-        'Leads activity staff with a focus on karaoke and community engagement, helping turn ideas into events and overseeing the staff responsible for keeping them running.',
+        'Senior Support Staff with a focus on karaoke and community engagement, helping turn ideas into events and overseeing the staff responsible for keeping them running.',
       highlights: [
-        'Leads the server’s karaoke activity staff',
-        'Organised and oversaw several successful karaoke night events',
+        'Leads the server’s activity & core staff(s) and helps implement new ideas',
+        'Organised and oversaw several successful karaoke night & debate/discussion events',
         'Helped increase member participation and vocal engagement through karaoke activities',
       ],
       links: [],
@@ -226,7 +226,7 @@ export const staffDirectory: StaffMember[] = [
     avatar: "🐸",
     accentColor: '#D04747',
     location: 'IND',
-    joined: '',
+    joined: '2024',
     bio: 'Vocal, opinionated, and highly involved, Zohaibs is the kind of Lead Staff member who is rarely short of an idea. His general-purpose approach, strong gaming focus, and ability to bring members into the community have helped turn passive members into people who actually invest their time in the server.',
     portfolio: {
       summary:
@@ -263,50 +263,6 @@ export const staffDirectory: StaffMember[] = [
 //   },
 
   {
-    id: 'manish',
-    name: 'Manish',
-    role: 'Assistant Staff',
-    team: 'Events',
-    avatar: "🦄",
-    accentColor: '#C43E4E',
-    location: 'IND',
-    joined: '',
-    bio: 'A veteran and highly vocal member of the community, Manish brings the kind of energy that makes an activity feel alive. Between streaming, gaming, talking, and the occasional skit, he has proven himself as both a performer and an entertainer in front of members and fellow staff alike.',
-    portfolio: {
-      summary:
-        'An experienced Assistant Staff who directly hosts and participates in community activities, using his personality and performance skills to bring members into the action.',
-      highlights: [
-        'Established himself as a veteran performer within the community',
-        'Uses gaming, streaming, conversations, and skits to entertain members',
-        'Directly engages with members to increase participation and activity',
-      ],
-      links: [],
-    },
-  },
-
-  {
-    id: 'akii',
-    name: 'Akii',
-    role: 'Assistant Staff',
-    team: 'Events',
-    avatar: "🦄",
-    accentColor: '#B83A4B',
-    location: 'IND',
-    joined: '',
-    bio: 'An Assistant Staff who helps bring the server’s activities directly to its members. A veteran and highly vocal member of the community, Akii brings the calm energy, pacing through conversations, and other activities that keeps members engaged and participating.',
-    portfolio: {
-      summary:
-        'Works directly with members through the server’s activities and events.',
-      highlights: [
-        'Established himself as a veteran performer within the community',
-        'Uses events and conversations to entertain members',
-        'Directly engages with members to increase participation and activity',
-      ],
-      links: [],
-    },
-  },
-
-  {
     id: 'nashedi',
     name: 'Nashedi',
     role: 'Assistant Staff',
@@ -314,7 +270,7 @@ export const staffDirectory: StaffMember[] = [
     avatar: "🦄",
     accentColor: '#CF4850',
     location: 'IND',
-    joined: '',
+    joined: '2025',
     bio: 'A newer face among Assistant Staffs, Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
     portfolio: {
       summary:
@@ -328,7 +284,7 @@ export const staffDirectory: StaffMember[] = [
     },
   },
 
-    {
+  {
     id: 'sylus',
     name: 'Sylus',
     role: 'Assistant Staff',
@@ -336,7 +292,7 @@ export const staffDirectory: StaffMember[] = [
     avatar: "🦄",
     accentColor: '#CF4850',
     location: 'IND',
-    joined: '',
+    joined: '2025',
     bio: 'Another new face among the server’s performers, Sylus is competent and enthusiastic, spreading his influence within the server through games, karaokes and engaging conversations.',
     portfolio: {
       summary:
@@ -349,6 +305,95 @@ export const staffDirectory: StaffMember[] = [
       links: [],
     },
   },
+
+  {
+    id: 'shinichi',
+    name: 'Shinichi',
+    role: 'Assistant Staff',
+    team: 'Events',
+    avatar: "🦄",
+    accentColor: '#CF4850',
+    location: 'IND',
+    joined: '2025',
+    bio: 'A New face among the server’s performers, Shinichi brings his influence within the server through karaokes and engaging conversations.',
+    portfolio: {
+      summary:
+        'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
+      highlights: [
+        'Established himself as a performer despite being relatively new to the community',
+        'Uses karaokes and conversation to engage members during activities',
+        'Works directly with the community to increase participation and server activity',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'neko',
+    name: 'Neko',
+    role: 'Assistant Staff',
+    team: 'Events',
+    avatar: "🦄",
+    accentColor: '#CF4850',
+    location: 'IND',
+    joined: '2023',
+    bio: 'A New face among the server’s performers, Neko expands his influence within the server through games, debate/discussions activities and engaging conversations.',
+    portfolio: {
+      summary:
+        'An Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
+      highlights: [
+        'Established himself as a performer in the community with the help of his previous experience as a staff within the community.',
+        'Uses Games & Debates/Discussions and open conversational spaces to engage members during activities',
+        'Works directly with the community to increase participation and server activity',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'manish',
+    name: 'Manish',
+    role: 'Activity Staff',
+    team: 'Events',
+    avatar: "🦄",
+    accentColor: '#C43E4E',
+    location: 'IND',
+    joined: '2025',
+    bio: 'A veteran and highly vocal member of the community, Manish brings the kind of energy that makes an activity feel alive. Between streaming, gaming, talking, and the occasional skit, he has proven himself as both a performer and an entertainer in front of members and fellow staff alike.',
+    portfolio: {
+      summary:
+        'An experienced Activity Staff who directly hosts and participates in community activities, using his personality and performance skills to bring members into the action.',
+      highlights: [
+        'Established himself as a veteran performer within the community',
+        'Uses gaming, streaming, conversations, and skits to entertain members',
+        'Directly engages with members to increase participation and activity',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'akii',
+    name: 'Akii',
+    role: 'Activity Staff',
+    team: 'Events',
+    avatar: "🦄",
+    accentColor: '#B83A4B',
+    location: 'IND',
+    joined: '2023',
+    bio: 'An Activity Staff who helps bring the server’s activities directly to its members. A veteran and highly vocal member of the community, Akii brings the calm energy, pacing through conversations, and other activities that keeps members engaged and participating.',
+    portfolio: {
+      summary:
+        'Works directly with members through the server’s activities and events.',
+      highlights: [
+        'Established himself as a veteran performer within the community',
+        'Uses events and conversations to entertain members',
+        'Directly engages with members to increase participation and activity',
+      ],
+      links: [],
+    },
+  },
+
 ]
 
 /**
