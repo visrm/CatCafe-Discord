@@ -177,7 +177,7 @@ export default function ServiceInquireForm({
       </div>
 
       {/* Conditional fields per service */}
-      {service?.id === 'member-advertising' && (
+      {service?.id === 'product-advertising' && (
         <div className="mb-5 flex flex-col gap-5">
           <div>
             <label htmlFor="promoLink" className="block text-sm font-medium text-primary mb-2">

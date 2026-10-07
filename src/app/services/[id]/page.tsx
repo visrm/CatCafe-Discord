@@ -161,7 +161,7 @@ export default function ServiceDetailPage({ params }: Props) {
           </div>
 
           {/* Shared CTA */}
-          <div className="m-sticker p-10 text-center mb-8" style={{ background: 'var(--m-paper)' }}>
+          {/* <div className="m-sticker p-10 text-center mb-8" style={{ background: 'var(--m-paper)' }}>
             <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-3">
               Ready to get started?
             </h2>
@@ -176,7 +176,7 @@ export default function ServiceDetailPage({ params }: Props) {
             >
               Submit an inquiry →
             </Link>
-          </div>
+          </div> */}
 
           <Link href="/services" className="kicker text-xs text-secondary hover:text-primary transition-colors">
             ← Back to all services

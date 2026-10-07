@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
     { name: 'Discord User ID', value: body.discordId, inline: true },
   ]
 
-  if (service.id === 'member-advertising') {
+  if (service.id === 'product-advertising') {
     if (body.promoLink) fields.push({ name: 'Link / Copy to Promote', value: body.promoLink })
     fields.push({ name: 'Wants Staff-Written Copy', value: body.wantsCustomCopy ? 'Yes' : 'No', inline: true })
     if (body.preferredTiming) fields.push({ name: 'Preferred Timing', value: body.preferredTiming, inline: true })

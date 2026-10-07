@@ -14,7 +14,7 @@ const BOT_TOKEN = process.env.DISCORD_BOT_TOKEN
  */
 export async function getDiscordStats(): Promise<DiscordStats> {
   if (!GUILD_ID || !BOT_TOKEN) {
-    return { memberCount: 53400, onlineCount: 2200, source: 'mock' }
+    return { memberCount: 58500, onlineCount: 4500, source: 'mock' }
   }
 
   try {
@@ -39,6 +39,6 @@ export async function getDiscordStats(): Promise<DiscordStats> {
     }
   } catch (error) {
     console.error('Discord API fetch error:', error)
-    return { memberCount: 53400, onlineCount: 2200, source: 'fallback' }
+    return { memberCount: 58500, onlineCount: 4500, source: 'fallback' }
   }
 }
