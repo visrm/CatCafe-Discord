@@ -20,7 +20,7 @@ export const siteConfig = {
  * same shape) — every page that renders staff reads from this array,
  * so nothing else needs to change.
  */
-export type StaffTeam = 'Leadership' | 'Management' | 'Moderation' | 'Events'
+export type StaffTeam = 'Leadership' | 'Management' | 'Support' | 'Events'
 
 export type StaffLink = { label: string, url: string }
 
@@ -72,7 +72,7 @@ export const staffDirectory: StaffMember[] = [
     team: 'Leadership',
     accentColor: '#A83246',
     location: 'IND',
-    joined: '2022',
+    joined: '2021',
     bio: 'A reserved but steady presence, Pakomii gradually became the person trusted to keep the server moving whenever Ning was away. She turned that trust into a lasting role at the heart of the community, helping transform Ning’s ideas into reality and keeping the staff together through the inevitable conflicts, dramas, and mishaps.',
     portfolio: {
       summary:
@@ -263,6 +263,75 @@ export const staffDirectory: StaffMember[] = [
 //   },
 
   {
+    id: 'era',
+    name: 'Era',
+    role: 'Girl Lead',
+    team: 'Support',
+    avatar: "🦄",
+    accentColor: '#CF4850',
+    location: 'IND',
+    joined: '2026',
+    bio: 'Era brings games, conversation, and her charms into activities to keep members engaged and directly works with other staff to ensure a safe environment for girls within the server.',
+    portfolio: {
+      summary:
+        'A Girls Lead who supports activities, helping turn events into engaging experiences for members.',
+      highlights: [
+        'Established herself as a Girls Support Staff despite being relatively new to the community',
+        'Uses wit and amicable conversations to engage members during activities',
+        'Handles issues of Girls within the server, ensuring a safe & open enironment for them to have fun.',
+        'Works directly with the community to increase participation and server activity',
+      ],
+      links: [],
+    },
+  },
+
+    {
+    id: 'shae',
+    name: 'Shae',
+    role: 'Girl Lead',
+    team: 'Support',
+    avatar: "🦄",
+    accentColor: '#CF4850',
+    location: 'IND',
+    joined: '2026',
+    bio: 'A veteran among the server’s performers, Shae is deeply invested in karaokes and engaging conversations; keeping members engaged from time to time.',
+    portfolio: {
+      summary:
+        'A proven Girls Lead who supports activities, helping turn events into engaging experiences for members.',
+      highlights: [
+        'Established herself as a Girls Support Staff despite being relatively new to the community',
+        'As an artist, She uses her melodious voice & experience to handle members during karaoke activities',
+        'Handles issues of Girls within the server, ensuring a safe & open enironment for them to have fun.',
+        'Works directly with the community to increase participation and server activity',
+      ],
+      links: [],
+    },
+  },
+
+  {
+    id: 'seraphyne',
+    name: 'Seraphyne',
+    role: 'Girl Lead',
+    team: 'Support',
+    avatar: "🦄",
+    accentColor: '#CF4850',
+    location: 'IND',
+    joined: '2026',
+    bio: 'As a relatively new server’s performer, Seraphyne is invested in karaokes and engaging conversations; keeping members engaged from time to time.',
+    portfolio: {
+      summary:
+        'A proven Girls Lead who supports activities, helping turn events into engaging experiences for members.',
+      highlights: [
+        'Established herself as a Girls Support Staff despite being relatively new to the community',
+        'As an artist, She uses her melodious voice & calm nature to handle members during karaoke activities',
+        'Handles issues of Girls within the server, ensuring a safe & open enironment for them to have fun.',
+        'Works directly with the community to increase participation and server activity',
+      ],
+      links: [],
+    },
+  },
+
+  {
     id: 'nashedi',
     name: 'Nashedi',
     role: 'Assistant Staff',
@@ -271,7 +340,7 @@ export const staffDirectory: StaffMember[] = [
     accentColor: '#CF4850',
     location: 'IND',
     joined: '2025',
-    bio: 'A newer face among Assistant Staffs, Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
+    bio: 'As a newcomer, Nashedi has already shown that he can hold his own in front of a crowd. Like the veteran entertainers around him, he brings games, conversation, and personality into activities to keep members engaged.',
     portfolio: {
       summary:
         'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
@@ -315,7 +384,7 @@ export const staffDirectory: StaffMember[] = [
     accentColor: '#CF4850',
     location: 'IND',
     joined: '2025',
-    bio: 'A New face among the server’s performers, Shinichi brings his influence within the server through karaokes and engaging conversations.',
+    bio: 'Among the server’s performers, Shinichi brings his influence within the server through karaokes and engaging conversations.',
     portfolio: {
       summary:
         'A relatively new but proven Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
@@ -337,7 +406,7 @@ export const staffDirectory: StaffMember[] = [
     accentColor: '#CF4850',
     location: 'IND',
     joined: '2023',
-    bio: 'A New face among the server’s performers, Neko expands his influence within the server through games, debate/discussions activities and engaging conversations.',
+    bio: 'A former staff & veteran, Neko expands his influence within the server through games, debate/discussions activities and engaging conversations.',
     portfolio: {
       summary:
         'An Assistant Staff who directly hosts and participates in activities, helping turn events into engaging experiences for members.',
