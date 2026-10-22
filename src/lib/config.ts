@@ -108,27 +108,27 @@ export const staffDirectory: StaffMember[] = [
     },
   },
 
-//   {
-//     id: 'aizen',
-//     name: 'Aizen',
-//     role: 'Senior Support Staff',
-//     team: 'Management',
-//     avatar: "🐨",
-//     accentColor: '#D14A4A',
-//     location: 'IND',
-//     joined: '',
-//     bio: 'Smart, attentive, and exceptionally quick on the support front, Aizen has become one of the server’s most capable hands when members need help. Working closely with Vince, he can handle a large volume of tickets and complicated issues without losing sight of the people behind them.',
-//     portfolio: {
-//       summary:
-//         'A high-performing senior support member who handles member issues, moderation, reports, and complicated cases while also helping guide and support other staff.',
-//       highlights: [
-//         'Handles large volumes of member tickets swiftly and attentively',
-//         'Acts as a close aide to Vince in member and staff matters',
-//         'Helps train and support other staff while handling difficult member issues',
-//       ],
-//       links: [],
-//     },
-//   },
+  {
+    id: 'aizen',
+    name: 'Aizen',
+    role: 'Senior Support Staff',
+    team: 'Management',
+    avatar: "🐨",
+    accentColor: '#D14A4A',
+    location: 'IND',
+    joined: '',
+    bio: 'Smart, attentive, and exceptionally quick on the support front, Aizen has become one of the server’s most capable hands when members need help. Working closely with Vince, he can handle a large volume of tickets and complicated issues without losing sight of the people behind them.',
+    portfolio: {
+      summary:
+        'A high-performing senior support member who handles member issues, moderation, reports, and complicated cases while also helping guide and support other staff.',
+      highlights: [
+        'Handles large volumes of member tickets swiftly and attentively',
+        'Acts as a close aide to Vince in member and staff matters',
+        'Helps train and support other staff while handling difficult member issues',
+      ],
+      links: [],
+    },
+  },
 
   {
     id: 'gabii',
@@ -174,27 +174,27 @@ export const staffDirectory: StaffMember[] = [
     },
   },
 
-  // {
-  //   id: 'bibo',
-  //   name: 'Bibo',
-  //   role: 'Senior Support Staff',
-  //   team: 'Management',
-  //   avatar: "🦉",
-  //   accentColor: '#A93649',
-  //   location: 'IND',
-  //   joined: '',
-  //   bio: 'A reliable member of the senior support team, Bibo works directly with members to solve problems, handle reports, and keep everyday issues from becoming bigger ones. She also provides support to female members of the community and contributes to the wider staff operation.',
-  //   portfolio: {
-  //     summary:
-  //       'Handles member support and moderation while helping resolve complicated issues, support disputes, and reports within the server.',
-  //     highlights: [
-  //       'Handles member concerns and support tickets',
-  //       'Helps resolve reports, disputes, and moderation issues',
-  //       'Provides a supportive point of contact for female members',
-  //     ],
-  //     links: [],
-  //   },
-  // },
+  {
+    id: 'bibo',
+    name: 'Bibo',
+    role: 'Senior Support Staff',
+    team: 'Management',
+    avatar: "🦉",
+    accentColor: '#A93649',
+    location: 'IND',
+    joined: '',
+    bio: 'A reliable member of the senior support team, Bibo works directly with members to solve problems, handle reports, and keep everyday issues from becoming bigger ones. She also provides support to female members of the community and contributes to the wider staff operation.',
+    portfolio: {
+      summary:
+        'Handles member support and moderation while helping resolve complicated issues, support disputes, and reports within the server.',
+      highlights: [
+        'Handles member concerns and support tickets',
+        'Helps resolve reports, disputes, and moderation issues',
+        'Provides a supportive point of contact for female members',
+      ],
+      links: [],
+    },
+  },
 
   {
     id: 'luffy',
@@ -240,27 +240,27 @@ export const staffDirectory: StaffMember[] = [
     },
   },
 
-//   {
-//     id: 'airo',
-//     name: 'Airo',
-//     role: 'Lead Staff',
-//     team: 'Management',
-//     avatar: "🐵",
-//     accentColor: '#9F3044',
-//     location: 'IND',
-//     joined: '',
-//     bio: 'More reserved than his fellow Lead Staff, Airo lets his consistency do most of the talking. Focused almost entirely on gaming, he has steadily built a reputation for actually making gaming activities happen and encouraging members to spend more time playing together.',
-//     portfolio: {
-//       summary:
-//         'A gaming-focused Lead Staff member who guides gaming activity staff and consistently turns ideas into organised events for the community.',
-//       highlights: [
-//         'Consistently conducted multiple gaming events',
-//         'Helps guide gaming activity staff under the server’s activity administration',
-//         'Encouraged a stronger gaming-oriented environment within the community',
-//       ],
-//       links: [],
-//     },
-//   },
+  {
+    id: 'airo',
+    name: 'Airo',
+    role: 'Lead Staff',
+    team: 'Management',
+    avatar: "🐵",
+    accentColor: '#9F3044',
+    location: 'IND',
+    joined: '',
+    bio: 'More reserved than his fellow Lead Staff, Airo lets his consistency do most of the talking. Focused almost entirely on gaming, he has steadily built a reputation for actually making gaming activities happen and encouraging members to spend more time playing together.',
+    portfolio: {
+      summary:
+        'A gaming-focused Lead Staff member who guides gaming activity staff and consistently turns ideas into organised events for the community.',
+      highlights: [
+        'Consistently conducted multiple gaming events',
+        'Helps guide gaming activity staff under the server’s activity administration',
+        'Encouraged a stronger gaming-oriented environment within the community',
+      ],
+      links: [],
+    },
+  },
 
   {
     id: 'era',
